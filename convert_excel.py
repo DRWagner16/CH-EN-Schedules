@@ -157,11 +157,11 @@ def convert_electives_sheet_to_json(client):
                     
                     # Fall Semester Check
                     if 'Fall' in frequency:
-                        if 'Every Fall' in frequency:
+                        if 'Fall - Every' in frequency:
                             schedule.append(f"FA{str(year)[-2:]}")
-                        elif 'Even Years Fall' in frequency and year % 2 == 0:
+                        elif 'Fall - Even Years' in frequency and year % 2 == 0:
                             schedule.append(f"FA{str(year)[-2:]}")
-                        elif 'Odd Years Fall' in frequency and year % 2 != 0:
+                        elif 'Fall - Odd Years' in frequency and year % 2 != 0:
                             schedule.append(f"FA{str(year)[-2:]}")
                         elif 'Every Other Year (Fall)' in frequency and last_year != 0 and 'FA' in last_offered:
                              if (year - last_year) % 2 == 0 and year >= last_year:
@@ -170,11 +170,11 @@ def convert_electives_sheet_to_json(client):
                     # Spring Semester Check (Spring '26 happens at the end of academic year 2025)
                     spring_year = year + 1
                     if 'Spring' in frequency:
-                        if 'Every Spring' in frequency:
+                        if 'Spring - Every' in frequency:
                             schedule.append(f"SP{str(spring_year)[-2:]}")
-                        elif 'Even Years Spring' in frequency and spring_year % 2 == 0:
+                        elif 'Spring -Even Years' in frequency and spring_year % 2 == 0:
                             schedule.append(f"SP{str(spring_year)[-2:]}")
-                        elif 'Odd Years Spring' in frequency and spring_year % 2 != 0:
+                        elif 'Spring - Odd Years' in frequency and spring_year % 2 != 0:
                             schedule.append(f"SP{str(spring_year)[-2:]}")
                         elif 'Every Other Year (Spring)' in frequency and last_year != 0 and 'SP' in last_offered:
                             if (spring_year - last_year) % 2 == 0 and spring_year >= last_year:
