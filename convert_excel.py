@@ -6,7 +6,6 @@ from datetime import datetime
 import os
 import sys
 
-# This helper function remains the same
 def calculate_duration(time_str):
     if pd.isna(time_str) or time_str == "TBA" or '-' not in str(time_str):
         return None
@@ -21,8 +20,8 @@ def calculate_duration(time_str):
     except (ValueError, AttributeError):
         return None
 
-# This helper function remains the same
-def process_sheet_data(df):
+def process_schedule_data(df):
+    """A helper function to process a semester schedule DataFrame."""
     if 'COURSE' in df.columns:
         df['course_number'] = df['COURSE'].astype(str)
     else:
@@ -57,75 +56,87 @@ def convert_all_semesters_to_json(client):
         config = json.load(f)
 
     for semester in config['semesters']:
-        # ... (This entire section remains the same as before)
-        # It will process each semester and save its JSON file
-        try:
-            google_sheet_name = semester['google_sheet_file_name']
-            worksheet_name = semester['worksheet_tab_name']
-            output_json_file = semester['output_json_file']
-            
-            print(f"\n--- Processing Semester: {semester['display_title']} ---")
-            sheet = client.open(google_sheet_name).worksheet(worksheet_name)
-            all_values = sheet.get_all_values()
+        google_sheet_name = semester['google_sheet_file_name']
+        worksheet_name = semester['worksheet_tab_name']
+        output_json_file = semester['output_json_file']
+        
+        print(f"\n--- Processing Semester: {semester['display_title']} ---")
+        sheet = client.open(google_sheet_name).worksheet(worksheet_name)
+        all_values = sheet.get_all_values()
 
-            if not all_values:
-                print(f"[WARN] Worksheet '{worksheet_name}' is empty. Skipping.")
-                continue
+        if not all_values:
+            print(f"[WARN] Worksheet '{worksheet_name}' is empty. Skipping.")
+            continue
 
-            header_row_index = -1
-            for i, row in enumerate(all_values):
-                if "COURSE" in row:
-                    header_row_index = i
-                    break
-            
-            if header_row_index == -1:
-                print(f"[WARN] Could not find header row in '{worksheet_name}'. Skipping.")
-                continue
+        header_row_index = -1
+        for i, row in enumerate(all_values):
+            if "COURSE" in row:
+                header_row_index = i
+                break
+        
+        if header_row_index == -1:
+            print(f"[WARN] Could not find header row containing 'COURSE' in '{worksheet_name}'. Skipping.")
+            continue
 
-            header = all_values[header_row_index]
-            data_rows = all_values[header_row_index + 1:]
-            df = pd.DataFrame(data_rows, columns=header)
-            
-            if 'COURSE' in df.columns:
-                df.dropna(subset=['COURSE'], inplace=True)
-                df = df[df['COURSE'] != '']
-            else:
-                print("[WARN] 'COURSE' column not found. Cannot clean empty rows.")
-                continue
+        header = all_values[header_row_index]
+        data_rows = all_values[header_row_index + 1:]
+        df = pd.DataFrame(data_rows, columns=header)
+        
+        if 'COURSE' in df.columns:
+            df.dropna(subset=['COURSE'], inplace=True)
+            df = df[df['COURSE'] != '']
+        else:
+            print("[WARN] 'COURSE' column not found. Cannot clean empty rows.")
+            continue
 
-            schedule_data = process_sheet_data(df)
-            with open(output_json_file, 'w') as f:
-                json.dump(schedule_data, f, indent=4)
-            print(f"[SUCCESS] Semester data saved to '{output_json_file}'.")
-        except Exception as e:
-            print(f"[ERROR] Could not process semester '{semester.get('display_title', 'N/A')}'. Reason: {e}")
+        schedule_data = process_schedule_data(df)
+        with open(output_json_file, 'w') as f:
+            json.dump(schedule_data, f, indent=4)
+        print(f"[SUCCESS] Semester data saved to '{output_json_file}'.")
 
-# --- NEW FUNCTION ---
+# --- MODIFIED: This function is now more robust ---
 def convert_electives_sheet_to_json(client):
     """Reads the elective tracker sheet and generates electives.json."""
     ########## UPDATE THESE VALUES FOR YOUR SETUP ##########
-    google_sheet_name = 'Teaching Assignments 2025-2026' # Or wherever your tracker is
-    worksheet_name = 'Electives'
+    google_sheet_name = 'Teaching Assignments 2025-2026' 
+    worksheet_name = 'Elective Tracker'
     output_json_file = 'electives.json'
+    # This is the header of the first column of your elective data table
+    first_column_header = 'Course Number (UG)'
     ########################################################
-    try:
-        print(f"\n--- Processing: Elective Tracker ---")
-        print(f"[INFO] Reading data from Google Sheet: '{google_sheet_name}' (Worksheet: '{worksheet_name}')...")
-        sheet = client.open(google_sheet_name).worksheet(worksheet_name)
-        data = sheet.get_all_records()
-        df = pd.DataFrame(data)
+    
+    print(f"\n--- Processing: Elective Tracker ---")
+    sheet = client.open(google_sheet_name).worksheet(worksheet_name)
+    all_values = sheet.get_all_values()
 
-        # Basic logic for predicting next offering (can be expanded)
-        # This is a placeholder; more complex logic can be added here
-        df['Next Offering'] = df['Offering Frequency']
+    if not all_values:
+        raise ValueError(f"The elective worksheet '{worksheet_name}' is empty.")
+    
+    header_row_index = -1
+    for i, row in enumerate(all_values):
+        if first_column_header in row:
+            header_row_index = i
+            break
+    
+    if header_row_index == -1:
+        raise ValueError(f"Could not find header row containing '{first_column_header}' in '{worksheet_name}'.")
 
-        df_final = df.fillna('')
-        electives_data = df_final.to_dict(orient='records')
-        with open(output_json_file, 'w') as f:
-            json.dump(electives_data, f, indent=4)
-        print(f"[SUCCESS] Elective tracker data saved to '{output_json_file}'.")
-    except Exception as e:
-        print(f"[ERROR] Could not process the elective tracker sheet. Reason: {e}")
+    header = all_values[header_row_index]
+    data_rows = all_values[header_row_index + 1:]
+    df = pd.DataFrame(data_rows, columns=header)
+    
+    # Clean up and save
+    df.dropna(subset=[first_column_header], inplace=True)
+    df = df[df[first_column_header] != '']
+
+    # Basic logic for predicting next offering (can be expanded)
+    df['Next Offering'] = df['Offering Frequency']
+    
+    df_final = df.fillna('')
+    electives_data = df_final.to_dict(orient='records')
+    with open(output_json_file, 'w') as f:
+        json.dump(electives_data, f, indent=4)
+    print(f"[SUCCESS] Elective tracker data saved to '{output_json_file}'.")
 
 
 def main():
