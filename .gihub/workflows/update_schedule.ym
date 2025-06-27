@@ -1,0 +1,60 @@
+name: Update Schedule Data from Google Sheet
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out your repository code
+      - name: Check out repo
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # Step 3: Install Python dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Step 4: Run the Python script to generate the JSON file
+      - name: Run script to convert Google Sheet to JSON
+        env:
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+        run: python convert_excel.py
+
+      # --- NEW: This step adds the timestamp to index.html ---
+      - name: Inject Timestamp into HTML
+        run: |
+          # Get the current date and time in a friendly format (e.g., "June 27, 2025 at 12:11 AM MDT")
+          # The timezone is set to America/Denver (MDT/MST)
+          TIMESTAMP=$(TZ="America/Denver" date +"%B %d, %Y at %I:%M %p %Z")
+          # Use sed to find the span and replace its content with the timestamp
+          sed -i 's|<span id="last-updated-timestamp">.*</span>|<span id="last-updated-timestamp">'"$TIMESTAMP"'</span>|' index.html
+
+      # --- MODIFIED: This step now commits both the JSON and the HTML file ---
+      - name: Commit and push if there are changes
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          # Add both files to be tracked for changes
+          git add S26schedule.json index.html
+          # Check if there are changes to commit
+          if ! git diff --staged --quiet; then
+            git commit -m "Automated schedule data update"
+            git push
+          else
+            echo "No changes to commit."
+          fi
