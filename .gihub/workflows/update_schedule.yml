@@ -1,10 +1,13 @@
 name: Update Schedule Data from Google Sheet
 
 on:
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  # Runs automatically every day at 5:00 UTC
   schedule:
     - cron: '0 5 * * *'
 
+# This grants the Action permission to write files back to your repository
 permissions:
   contents: write
 
@@ -17,36 +20,37 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v3
 
-      # Step 2: Set up Python environment
+      # Step 2: Set up the Python environment
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      # Step 3: Install Python dependencies
+      # Step 3: Install the necessary Python libraries
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Step 4: Run the Python script to generate all semester JSON files
+      # Step 4: Run your Python script to generate all semester JSON files
       - name: Run script to convert Google Sheet to JSON
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
-        run: python convert_excel.py # This name should match your python script file
+        # Make sure this filename matches your Python script exactly
+        run: python convert_excel.py
 
-      # Step 5: Inject the timestamp into index.html
+      # Step 5: Inject the current timestamp into your index.html
       - name: Inject Timestamp into HTML
         run: |
           TIMESTAMP=$(TZ="America/Denver" date +"%B %d, %Y at %I:%M %p %Z")
           sed -i 's|<span id="last-updated-timestamp">.*</span>|<span id="last-updated-timestamp">'"$TIMESTAMP"'</span>|' index.html
 
-      # --- MODIFIED: This step now commits all .json files and the updated index.html ---
+      # Step 6: Commit all generated files back to the repository
       - name: Commit and push if there are changes
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
-          # Add the timestamped index.html and all generated JSON files
+          # This command adds the updated index.html AND all .json files
           git add index.html *.json
           # Check if there are changes to commit
           if ! git diff --staged --quiet; then
