@@ -34,16 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(config => {
                 siteConfig = config;
                 populateSemesterSelector();
-                // Load the data for the default semester specified in the config
                 loadSemesterData(config.current_semester_id);
             })
             .catch(error => console.error('[FATAL] Could not load config.json:', error));
     }
 
-    // --- Populates the semester dropdown menu ---
     function populateSemesterSelector() {
         if (!siteConfig.semesters || !semesterSelect) return;
-        semesterSelect.innerHTML = ''; // Clear existing options
+        semesterSelect.innerHTML = '';
         siteConfig.semesters.forEach(semester => {
             const option = document.createElement('option');
             option.value = semester.id;
@@ -53,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         semesterSelect.value = siteConfig.current_semester_id;
     }
 
-    // --- Fetches and processes data for a given semester ---
     function loadSemesterData(semesterId) {
         const semester = siteConfig.semesters.find(s => s.id === semesterId);
         if (!semester) {
@@ -71,10 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 allCourses = data.map(course => {
                     const timeString = course.time_of_day;
-                    if (!timeString || !timeString.match(/(\d{1,2}:\d{2})\s* (AM|PM)/i)) {
+                    if (!timeString || !timeString.match(/(\d{1,2}:\d{2})\s*(AM|PM)/i)) {
                         return { ...course, startMinutes: null, endMinutes: null };
                     }
-                    const timeParts = timeString.match(/(\d{1,2}:\d{2})\s* (AM|PM)/i);
+                    const timeParts = timeString.match(/(\d{1,2}:\d{2})\s*(AM|PM)/i);
                     const [time, ampm] = [timeParts[1], timeParts[2].toUpperCase()];
                     let [hour, minute] = time.split(':').map(Number);
                     if (ampm === 'PM' && hour !== 12) hour += 12;
@@ -91,13 +88,35 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error(`[FATAL] Error loading schedule data for ${semester.display_title}:`, error));
     }
     
-    // --- Event Listeners ---
+    // --- EVENT LISTENERS (Restored from old script) ---
     semesterSelect.addEventListener('change', (e) => loadSemesterData(e.target.value));
 
-    instructorFilter.addEventListener('change', () => filterAndRedrawCalendar());
-    typeFilter.addEventListener('change', () => filterAndRedrawCalendar());
-    locationFilter.addEventListener('change', () => filterAndRedrawCalendar);
-    courseCheckboxesContainer.addEventListener('change', () => filterAndRedrawCalendar());
+    instructorFilter.addEventListener('change', () => {
+        const selectedInstructor = instructorFilter.value;
+        if (selectedInstructor === 'all') { filterAndRedrawCalendar(); return; }
+        typeFilter.value = 'all';
+        locationFilter.value = 'all';
+        document.querySelectorAll('#course-checkboxes input[type="checkbox"]').forEach(cb => {
+            const course = allCourses.find(c => c.course_number === cb.value);
+            cb.checked = (course && course.instructors && course.instructors.includes(selectedInstructor));
+        });
+        filterAndRedrawCalendar();
+    });
+
+    typeFilter.addEventListener('change', () => {
+        const selectedType = typeFilter.value;
+        if (selectedType === 'all') { filterAndRedrawCalendar(); return; }
+        instructorFilter.value = 'all';
+        locationFilter.value = 'all';
+        document.querySelectorAll('#course-checkboxes input[type="checkbox"]').forEach(cb => {
+            const course = allCourses.find(c => c.course_number === cb.value);
+            cb.checked = (course && course.type && course.type.includes(selectedType));
+        });
+        filterAndRedrawCalendar();
+    });
+
+    locationFilter.addEventListener('change', filterAndRedrawCalendar);
+    courseCheckboxesContainer.addEventListener('change', filterAndRedrawCalendar);
 
     resetBtn.addEventListener('click', () => {
         resetAllFilters();
@@ -128,9 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (courseCheckboxesContainer) courseCheckboxesContainer.innerHTML = '';
     }
 
+    // --- COLOR FUNCTION (Restored from old script) ---
     function courseToHslColor(course) {
         const typeBaseHues = {
-            'First-year': 210, 'Sophomore': 120, 'Junior': 50,
+            'Year 1': 210, 'First-year': 210, 'Sophomore': 120, 'Junior': 50,
             'Senior': 0, 'Elective': 280, 'Graduate': 30, 'Other': 300,
         };
         const primaryType = (course.type || '').split(',')[0].trim();
@@ -436,5 +456,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Start the application ---
     initializeApp();
 });
