@@ -1,12 +1,15 @@
+# In convert_excel.py
+
 import pandas as pd
 import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 import os
-import sys
+import sys # <-- This import statement was missing
 
 def calculate_duration(time_str):
+    """Calculates the duration of a class in minutes from a time string."""
     if pd.isna(time_str) or time_str == "TBA" or '-' not in str(time_str):
         return None
     try:
@@ -23,7 +26,13 @@ def calculate_duration(time_str):
 def process_sheet_data(df):
     """A helper function to process a DataFrame into the final format."""
     print("[INFO] Setting course number...")
-    df['course_number'] = df['COURSE'].astype(str)
+    # Ensure COURSE column exists before trying to access it
+    if 'COURSE' in df.columns:
+        df['course_number'] = df['COURSE'].astype(str)
+    else:
+        # If there's no COURSE column, create an empty one to prevent errors
+        df['course_number'] = ''
+
     print("[INFO] Calculating class durations...")
     df['duration'] = df['TIME'].apply(calculate_duration)
     print("[INFO] Identifying and cleaning up unscheduled courses...")
@@ -50,7 +59,7 @@ def process_sheet_data(df):
     })
     return df_final.to_dict(orient='records')
 
-def convert_all_semesters():
+def convert_all_semesters_to_json():
     """
     Reads config.json, loops through all semesters, and generates a JSON file for each.
     """
@@ -89,15 +98,20 @@ def convert_all_semesters():
                     break
             
             if header_row_index == -1:
-                print(f"[WARN] Could not find header row in '{worksheet_name}'. Skipping.")
+                print(f"[WARN] Could not find header row containing 'COURSE' in '{worksheet_name}'. Skipping.")
                 continue
 
             header = all_values[header_row_index]
             data_rows = all_values[header_row_index + 1:]
             df = pd.DataFrame(data_rows, columns=header)
             
-            df.dropna(subset=['COURSE'], inplace=True)
-            df = df[df['COURSE'] != '']
+            # Check for COURSE column before trying to drop NA values from it
+            if 'COURSE' in df.columns:
+                df.dropna(subset=['COURSE'], inplace=True)
+                df = df[df['COURSE'] != '']
+            else:
+                print("[WARN] 'COURSE' column not found after DataFrame creation. Cannot clean empty rows.")
+                continue
 
             # Process the data and convert to JSON
             schedule_data = process_sheet_data(df)
@@ -112,4 +126,4 @@ def convert_all_semesters():
         sys.exit(1)
 
 if __name__ == "__main__":
-    convert_all_semesters()
+    convert_all_semesters_to_json()
