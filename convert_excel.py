@@ -99,7 +99,7 @@ def convert_electives_sheet_to_json(client):
     """Reads the elective tracker sheet and generates electives.json."""
     ########## UPDATE THESE VALUES FOR YOUR SETUP ##########
     google_sheet_name = 'Teaching Assignments 2025-2026' 
-    worksheet_name = 'Elective Tracker'
+    worksheet_name = 'Electives'
     output_json_file = 'electives.json'
     # This is the header of the first column of your elective data table
     first_column_header = 'Course Number (UG)'
