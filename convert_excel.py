@@ -97,6 +97,10 @@ def convert_all_semesters_to_json(client):
 # --- MODIFIED: This function is now more robust ---
 # In convert_excel.py
 
+# In convert_excel.py
+
+# ... (the top of your file and the other functions remain the same) ...
+
 def convert_electives_sheet_to_json(client):
     """Reads the elective tracker sheet, predicts future offerings, and generates electives.json."""
     ########## UPDATE THESE VALUES FOR YOUR SETUP ##########
@@ -104,8 +108,7 @@ def convert_electives_sheet_to_json(client):
     worksheet_name = 'Electives'
     output_json_file = 'electives.json'
     first_column_header = 'Course Number (UG)'
-    # How many years into the future to predict
-    prediction_years = 5
+    prediction_years = 5 # How many years into the future to predict
     ########################################################
     
     try:
@@ -132,7 +135,7 @@ def convert_electives_sheet_to_json(client):
         df.dropna(subset=[first_column_header], inplace=True)
         df = df[df[first_column_header] != '']
 
-        # --- NEW: Logic to predict the next several offerings ---
+        # --- NEW: Simplified and corrected prediction logic ---
         def predict_schedule(row):
             frequency = row.get('Offering Frequency', '')
             last_offered = row.get('Last Offered', '')
@@ -141,10 +144,18 @@ def convert_electives_sheet_to_json(client):
             try:
                 current_year = datetime.now().year
                 
-                for i in range(prediction_years):
+                # Try to get the year from the 'Last Offered' string
+                last_year = 0
+                if last_offered and isinstance(last_offered, str) and last_offered.strip():
+                    # Extract numbers from string and take the last one
+                    numbers = [int(s) for s in last_offered if s.isdigit()]
+                    if numbers:
+                        last_year = 2000 + numbers[-1]
+
+                for i in range(prediction_years + 1): # Predict for current year + next 5 years
                     year = current_year + i
                     
-                    # Fall Semester
+                    # Fall Semester Check
                     if 'Fall' in frequency:
                         if 'Every Fall' in frequency:
                             schedule.append(f"FA{str(year)[-2:]}")
@@ -152,32 +163,35 @@ def convert_electives_sheet_to_json(client):
                             schedule.append(f"FA{str(year)[-2:]}")
                         elif 'Odd Years Fall' in frequency and year % 2 != 0:
                             schedule.append(f"FA{str(year)[-2:]}")
-                        elif 'Every Other Year (Fall)' in frequency and last_offered and 'FA' in last_offered:
-                            last_year = int(last_offered[-2:])
-                            if (year - (2000 + last_year)) % 2 == 0:
+                        elif 'Every Other Year (Fall)' in frequency and last_year != 0 and 'FA' in last_offered:
+                             if (year - last_year) % 2 == 0 and year >= last_year:
                                 schedule.append(f"FA{str(year)[-2:]}")
-
-                    # Spring Semester
+                    
+                    # Spring Semester Check (Spring '26 happens at the end of academic year 2025)
+                    spring_year = year + 1
                     if 'Spring' in frequency:
-                        year_sp = year + 1 # Spring semester is in the next calendar year
                         if 'Every Spring' in frequency:
-                            schedule.append(f"SP{str(year_sp)[-2:]}")
-                        elif 'Even Years Spring' in frequency and year_sp % 2 == 0:
-                            schedule.append(f"SP{str(year_sp)[-2:]}")
-                        elif 'Odd Years Spring' in frequency and year_sp % 2 != 0:
-                            schedule.append(f"SP{str(year_sp)[-2:]}")
-                        elif 'Every Other Year (Spring)' in frequency and last_offered and 'SP' in last_offered:
-                            last_year = int(last_offered[-2:])
-                            if (year_sp - (2000 + last_year)) % 2 == 0:
-                                schedule.append(f"SP{str(year_sp)[-2:]}")
+                            schedule.append(f"SP{str(spring_year)[-2:]}")
+                        elif 'Even Years Spring' in frequency and spring_year % 2 == 0:
+                            schedule.append(f"SP{str(spring_year)[-2:]}")
+                        elif 'Odd Years Spring' in frequency and spring_year % 2 != 0:
+                            schedule.append(f"SP{str(spring_year)[-2:]}")
+                        elif 'Every Other Year (Spring)' in frequency and last_year != 0 and 'SP' in last_offered:
+                            if (spring_year - last_year) % 2 == 0 and spring_year >= last_year:
+                                schedule.append(f"SP{str(spring_year)[-2:]}")
 
-            except Exception:
-                return [] # Return empty list if there's an error
+            except Exception as e:
+                print(f"[WARN] Could not predict schedule for a row. Error: {e}")
+                return []
             
-            return schedule
+            # Predict only for the future, and return a unique, sorted list
+            return sorted(list(set(s for s in schedule if int(s[-2:]) >= int(str(current_year)[-2:]))))
 
         df['predicted_schedule'] = df.apply(predict_schedule, axis=1)
         # --- END NEW ---
+        
+        # This creates a more user-friendly 'Next Offering' text field
+        df['Next Offering'] = df['predicted_schedule'].apply(lambda x: x[0] if x else 'On Demand')
         
         df_final = df.fillna('')
         electives_data = df_final.to_dict(orient='records')
@@ -186,9 +200,10 @@ def convert_electives_sheet_to_json(client):
         print(f"[SUCCESS] Elective tracker data saved to '{output_json_file}'.")
 
     except Exception as e:
-        # This will now correctly report errors from this function to the Actions log
         print(f"[ERROR] Could not process the elective tracker sheet. Reason: {e}")
         raise e
+
+# ... (the rest of your file, including the main() function, remains the same) ...
 
 
 def main():
