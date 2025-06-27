@@ -105,7 +105,7 @@ def convert_electives_sheet_to_json(client):
     """Reads the elective tracker sheet and generates electives.json."""
     ########## UPDATE THESE VALUES FOR YOUR SETUP ##########
     google_sheet_name = 'Teaching Assignments 2025-2026' # Or wherever your tracker is
-    worksheet_name = 'Elective Tracker'
+    worksheet_name = 'Electives'
     output_json_file = 'electives.json'
     ########################################################
     try:
