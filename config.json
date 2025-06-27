@@ -1,0 +1,19 @@
+{
+  "current_semester_id": "S26",
+  "semesters": [
+    {
+      "id": "S26",
+      "display_title": "Spring 2026",
+      "google_sheet_file_name": "Teaching Assignments 2025-2026",
+      "worksheet_tab_name": "Spring Summary",
+      "output_json_file": "S26schedule.json"
+    },
+    {
+      "id": "F25",
+      "display_title": "Fall 2025",
+      "google_sheet_file_name": "Teaching Assignments 2025-2026",
+      "worksheet_tab_name": "Fall Summary",
+      "output_json_file": "F25schedule.json"
+    }
+  ]
+}
