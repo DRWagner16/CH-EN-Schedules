@@ -3,17 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const programFilter = document.getElementById('program-filter');
     const frequencyFilter = document.getElementById('frequency-filter');
     const certaintyFilter = document.getElementById('certainty-filter');
+    const electiveGrid = document.getElementById('elective-grid');
 
     let allElectives = [];
 
-    // Fetch the processed elective data
     fetch('electives.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
             allElectives = data;
             populateElectiveFilters(data);
@@ -21,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => {
             console.error('Error fetching electives data:', error);
-            tableBody.innerHTML = `<tr><td colspan="10" style="text-align:center; color:red;">Error: Could not load electives data.</td></tr>`;
+            tableBody.innerHTML = `<tr><td colspan="10" style="text-align:center; color:red;">Error: Could not load electives.json.</td></tr>`;
         });
 
     function populateElectiveFilters(courses) {
@@ -61,8 +56,64 @@ document.addEventListener('DOMContentLoaded', () => {
             return programMatch && frequencyMatch && certaintyMatch;
         });
 
+        // Call both display functions
+        displayOfferingGrid(filteredCourses);
+        displayElectivesTable(filteredCourses);
+    }
+    
+    function displayOfferingGrid(courses) {
+        electiveGrid.innerHTML = ''; // Clear previous grid
+
+        // Create headers
+        const currentYear = new Date().getFullYear();
+        const headers = ['Course', 'Title'];
+        const semesterCodes = [];
+        for (let i = 0; i < 5; i++) {
+            const year = currentYear + i;
+            headers.push(`FA${String(year).slice(-2)}`);
+            semesterCodes.push(`FA${String(year).slice(-2)}`);
+            headers.push(`SP${String(year + 1).slice(-2)}`);
+            semesterCodes.push(`SP${String(year + 1).slice(-2)}`);
+        }
+        headers.forEach(header => {
+            const headerDiv = document.createElement('div');
+            headerDiv.className = 'grid-header';
+            headerDiv.textContent = header;
+            electiveGrid.appendChild(headerDiv);
+        });
+
+        // Create rows
+        courses.forEach(course => {
+            const courseNumCell = document.createElement('div');
+            courseNumCell.className = 'grid-cell course-name';
+            const ug = course['Course Number (UG)'] || '';
+            const gr = course['Course Number (GR)'] || '';
+            courseNumCell.textContent = ug ? `${ug} / ${gr}` : gr || ug;
+            electiveGrid.appendChild(courseNumCell);
+
+            const courseTitleCell = document.createElement('div');
+            courseTitleCell.className = 'grid-cell course-name';
+            courseTitleCell.textContent = course['Course Title'] || '';
+            electiveGrid.appendChild(courseTitleCell);
+
+            const schedule = course.predicted_schedule || [];
+            semesterCodes.forEach(semCode => {
+                const cell = document.createElement('div');
+                cell.className = 'grid-cell';
+                if (schedule.includes(semCode)) {
+                    cell.textContent = '✔️';
+                    if (course.Certainty === 'Confirmed') cell.classList.add('offered');
+                    if (course.Certainty === 'Tentative') cell.classList.add('offered-tentative');
+                    if (course.Certainty === 'Planned') cell.classList.add('offered-planned');
+                }
+                electiveGrid.appendChild(cell);
+            });
+        });
+    }
+
+    function displayElectivesTable(courses) {
         tableBody.innerHTML = '';
-        if (filteredCourses.length === 0) {
+        if (courses.length === 0) {
             const row = tableBody.insertRow();
             const cell = row.insertCell();
             cell.colSpan = 10;
@@ -71,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        filteredCourses.forEach(course => {
+        courses.forEach(course => {
             const row = tableBody.insertRow();
             const ug = course['Course Number (UG)'] || '';
             const gr = course['Course Number (GR)'] || '';
