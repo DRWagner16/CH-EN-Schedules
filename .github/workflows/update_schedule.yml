@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   # Runs automatically every day at 5:00 UTC
   schedule:
-    - cron: '0 5 * * *'
+    - cron: '0 6 * * *'
 
 # This grants the Action permission to write files back to your repository
 permissions:
