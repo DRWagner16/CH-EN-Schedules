@@ -255,3 +255,36 @@ h1, h2, h3 {
     font-size: 1em;
     padding: 5px;
 }
+/* --- Styles for the new Elective Offering Grid --- */
+.offering-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr repeat(10, 50px); /* Course/Title, then 10 semester columns */
+    gap: 1px;
+    background-color: #ddd;
+    border: 1px solid #ddd;
+    font-size: 12px;
+}
+.grid-header, .grid-cell {
+    background-color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+.grid-header {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+}
+.grid-cell.course-name {
+    text-align: left;
+    font-weight: bold;
+}
+.grid-cell.offered {
+    background-color: #d4edda; /* Light green */
+}
+.grid-cell.offered-tentative {
+    background-color: #fff3cd; /* Light yellow */
+}
+.grid-cell.offered-planned {
+    background-color: #f5c6cb; /* Light red */
+}
