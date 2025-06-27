@@ -95,48 +95,100 @@ def convert_all_semesters_to_json(client):
         print(f"[SUCCESS] Semester data saved to '{output_json_file}'.")
 
 # --- MODIFIED: This function is now more robust ---
+# In convert_excel.py
+
 def convert_electives_sheet_to_json(client):
-    """Reads the elective tracker sheet and generates electives.json."""
+    """Reads the elective tracker sheet, predicts future offerings, and generates electives.json."""
     ########## UPDATE THESE VALUES FOR YOUR SETUP ##########
     google_sheet_name = 'Teaching Assignments 2025-2026' 
     worksheet_name = 'Electives'
     output_json_file = 'electives.json'
-    # This is the header of the first column of your elective data table
     first_column_header = 'Course Number (UG)'
+    # How many years into the future to predict
+    prediction_years = 5
     ########################################################
     
-    print(f"\n--- Processing: Elective Tracker ---")
-    sheet = client.open(google_sheet_name).worksheet(worksheet_name)
-    all_values = sheet.get_all_values()
+    try:
+        print(f"\n--- Processing: Elective Tracker ---")
+        sheet = client.open(google_sheet_name).worksheet(worksheet_name)
+        all_values = sheet.get_all_values()
 
-    if not all_values:
-        raise ValueError(f"The elective worksheet '{worksheet_name}' is empty.")
-    
-    header_row_index = -1
-    for i, row in enumerate(all_values):
-        if first_column_header in row:
-            header_row_index = i
-            break
-    
-    if header_row_index == -1:
-        raise ValueError(f"Could not find header row containing '{first_column_header}' in '{worksheet_name}'.")
+        if not all_values:
+            raise ValueError(f"The elective worksheet '{worksheet_name}' is empty.")
+        
+        header_row_index = -1
+        for i, row in enumerate(all_values):
+            if first_column_header in row:
+                header_row_index = i
+                break
+        
+        if header_row_index == -1:
+            raise ValueError(f"Could not find header row containing '{first_column_header}' in '{worksheet_name}'.")
 
-    header = all_values[header_row_index]
-    data_rows = all_values[header_row_index + 1:]
-    df = pd.DataFrame(data_rows, columns=header)
-    
-    # Clean up and save
-    df.dropna(subset=[first_column_header], inplace=True)
-    df = df[df[first_column_header] != '']
+        header = all_values[header_row_index]
+        data_rows = all_values[header_row_index + 1:]
+        df = pd.DataFrame(data_rows, columns=header)
+        
+        df.dropna(subset=[first_column_header], inplace=True)
+        df = df[df[first_column_header] != '']
 
-    # Basic logic for predicting next offering (can be expanded)
-    df['Next Offering'] = df['Offering Frequency']
-    
-    df_final = df.fillna('')
-    electives_data = df_final.to_dict(orient='records')
-    with open(output_json_file, 'w') as f:
-        json.dump(electives_data, f, indent=4)
-    print(f"[SUCCESS] Elective tracker data saved to '{output_json_file}'.")
+        # --- NEW: Logic to predict the next several offerings ---
+        def predict_schedule(row):
+            frequency = row.get('Offering Frequency', '')
+            last_offered = row.get('Last Offered', '')
+            schedule = []
+            
+            try:
+                current_year = datetime.now().year
+                
+                for i in range(prediction_years):
+                    year = current_year + i
+                    
+                    # Fall Semester
+                    if 'Fall' in frequency:
+                        if 'Every Fall' in frequency:
+                            schedule.append(f"FA{str(year)[-2:]}")
+                        elif 'Even Years Fall' in frequency and year % 2 == 0:
+                            schedule.append(f"FA{str(year)[-2:]}")
+                        elif 'Odd Years Fall' in frequency and year % 2 != 0:
+                            schedule.append(f"FA{str(year)[-2:]}")
+                        elif 'Every Other Year (Fall)' in frequency and last_offered and 'FA' in last_offered:
+                            last_year = int(last_offered[-2:])
+                            if (year - (2000 + last_year)) % 2 == 0:
+                                schedule.append(f"FA{str(year)[-2:]}")
+
+                    # Spring Semester
+                    if 'Spring' in frequency:
+                        year_sp = year + 1 # Spring semester is in the next calendar year
+                        if 'Every Spring' in frequency:
+                            schedule.append(f"SP{str(year_sp)[-2:]}")
+                        elif 'Even Years Spring' in frequency and year_sp % 2 == 0:
+                            schedule.append(f"SP{str(year_sp)[-2:]}")
+                        elif 'Odd Years Spring' in frequency and year_sp % 2 != 0:
+                            schedule.append(f"SP{str(year_sp)[-2:]}")
+                        elif 'Every Other Year (Spring)' in frequency and last_offered and 'SP' in last_offered:
+                            last_year = int(last_offered[-2:])
+                            if (year_sp - (2000 + last_year)) % 2 == 0:
+                                schedule.append(f"SP{str(year_sp)[-2:]}")
+
+            except Exception:
+                return [] # Return empty list if there's an error
+            
+            return schedule
+
+        df['predicted_schedule'] = df.apply(predict_schedule, axis=1)
+        # --- END NEW ---
+        
+        df_final = df.fillna('')
+        electives_data = df_final.to_dict(orient='records')
+        with open(output_json_file, 'w') as f:
+            json.dump(electives_data, f, indent=4)
+        print(f"[SUCCESS] Elective tracker data saved to '{output_json_file}'.")
+
+    except Exception as e:
+        # This will now correctly report errors from this function to the Actions log
+        print(f"[ERROR] Could not process the elective tracker sheet. Reason: {e}")
+        raise e
 
 
 def main():
