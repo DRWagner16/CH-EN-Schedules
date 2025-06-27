@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elective Course Tracker</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <h1>CH EN Elective Course Tracker</h1>
+        <h3>Use the filters to find elective offering information</h3>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label for="program-filter">Filter by Program:</label>
+                <select id="program-filter">
+                    <option value="all">All Programs</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="frequency-filter">Filter by Frequency:</label>
+                <select id="frequency-filter">
+                    <option value="all">All Frequencies</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="certainty-filter">Filter by Certainty:</label>
+                <select id="certainty-filter">
+                    <option value="all">All Certainties</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="course-table-container">
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Title</th>
+                        <th>Program(s)</th>
+                        <th>Frequency</th>
+                        <th>Next Offering</th>
+                        <th>Last Offered</th>
+                        <th>Certainty</th>
+                        <th>Format</th>
+                        <th>Potential Instructor(s)</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody id="electives-table-body">
+                    </tbody>
+            </table>
+        </div>
+        
+        <footer class="page-footer">
+            <a href="index.html">Return to Main Semester Schedule</a>
+        </footer>
+    </div>
+    <script src="electives.js"></script>
+</body>
+</html>
