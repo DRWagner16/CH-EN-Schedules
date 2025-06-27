@@ -26,8 +26,21 @@
         "Potential Instructors": "Sieving",
         "Notes": "",
         "": "CH EN 4903 \u2013 Projects Laboratory I",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "FA25",
+            "FA26",
+            "FA27",
+            "FA28",
+            "FA29",
+            "FA30",
+            "SP26",
+            "SP27",
+            "SP28",
+            "SP29",
+            "SP30",
+            "SP31"
+        ],
+        "Next Offering": "FA25"
     },
     {
         "Course Number (UG)": "CH EN 5103",
@@ -41,8 +54,15 @@
         "Potential Instructors": "Sant; Mohanty",
         "Notes": "",
         "": "CH EN 4905 \u2013 Projects Laboratory II",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "SP26",
+            "SP27",
+            "SP28",
+            "SP29",
+            "SP30",
+            "SP31"
+        ],
+        "Next Offering": "SP26"
     },
     {
         "Course Number (UG)": "CH EN 5151",
@@ -116,8 +136,15 @@
         "Potential Instructors": "",
         "Notes": "",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "FA25",
+            "FA26",
+            "FA27",
+            "FA28",
+            "FA29",
+            "FA30"
+        ],
+        "Next Offering": "FA25"
     },
     {
         "Course Number (UG)": "CH EN 5165",
@@ -176,8 +203,12 @@
         "Potential Instructors": "Whitty",
         "Notes": "",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "FA25",
+            "FA27",
+            "FA29"
+        ],
+        "Next Offering": "FA25"
     },
     {
         "Course Number (UG)": "CH EN 5181",
@@ -236,8 +267,15 @@
         "Potential Instructors": "",
         "Notes": "Cross-listed as CH EN ",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "SP26",
+            "SP27",
+            "SP28",
+            "SP29",
+            "SP30",
+            "SP31"
+        ],
+        "Next Offering": "SP26"
     },
     {
         "Course Number (UG)": "CH EN 5205",
@@ -251,8 +289,15 @@
         "Potential Instructors": "Powell",
         "Notes": "",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "SP26",
+            "SP27",
+            "SP28",
+            "SP29",
+            "SP30",
+            "SP31"
+        ],
+        "Next Offering": "SP26"
     },
     {
         "Course Number (UG)": "CH EN 5208",
@@ -266,8 +311,15 @@
         "Potential Instructors": "Faroughi",
         "Notes": "",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "SP26",
+            "SP27",
+            "SP28",
+            "SP29",
+            "SP30",
+            "SP31"
+        ],
+        "Next Offering": "SP26"
     },
     {
         "Course Number (UG)": "CH EN 5230 ",
@@ -281,8 +333,12 @@
         "Potential Instructors": "Mohanty",
         "Notes": "",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "FA26",
+            "FA28",
+            "FA30"
+        ],
+        "Next Offering": "FA26"
     },
     {
         "Course Number (UG)": "CH EN 5305",
@@ -296,8 +352,12 @@
         "Potential Instructors": "Holmes",
         "Notes": "Last offered S24",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "FA25",
+            "FA27",
+            "FA29"
+        ],
+        "Next Offering": "FA25"
     },
     {
         "Course Number (UG)": "CH EN 5306",
@@ -311,8 +371,12 @@
         "Potential Instructors": "Holmes",
         "Notes": "",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "FA26",
+            "FA28",
+            "FA30"
+        ],
+        "Next Offering": "FA26"
     },
     {
         "Course Number (UG)": "CH EN 5308",
@@ -326,8 +390,15 @@
         "Potential Instructors": "Gao",
         "Notes": "",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "FA25",
+            "FA26",
+            "FA27",
+            "FA28",
+            "FA29",
+            "FA30"
+        ],
+        "Next Offering": "FA25"
     },
     {
         "Course Number (UG)": "CH EN 5310",
@@ -341,8 +412,15 @@
         "Potential Instructors": "Mohanty",
         "Notes": "",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "FA25",
+            "FA26",
+            "FA27",
+            "FA28",
+            "FA29",
+            "FA30"
+        ],
+        "Next Offering": "FA25"
     },
     {
         "Course Number (UG)": "CH EN 5555",
@@ -356,8 +434,12 @@
         "Potential Instructors": "Nigra",
         "Notes": "",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "FA25",
+            "FA27",
+            "FA29"
+        ],
+        "Next Offering": "FA25"
     },
     {
         "Course Number (UG)": "CH EN 5840",
@@ -371,8 +453,15 @@
         "Potential Instructors": "Wang",
         "Notes": "",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "SP26",
+            "SP27",
+            "SP28",
+            "SP29",
+            "SP30",
+            "SP31"
+        ],
+        "Next Offering": "SP26"
     },
     {
         "Course Number (UG)": "CH EN 5960",
@@ -386,7 +475,20 @@
         "Potential Instructors": "Various",
         "Notes": "",
         "": "",
-        "predicted_schedule": [],
-        "Next Offering": "On Demand"
+        "predicted_schedule": [
+            "FA25",
+            "FA26",
+            "FA27",
+            "FA28",
+            "FA29",
+            "FA30",
+            "SP26",
+            "SP27",
+            "SP28",
+            "SP29",
+            "SP30",
+            "SP31"
+        ],
+        "Next Offering": "FA25"
     }
 ]
