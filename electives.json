@@ -7,11 +7,11 @@
         "Offering Frequency": "",
         "Last Offered": "",
         "Certainty": "",
-        "Format": "In-person",
+        "Format": "",
         "Potential Instructors": "",
         "Notes": "",
         "": "Courses to Delete?",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 4870",
@@ -19,27 +19,27 @@
         "Course Title": "Industrial Energy Analysis",
         "Program": "",
         "Offering Frequency": "Fall and Spring",
-        "Last Offered": "",
-        "Certainty": "",
+        "Last Offered": "S25",
+        "Certainty": "Confirmed",
         "Format": "Hybrid",
-        "Potential Instructors": "",
+        "Potential Instructors": "Sieving",
         "Notes": "",
         "": "CH EN 4903 \u2013 Projects Laboratory I",
-        "Next Offering": "Fall and Spring"
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5103",
         "Course Number (GR)": "CH EN 6103",
         "Course Title": "Biochemical Engineering",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Spring - Every",
+        "Last Offered": "S25",
+        "Certainty": "Confirmed",
         "Format": "In-person",
-        "Potential Instructors": "",
+        "Potential Instructors": "Sant; Mohanty",
         "Notes": "",
         "": "CH EN 4905 \u2013 Projects Laboratory II",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5151",
@@ -49,11 +49,11 @@
         "Offering Frequency": "",
         "Last Offered": "",
         "Certainty": "",
-        "Format": "In-person",
+        "Format": "",
         "Potential Instructors": "",
         "Notes": "",
         "": "CH EN 6353 \u2013 Fluid Mechanics",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5153",
@@ -63,11 +63,11 @@
         "Offering Frequency": "",
         "Last Offered": "",
         "Certainty": "",
-        "Format": "In-person",
+        "Format": "",
         "Potential Instructors": "",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5156",
@@ -77,11 +77,11 @@
         "Offering Frequency": "",
         "Last Offered": "",
         "Certainty": "",
-        "Format": "In-person",
+        "Format": "",
         "Potential Instructors": "",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5158",
@@ -91,25 +91,25 @@
         "Offering Frequency": "",
         "Last Offered": "",
         "Certainty": "",
-        "Format": "In-person",
+        "Format": "",
         "Potential Instructors": "",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5163",
         "Course Number (GR)": "CH EN 6163",
         "Course Title": "Geoscience for Energy Transition",
         "Program": "PETRMS; ResEnCert",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Fall - Every",
+        "Last Offered": "F24",
+        "Certainty": "Confirmed",
         "Format": "In-person",
         "Potential Instructors": "",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5165",
@@ -119,11 +119,11 @@
         "Offering Frequency": "",
         "Last Offered": "",
         "Certainty": "",
-        "Format": "In-person",
+        "Format": "",
         "Potential Instructors": "",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5167",
@@ -133,11 +133,11 @@
         "Offering Frequency": "",
         "Last Offered": "",
         "Certainty": "",
-        "Format": "In-person",
+        "Format": "",
         "Potential Instructors": "",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5169",
@@ -147,25 +147,25 @@
         "Offering Frequency": "",
         "Last Offered": "",
         "Certainty": "",
-        "Format": "In-person",
+        "Format": "",
         "Potential Instructors": "",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5173",
         "Course Number (GR)": "",
         "Course Title": "Practical Industrial Process Engineering (PIPE)",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Fall - Odd Years",
+        "Last Offered": "F25",
+        "Certainty": "Confirmed",
         "Format": "In-person",
-        "Potential Instructors": "",
+        "Potential Instructors": "Whitty",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5181",
@@ -175,11 +175,11 @@
         "Offering Frequency": "",
         "Last Offered": "",
         "Certainty": "",
-        "Format": "In-person",
+        "Format": "",
         "Potential Instructors": "",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5185",
@@ -189,11 +189,11 @@
         "Offering Frequency": "",
         "Last Offered": "",
         "Certainty": "",
-        "Format": "In-person",
+        "Format": "",
         "Potential Instructors": "",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5187",
@@ -203,164 +203,164 @@
         "Offering Frequency": "",
         "Last Offered": "",
         "Certainty": "",
-        "Format": "In-person",
+        "Format": "",
         "Potential Instructors": "",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5203",
         "Course Number (GR)": "CH EN 6203",
         "Course Title": "Linear Systems and State-Space Control",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Spring - Every",
+        "Last Offered": "S25",
+        "Certainty": "Confirmed",
         "Format": "In-person",
         "Potential Instructors": "",
-        "Notes": "",
+        "Notes": "Cross-listed as CH EN ",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5205",
         "Course Number (GR)": "CH EN 6205",
         "Course Title": "Smart Systems",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Spring - Every",
+        "Last Offered": "S25",
+        "Certainty": "Confirmed",
         "Format": "In-person",
-        "Potential Instructors": "",
+        "Potential Instructors": "Powell",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5208",
         "Course Number (GR)": "CH EN 6208",
         "Course Title": "Machine Learning for Chemical Engineers",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Spring - Every",
+        "Last Offered": "S25",
+        "Certainty": "Tentative",
         "Format": "In-person",
-        "Potential Instructors": "",
+        "Potential Instructors": "Faroughi",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5230 ",
-        "Course Number (GR)": "",
+        "Course Number (GR)": "CH EN 6230",
         "Course Title": "Biomedical Devices and Sensors",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Fall - Even Years",
+        "Last Offered": "F24",
+        "Certainty": "Confirmed",
         "Format": "In-person",
-        "Potential Instructors": "",
+        "Potential Instructors": "Mohanty",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5305",
         "Course Number (GR)": "CH EN 6305",
         "Course Title": "Air Pollution Control Engineering",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Fall - Odd Years",
+        "Last Offered": "F25",
+        "Certainty": "Confirmed",
         "Format": "In-person",
-        "Potential Instructors": "",
-        "Notes": "",
+        "Potential Instructors": "Holmes",
+        "Notes": "Last offered S24",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5306",
         "Course Number (GR)": "CH EN 6306",
         "Course Title": "Applied Atmospheric Modeling",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Fall - Even Years",
+        "Last Offered": "F24",
+        "Certainty": "Confirmed",
         "Format": "In-person",
-        "Potential Instructors": "",
+        "Potential Instructors": "Holmes",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5308",
         "Course Number (GR)": "CH EN 6308",
         "Course Title": "Battery Technology and Manufacturing",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Fall - Every",
+        "Last Offered": "F24",
+        "Certainty": "Confirmed",
         "Format": "In-person",
-        "Potential Instructors": "",
+        "Potential Instructors": "Gao",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5310",
         "Course Number (GR)": "CH EN 6310",
         "Course Title": "Renewable and Alternate Energy",
         "Program": "ResEnCert",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Fall - Every",
+        "Last Offered": "F24",
+        "Certainty": "Confirmed",
         "Format": "In-person",
-        "Potential Instructors": "",
+        "Potential Instructors": "Mohanty",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5555",
         "Course Number (GR)": "CH EN 6555",
         "Course Title": "Catalysis Science and Engineering",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Fall - Odd Years",
+        "Last Offered": "F23",
+        "Certainty": "Confirmed",
         "Format": "In-person",
-        "Potential Instructors": "",
+        "Potential Instructors": "Nigra",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5840",
         "Course Number (GR)": "CH EN 6840",
         "Course Title": "Introduction to Micro and Nanoscale Science and Technology",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Spring - Every",
+        "Last Offered": "S25",
+        "Certainty": "Confirmed",
         "Format": "In-person",
-        "Potential Instructors": "",
+        "Potential Instructors": "Wang",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     },
     {
         "Course Number (UG)": "CH EN 5960",
         "Course Number (GR)": "",
         "Course Title": "Special Topics",
         "Program": "",
-        "Offering Frequency": "",
-        "Last Offered": "",
-        "Certainty": "",
+        "Offering Frequency": "Fall and Spring",
+        "Last Offered": "S25",
+        "Certainty": "Confirmed",
         "Format": "In-person",
-        "Potential Instructors": "",
+        "Potential Instructors": "Various",
         "Notes": "",
         "": "",
-        "Next Offering": ""
+        "predicted_schedule": []
     }
 ]
