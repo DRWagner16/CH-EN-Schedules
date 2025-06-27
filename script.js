@@ -88,9 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error(`[FATAL] Error loading schedule data for ${semester.display_title}:`, error));
     }
     
-    // --- EVENT LISTENERS (Restored from old script) ---
+    // --- Event Listeners ---
     semesterSelect.addEventListener('change', (e) => loadSemesterData(e.target.value));
-
+    
+    // --- MODIFIED: Restored advanced event listeners ---
     instructorFilter.addEventListener('change', () => {
         const selectedInstructor = instructorFilter.value;
         if (selectedInstructor === 'all') { filterAndRedrawCalendar(); return; }
@@ -118,8 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
     locationFilter.addEventListener('change', filterAndRedrawCalendar);
     courseCheckboxesContainer.addEventListener('change', filterAndRedrawCalendar);
 
+    // --- MODIFIED: Corrected Reset Button Logic ---
     resetBtn.addEventListener('click', () => {
         resetAllFilters();
+        // After resetting, we must call filterAndRedrawCalendar to show the default (empty) state
         filterAndRedrawCalendar();
     });
     
@@ -145,19 +148,26 @@ document.addEventListener('DOMContentLoaded', () => {
             locationFilter.value = 'all';
         }
         if (courseCheckboxesContainer) courseCheckboxesContainer.innerHTML = '';
+        // The key is that populateFilters and filterAndRedrawCalendar must be called AFTER this
+        // to correctly repopulate and show the view. This happens in loadSemesterData.
     }
 
-    // --- COLOR FUNCTION (Restored from old script) ---
+    // --- MODIFIED: Corrected Color Definitions ---
     function courseToHslColor(course) {
         const typeBaseHues = {
-            'Year 1': 210, 'First-year': 210, 'Sophomore': 120, 'Junior': 50,
-            'Senior': 0, 'Elective': 280, 'Graduate': 30, 'Other': 300,
+            'Year 1': 210, 'First-year': 210, // Added alias
+            'Year 2': 120, 'Sophomore': 120, // Added alias
+            'Year 3': 50,  'Junior': 50,    // Added alias
+            'Year 4': 0,   'Senior': 0,      // Added alias
+            'Elective': 280, 
+            'Graduate': 30, 
+            'Other': 300,
         };
         const primaryType = (course.type || '').split(',')[0].trim();
         let baseHue = typeBaseHues[primaryType] ?? 0;
         let saturation = 65;
         if (typeBaseHues[primaryType] === undefined) {
-            saturation = 0;
+            saturation = 0; // Default to gray if type not found
         }
         let hash = 0;
         const str = course.course_number;
@@ -184,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 courseColorMap.set(course.course_number, courseToHslColor(course));
             }
         });
+
         const uniqueCourses = [...new Set(courses.map(course => course.course_number))].sort();
         
         const allInstructorNames = courses.flatMap(course => (course.instructors || '').split(';').map(name => name.trim()));
