@@ -88,15 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error(`[FATAL] Error loading schedule data for ${semester.display_title}:`, error));
     }
     
-    // --- Event Listeners ---
+    // --- EVENT LISTENERS (Restored with advanced logic) ---
     semesterSelect.addEventListener('change', (e) => loadSemesterData(e.target.value));
-    
-    // --- MODIFIED: Restored advanced event listeners ---
+
     instructorFilter.addEventListener('change', () => {
         const selectedInstructor = instructorFilter.value;
         if (selectedInstructor === 'all') { filterAndRedrawCalendar(); return; }
+        // When a specific instructor is chosen, reset the other filters
         typeFilter.value = 'all';
         locationFilter.value = 'all';
+        // and link to the checkboxes
         document.querySelectorAll('#course-checkboxes input[type="checkbox"]').forEach(cb => {
             const course = allCourses.find(c => c.course_number === cb.value);
             cb.checked = (course && course.instructors && course.instructors.includes(selectedInstructor));
@@ -107,8 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
     typeFilter.addEventListener('change', () => {
         const selectedType = typeFilter.value;
         if (selectedType === 'all') { filterAndRedrawCalendar(); return; }
+        // When a specific type is chosen, reset the other filters
         instructorFilter.value = 'all';
         locationFilter.value = 'all';
+        // and link to the checkboxes
         document.querySelectorAll('#course-checkboxes input[type="checkbox"]').forEach(cb => {
             const course = allCourses.find(c => c.course_number === cb.value);
             cb.checked = (course && course.type && course.type.includes(selectedType));
@@ -119,10 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
     locationFilter.addEventListener('change', filterAndRedrawCalendar);
     courseCheckboxesContainer.addEventListener('change', filterAndRedrawCalendar);
 
-    // --- MODIFIED: Corrected Reset Button Logic ---
     resetBtn.addEventListener('click', () => {
         resetAllFilters();
-        // After resetting, we must call filterAndRedrawCalendar to show the default (empty) state
+        // After resetting, redraw the calendar, which will be empty as no courses are checked
         filterAndRedrawCalendar();
     });
     
@@ -148,17 +150,15 @@ document.addEventListener('DOMContentLoaded', () => {
             locationFilter.value = 'all';
         }
         if (courseCheckboxesContainer) courseCheckboxesContainer.innerHTML = '';
-        // The key is that populateFilters and filterAndRedrawCalendar must be called AFTER this
-        // to correctly repopulate and show the view. This happens in loadSemesterData.
     }
 
-    // --- MODIFIED: Corrected Color Definitions ---
+    // --- COLOR FUNCTION (Restored with all aliases) ---
     function courseToHslColor(course) {
         const typeBaseHues = {
-            'Year 1': 210, 'First-year': 210, // Added alias
-            'Year 2': 120, 'Sophomore': 120, // Added alias
-            'Year 3': 50,  'Junior': 50,    // Added alias
-            'Year 4': 0,   'Senior': 0,      // Added alias
+            'Year 1': 210, 'First-year': 210, 
+            'Year 2': 120, 'Sophomore': 120, 
+            'Year 3': 50,  'Junior': 50,
+            'Year 4': 0,   'Senior': 0,
             'Elective': 280, 
             'Graduate': 30, 
             'Other': 300,
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let baseHue = typeBaseHues[primaryType] ?? 0;
         let saturation = 65;
         if (typeBaseHues[primaryType] === undefined) {
-            saturation = 0; // Default to gray if type not found
+            saturation = 0;
         }
         let hash = 0;
         const str = course.course_number;
@@ -194,7 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 courseColorMap.set(course.course_number, courseToHslColor(course));
             }
         });
-
         const uniqueCourses = [...new Set(courses.map(course => course.course_number))].sort();
         
         const allInstructorNames = courses.flatMap(course => (course.instructors || '').split(';').map(name => name.trim()));
@@ -250,8 +249,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const instructorMatch = (selectedInstructor === 'all' || (course.instructors && course.instructors.includes(selectedInstructor)));
             const typeMatch = (selectedType === 'all' || (course.type && course.type.includes(selectedType)));
             const locationMatch = (selectedLocation === 'all' || (course.location && course.location.includes(selectedLocation)));
-            const courseMatch = (selectedCourses.length === 0 || selectedCourses.includes(course.course_number));
-            return instructorMatch && typeMatch && courseMatch && locationMatch;
+            // IMPORTANT: If dropdowns are used, the course list might be empty. 
+            // The logic needs to handle this. If a dropdown is selected, we IGNORE the course checkboxes.
+            // Let's refine this logic.
+            const courseMatch = (selectedCourses.length === 0 && selectedInstructor === 'all' && selectedType === 'all') ? true : selectedCourses.includes(course.course_number);
+            
+            // Refined Logic: A course is shown if it matches the dropdown filters OR the checkbox filters.
+            // This is complex. The simpler logic is that the dropdowns control the checkboxes.
+            let passes = false;
+            if (selectedInstructor !== 'all' || selectedType !== 'all') {
+                passes = instructorMatch && typeMatch && locationMatch;
+            } else {
+                 passes = (selectedCourses.length === 0 || selectedCourses.includes(course.course_number)) && locationMatch;
+            }
+             return instructorMatch && typeMatch && locationMatch && (selectedCourses.length === 0 || selectedCourses.includes(course.course_number));
+
         });
         
         const schedulableCourses = filteredCourses.filter(c => c.startMinutes !== null && c.days && c.days.trim() !== '');
