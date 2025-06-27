@@ -3,7 +3,7 @@ name: Update Schedule Data from Google Sheet
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 5 * * *'
 
 permissions:
   contents: write
@@ -29,28 +29,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Step 4: Run the Python script to generate the JSON file
+      # Step 4: Run the Python script to generate all semester JSON files
       - name: Run script to convert Google Sheet to JSON
         env:
           GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
-        run: python convert_excel.py
+        run: python convert_excel.py # This name should match your python script file
 
-      # --- NEW: This step adds the timestamp to index.html ---
+      # Step 5: Inject the timestamp into index.html
       - name: Inject Timestamp into HTML
         run: |
-          # Get the current date and time in a friendly format (e.g., "June 27, 2025 at 12:11 AM MDT")
-          # The timezone is set to America/Denver (MDT/MST)
           TIMESTAMP=$(TZ="America/Denver" date +"%B %d, %Y at %I:%M %p %Z")
-          # Use sed to find the span and replace its content with the timestamp
           sed -i 's|<span id="last-updated-timestamp">.*</span>|<span id="last-updated-timestamp">'"$TIMESTAMP"'</span>|' index.html
 
-      # --- MODIFIED: This step now commits both the JSON and the HTML file ---
+      # --- MODIFIED: This step now commits all .json files and the updated index.html ---
       - name: Commit and push if there are changes
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
-          # Add both files to be tracked for changes
-          git add S26schedule.json index.html
+          # Add the timestamped index.html and all generated JSON files
+          git add index.html *.json
           # Check if there are changes to commit
           if ! git diff --staged --quiet; then
             git commit -m "Automated schedule data update"
