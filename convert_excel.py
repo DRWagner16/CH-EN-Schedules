@@ -94,13 +94,6 @@ def convert_all_semesters_to_json(client):
             json.dump(schedule_data, f, indent=4)
         print(f"[SUCCESS] Semester data saved to '{output_json_file}'.")
 
-# --- MODIFIED: This function is now more robust ---
-# In convert_excel.py
-
-# In convert_excel.py
-
-# ... (the top of your file and the other functions remain the same) ...
-
 def convert_electives_sheet_to_json(client):
     """Reads the elective tracker sheet, predicts future offerings, and generates electives.json."""
     ########## UPDATE THESE VALUES FOR YOUR SETUP ##########
@@ -135,56 +128,44 @@ def convert_electives_sheet_to_json(client):
         df.dropna(subset=[first_column_header], inplace=True)
         df = df[df[first_column_header] != '']
 
-        # --- NEW: Simplified and corrected prediction logic ---
+        # --- NEW: Updated prediction logic to match your categories ---
         def predict_schedule(row):
             frequency = row.get('Offering Frequency', '')
-            last_offered = row.get('Last Offered', '')
             schedule = []
             
             try:
                 current_year = datetime.now().year
                 
-                # Try to get the year from the 'Last Offered' string
-                last_year = 0
-                if last_offered and isinstance(last_offered, str) and last_offered.strip():
-                    # Extract numbers from string and take the last one
-                    numbers = [int(s) for s in last_offered if s.isdigit()]
-                    if numbers:
-                        last_year = 2000 + numbers[-1]
-
                 for i in range(prediction_years + 1): # Predict for current year + next 5 years
                     year = current_year + i
-                    
-                    # Fall Semester Check
-                    if 'Fall' in frequency:
-                        if 'Fall - Every' in frequency:
-                            schedule.append(f"FA{str(year)[-2:]}")
-                        elif 'Fall - Even Years' in frequency and year % 2 == 0:
-                            schedule.append(f"FA{str(year)[-2:]}")
-                        elif 'Fall - Odd Years' in frequency and year % 2 != 0:
-                            schedule.append(f"FA{str(year)[-2:]}")
-                        elif 'Every Other Year (Fall)' in frequency and last_year != 0 and 'FA' in last_offered:
-                             if (year - last_year) % 2 == 0 and year >= last_year:
-                                schedule.append(f"FA{str(year)[-2:]}")
-                    
-                    # Spring Semester Check (Spring '26 happens at the end of academic year 2025)
                     spring_year = year + 1
-                    if 'Spring' in frequency:
-                        if 'Spring - Every' in frequency:
-                            schedule.append(f"SP{str(spring_year)[-2:]}")
-                        elif 'Spring -Even Years' in frequency and spring_year % 2 == 0:
-                            schedule.append(f"SP{str(spring_year)[-2:]}")
-                        elif 'Spring - Odd Years' in frequency and spring_year % 2 != 0:
-                            schedule.append(f"SP{str(spring_year)[-2:]}")
-                        elif 'Every Other Year (Spring)' in frequency and last_year != 0 and 'SP' in last_offered:
-                            if (spring_year - last_year) % 2 == 0 and spring_year >= last_year:
-                                schedule.append(f"SP{str(spring_year)[-2:]}")
+
+                    # Handle Fall Offerings
+                    if frequency == 'Fall - Every':
+                        schedule.append(f"FA{str(year)[-2:]}")
+                    elif frequency == 'Fall - Even Years' and year % 2 == 0:
+                        schedule.append(f"FA{str(year)[-2:]}")
+                    elif frequency == 'Fall - Odd Years' and year % 2 != 0:
+                        schedule.append(f"FA{str(year)[-2:]}")
+                    
+                    # Handle Spring Offerings
+                    if frequency == 'Spring - Every':
+                        schedule.append(f"SP{str(spring_year)[-2:]}")
+                    elif frequency == 'Spring - Even Years' and spring_year % 2 == 0:
+                        schedule.append(f"SP{str(spring_year)[-2:]}")
+                    elif frequency == 'Spring - Odd Years' and spring_year % 2 != 0:
+                        schedule.append(f"SP{str(spring_year)[-2:]}")
+
+                    # Handle Fall and Spring
+                    if frequency == 'Fall and Spring':
+                        schedule.append(f"FA{str(year)[-2:]}")
+                        schedule.append(f"SP{str(spring_year)[-2:]}")
 
             except Exception as e:
                 print(f"[WARN] Could not predict schedule for a row. Error: {e}")
                 return []
             
-            # Predict only for the future, and return a unique, sorted list
+            # Return a unique, sorted list of future offerings
             return sorted(list(set(s for s in schedule if int(s[-2:]) >= int(str(current_year)[-2:]))))
 
         df['predicted_schedule'] = df.apply(predict_schedule, axis=1)
@@ -201,10 +182,8 @@ def convert_electives_sheet_to_json(client):
 
     except Exception as e:
         print(f"[ERROR] Could not process the elective tracker sheet. Reason: {e}")
-        raise e
-
-# ... (the rest of your file, including the main() function, remains the same) ...
-
+        # Use sys.exit(1) to ensure the GitHub Action fails if this process errors out
+        sys.exit(1)
 
 def main():
     """Main function to authenticate and run all conversion tasks."""
