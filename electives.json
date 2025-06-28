@@ -1,7 +1,7 @@
 [
     {
         "Course Number (UG)": "CH EN 4850",
-        "Course Number (GR)": "",
+        "Course Number (GR)": "-",
         "Course Title": "FE Exam Practice for Chemical Engineering",
         "Program": "",
         "Offering Frequency": "",
@@ -16,7 +16,7 @@
     },
     {
         "Course Number (UG)": "CH EN 4870",
-        "Course Number (GR)": "",
+        "Course Number (GR)": "-",
         "Course Title": "Industrial Energy Analysis",
         "Program": "EnergyEmp; SustEmp",
         "Offering Frequency": "Fall and Spring",
@@ -193,7 +193,7 @@
     },
     {
         "Course Number (UG)": "CH EN 5173",
-        "Course Number (GR)": "",
+        "Course Number (GR)": "-",
         "Course Title": "Practical Industrial Process Engineering (PIPE)",
         "Program": "",
         "Offering Frequency": "Fall - Odd Years",
@@ -209,6 +209,21 @@
             "FA29"
         ],
         "Next Offering": "FA25"
+    },
+    {
+        "Course Number (UG)": "-",
+        "Course Number (GR)": "CH EN 6171",
+        "Course Title": "Petroleum Field Study",
+        "Program": "PETRMS",
+        "Offering Frequency": "",
+        "Last Offered": "-",
+        "Certainty": "",
+        "Format": "",
+        "Potential Instructors": "",
+        "Notes": "Not offered in past 20+ years",
+        "": "",
+        "predicted_schedule": [],
+        "Next Offering": "On Demand"
     },
     {
         "Course Number (UG)": "CH EN 5181",
@@ -298,6 +313,21 @@
             "SP31"
         ],
         "Next Offering": "SP26"
+    },
+    {
+        "Course Number (UG)": "-",
+        "Course Number (GR)": "CH EN 6207",
+        "Course Title": "Statistics for Chemical Engineers",
+        "Program": "",
+        "Offering Frequency": "",
+        "Last Offered": "F18",
+        "Certainty": "",
+        "Format": "",
+        "Potential Instructors": "",
+        "Notes": "",
+        "": "",
+        "predicted_schedule": [],
+        "Next Offering": "On Demand"
     },
     {
         "Course Number (UG)": "CH EN 5208",
@@ -423,6 +453,21 @@
         "Next Offering": "FA25"
     },
     {
+        "Course Number (UG)": "-",
+        "Course Number (GR)": "CH EN 6355",
+        "Course Title": "Computational Fluid Dynamics",
+        "Program": "",
+        "Offering Frequency": "",
+        "Last Offered": "S19",
+        "Certainty": "",
+        "Format": "",
+        "Potential Instructors": "",
+        "Notes": "",
+        "": "",
+        "predicted_schedule": [],
+        "Next Offering": "On Demand"
+    },
+    {
         "Course Number (UG)": "CH EN 5555",
         "Course Number (GR)": "CH EN 6555",
         "Course Title": "Catalysis Science and Engineering",
@@ -438,6 +483,28 @@
             "FA25",
             "FA27",
             "FA29"
+        ],
+        "Next Offering": "FA25"
+    },
+    {
+        "Course Number (UG)": "-",
+        "Course Number (GR)": "CH EN 6703",
+        "Course Title": "Advanced Numerical Methods for Chemical Engineers",
+        "Program": "",
+        "Offering Frequency": "Fall - Every",
+        "Last Offered": "F24",
+        "Certainty": "Confirmed",
+        "Format": "In-person",
+        "Potential Instructors": "Sutherland",
+        "Notes": "",
+        "": "",
+        "predicted_schedule": [
+            "FA25",
+            "FA26",
+            "FA27",
+            "FA28",
+            "FA29",
+            "FA30"
         ],
         "Next Offering": "FA25"
     },
@@ -462,6 +529,51 @@
             "SP31"
         ],
         "Next Offering": "SP26"
+    },
+    {
+        "Course Number (UG)": "-",
+        "Course Number (GR)": "CH EN 6900",
+        "Course Title": "Advanced Design: Petroleum Engineering Project",
+        "Program": "PETRMS",
+        "Offering Frequency": "",
+        "Last Offered": "S21",
+        "Certainty": "",
+        "Format": "",
+        "Potential Instructors": "",
+        "Notes": "",
+        "": "",
+        "predicted_schedule": [],
+        "Next Offering": "On Demand"
+    },
+    {
+        "Course Number (UG)": "-",
+        "Course Number (GR)": "CH EN 7703",
+        "Course Title": "Bayesian Model Validation and Machine Learning",
+        "Program": "",
+        "Offering Frequency": "",
+        "Last Offered": "F21",
+        "Certainty": "",
+        "Format": "",
+        "Potential Instructors": "",
+        "Notes": "",
+        "": "",
+        "predicted_schedule": [],
+        "Next Offering": "On Demand"
+    },
+    {
+        "Course Number (UG)": "-",
+        "Course Number (GR)": "CH EN 7960",
+        "Course Title": "Special Topics",
+        "Program": "",
+        "Offering Frequency": "",
+        "Last Offered": "F19",
+        "Certainty": "",
+        "Format": "",
+        "Potential Instructors": "",
+        "Notes": "",
+        "": "",
+        "predicted_schedule": [],
+        "Next Offering": "On Demand"
     },
     {
         "Course Number (UG)": "CH EN 3780",
