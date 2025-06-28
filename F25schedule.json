@@ -468,7 +468,7 @@
         "time_of_day": "11:50 AM-01:10 PM",
         "duration": 80.0,
         "location": "MEB 2550",
-        "type": "Graduate",
+        "type": "Elective",
         "notes": "",
         "anticipated_enrollment": "35"
     },
@@ -479,7 +479,7 @@
         "time_of_day": "01:25 PM-02:45 PM",
         "duration": 80.0,
         "location": "WEB 1248",
-        "type": "Graduate",
+        "type": "Elective",
         "notes": "",
         "anticipated_enrollment": "30"
     },
