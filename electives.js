@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentYear = new Date().getFullYear();
         const headers = ['Course', 'Title'];
         const semesterCodes = [];
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 5; i++) {
             const year = currentYear + i;
             headers.push(`FA${String(year).slice(-2)}`);
             semesterCodes.push(`FA${String(year).slice(-2)}`);
