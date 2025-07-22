@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
             row.insertCell().textContent = course.instructors || '';
             row.insertCell().textContent = course.location || '';
             row.insertCell().textContent = course.anticipated_enrollment || 0;
-            row.insertCell().textContent = course.notes || '';
+//           row.insertCell().textContent = course.notes || ''; 
         });
     }
 
