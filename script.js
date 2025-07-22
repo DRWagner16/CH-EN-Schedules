@@ -318,9 +318,9 @@ document.addEventListener('DOMContentLoaded', () => {
             row.insertCell().textContent = course.instructors || '';
             row.insertCell().textContent = course.location || '';
             row.insertCell().textContent = course.anticipated_enrollment || 0;
-//           row.insertCell().textContent = course.notes || ''; 
         });
     }
+            // Add this line to the TableBody above --> row.insertCell().textContent = course.notes || ''; 
 
     function displayUnscheduledCourses(courses) {
         unscheduledCoursesList.innerHTML = '';
@@ -456,11 +456,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <strong>Location:</strong> ${course.location}<br>
                 <strong>Type:</strong> ${course.type}<br>
                 <strong>Duration:</strong> ${course.duration} min<br>
-                //${course.notes ? `<strong>Notes:</strong> ${course.notes}<br>` : ''}
                 ${course.anticipated_enrollment ? `<strong>Anticipated Enrollment:</strong> ${course.anticipated_enrollment}` : ''}
             `;
             tooltip.style.display = 'block';
         });
+                // Add this line back to tooltip.innerHTML above --> ${course.notes ? `<strong>Notes:</strong> ${course.notes}<br>` : ''}
     
         eventDiv.addEventListener('mouseout', () => {
             tooltip.style.display = 'none';
