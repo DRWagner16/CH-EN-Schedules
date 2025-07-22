@@ -32,12 +32,12 @@ def process_schedule_data(df):
     df.loc[unscheduled_mask, 'DAYS'] = ''
     df = df.rename(columns={
         'INSTRUCTOR': 'instructors', 'DAYS': 'days', 'TIME': 'time_of_day',
-        'LOCATION': 'location', 'TYPE': 'type', 'NOTES': 'notes',
+        'LOCATION': 'location', 'TYPE': 'type',
         'ENROLL': 'anticipated_enrollment'
     })
     final_columns = [
         'course_number', 'instructors', 'days', 'time_of_day', 'duration', 
-        'location', 'type', 'notes', 'anticipated_enrollment'
+        'location', 'type', 'anticipated_enrollment'
     ]
     for col in final_columns:
         if col not in df.columns:
@@ -45,7 +45,7 @@ def process_schedule_data(df):
     df_final = df[final_columns]
     df_final = df_final.fillna({
         'instructors': 'TBD', 'days': '', 'time_of_day': 'TBD',
-        'location': 'TBD', 'type': 'N/A', 'notes': '',
+        'location': 'TBD', 'type': 'N/A',
         'anticipated_enrollment': 0, 'duration': 0
     })
     return df_final.to_dict(orient='records')
