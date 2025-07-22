@@ -60,14 +60,24 @@
         "anticipated_enrollment": "30"
     },
     {
-        "course_number": "CH EN 1703-1",
+        "course_number": "CH EN 1703-2",
         "instructors": "Holmes",
-        "days": "R",
+        "days": "T",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "MEB 1292",
+        "location": "MEB 2550",
         "type": "Year 1",
-        "anticipated_enrollment": "30"
+        "anticipated_enrollment": "20"
+    },
+    {
+        "course_number": "CH EN 1703-3",
+        "instructors": "Holmes",
+        "days": "W",
+        "time_of_day": "10:45 AM-11:35 AM",
+        "duration": 50.0,
+        "location": "MEB 2550",
+        "type": "Year 1",
+        "anticipated_enrollment": "20"
     },
     {
         "course_number": "CH EN 1705-1",
