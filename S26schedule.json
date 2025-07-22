@@ -122,9 +122,9 @@
     {
         "course_number": "CH EN 2800-2",
         "instructors": "Fernandes",
-        "days": "MWF",
-        "time_of_day": "09:40 AM-10:30 AM",
-        "duration": 50.0,
+        "days": "TR",
+        "time_of_day": "12:25 PM-01:45 PM",
+        "duration": 80.0,
         "location": "TBD",
         "type": "Year 2",
         "anticipated_enrollment": "70"
