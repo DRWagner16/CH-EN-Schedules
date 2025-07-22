@@ -352,9 +352,9 @@
     {
         "course_number": "CH EN 5960-5",
         "instructors": "Huang",
-        "days": "MWF",
-        "time_of_day": "03:05 PM-03:55 PM",
-        "duration": 50.0,
+        "days": "MW",
+        "time_of_day": "03:40 PM-05:00 PM",
+        "duration": 80.0,
         "location": "TBD",
         "type": "Elective",
         "anticipated_enrollment": "20"
