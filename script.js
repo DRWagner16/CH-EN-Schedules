@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <strong>${course.course_number} (${course.type || 'N/A'})</strong><br>
                 Instructor(s): ${course.instructors || 'N/A'}<br>
                 Location: ${course.location || 'N/A'}<br>
-                ${course.notes ? `Notes: ${course.notes}` : ''}
+                // ${course.notes ? `Notes: ${course.notes}` : ''}
             `;
             unscheduledCoursesList.appendChild(li);
         });
@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <strong>Location:</strong> ${course.location}<br>
                 <strong>Type:</strong> ${course.type}<br>
                 <strong>Duration:</strong> ${course.duration} min<br>
-                ${course.notes ? `<strong>Notes:</strong> ${course.notes}<br>` : ''}
+                //${course.notes ? `<strong>Notes:</strong> ${course.notes}<br>` : ''}
                 ${course.anticipated_enrollment ? `<strong>Anticipated Enrollment:</strong> ${course.anticipated_enrollment}` : ''}
             `;
             tooltip.style.display = 'block';
