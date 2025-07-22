@@ -7,7 +7,6 @@
         "duration": 80.0,
         "location": "WEB 1230",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "80"
     },
     {
@@ -18,7 +17,6 @@
         "duration": 80.0,
         "location": "MEB 2550",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -29,7 +27,6 @@
         "duration": 80.0,
         "location": "MEB 2550",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -40,7 +37,6 @@
         "duration": 80.0,
         "location": "MEB 2550",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -51,7 +47,6 @@
         "duration": 80.0,
         "location": "MEB 2550",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -62,7 +57,6 @@
         "duration": 80.0,
         "location": "ASB 210",
         "type": "Year 1",
-        "notes": "Instructors want really good experiences with the students; reluctant to replace with TAs or reduce instructor presence in labs",
         "anticipated_enrollment": "100"
     },
     {
@@ -73,7 +67,6 @@
         "duration": 50.0,
         "location": "MEB 1292",
         "type": "Year 1",
-        "notes": "",
         "anticipated_enrollment": "25"
     },
     {
@@ -84,7 +77,6 @@
         "duration": 50.0,
         "location": "MEB 1292",
         "type": "Year 1",
-        "notes": "",
         "anticipated_enrollment": "25"
     },
     {
@@ -95,7 +87,6 @@
         "duration": 50.0,
         "location": "MEB 1292",
         "type": "Year 1",
-        "notes": "",
         "anticipated_enrollment": "25"
     },
     {
@@ -106,7 +97,6 @@
         "duration": 50.0,
         "location": "MEB 1292",
         "type": "Year 1",
-        "notes": "",
         "anticipated_enrollment": "25"
     },
     {
@@ -117,7 +107,6 @@
         "duration": 50.0,
         "location": "MEB 1292",
         "type": "Year 1",
-        "notes": "",
         "anticipated_enrollment": "25"
     },
     {
@@ -128,7 +117,6 @@
         "duration": 50.0,
         "location": "WEB 1230",
         "type": "Year 2",
-        "notes": "Need to find someone to teach this. Maybe Tao?\nThomas Kohl is probably a very good candidate to teach this as well.",
         "anticipated_enrollment": "70"
     },
     {
@@ -139,7 +127,6 @@
         "duration": 80.0,
         "location": "WEB 2250",
         "type": "Year 2",
-        "notes": "",
         "anticipated_enrollment": "70"
     },
     {
@@ -150,7 +137,6 @@
         "duration": 80.0,
         "location": "MEB 4550",
         "type": "Year 2",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -161,7 +147,6 @@
         "duration": 50.0,
         "location": "WEB 1230",
         "type": "Year 2, Year 3",
-        "notes": "",
         "anticipated_enrollment": "90"
     },
     {
@@ -172,7 +157,6 @@
         "duration": 50.0,
         "location": "WEB 1250",
         "type": "Year 3, Year 4",
-        "notes": "",
         "anticipated_enrollment": "70"
     },
     {
@@ -183,7 +167,6 @@
         "duration": 50.0,
         "location": "GC 2660",
         "type": "Year 3",
-        "notes": "Move to 2 day schedule for Fall 2026",
         "anticipated_enrollment": "65"
     },
     {
@@ -194,7 +177,6 @@
         "duration": 80.0,
         "location": "WEB 1230",
         "type": "Year 3",
-        "notes": "Dave P. with a new co-instructor?  Maybe Heather?",
         "anticipated_enrollment": "70"
     },
     {
@@ -205,7 +187,6 @@
         "duration": 50.0,
         "location": "M LI 1715",
         "type": "Year 3",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -216,7 +197,6 @@
         "duration": 50.0,
         "location": "WEB 2250",
         "type": "Year 3",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -227,7 +207,6 @@
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
         "type": "Year 3",
-        "notes": "",
         "anticipated_enrollment": "27"
     },
     {
@@ -238,7 +217,6 @@
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
         "type": "Year 3",
-        "notes": "",
         "anticipated_enrollment": "27"
     },
     {
@@ -249,7 +227,6 @@
         "duration": 50.0,
         "location": "WEB 1250",
         "type": "Year 3",
-        "notes": "",
         "anticipated_enrollment": "75"
     },
     {
@@ -260,7 +237,6 @@
         "duration": 50.0,
         "location": "WEB L102",
         "type": "Year 4",
-        "notes": "Consider moving Kody here in Fall 2026",
         "anticipated_enrollment": "70"
     },
     {
@@ -271,7 +247,6 @@
         "duration": 180.0,
         "location": "MEB 3520",
         "type": "Year 4",
-        "notes": "Potentially a second instructor here?  Or a solid TA?\nMaybe Stacy stays on here?",
         "anticipated_enrollment": "25"
     },
     {
@@ -282,7 +257,6 @@
         "duration": 180.0,
         "location": "MEB 3520",
         "type": "Year 4",
-        "notes": "",
         "anticipated_enrollment": "35"
     },
     {
@@ -293,7 +267,6 @@
         "duration": 50.0,
         "location": "FASB 295",
         "type": "Year 4",
-        "notes": "",
         "anticipated_enrollment": "70"
     },
     {
@@ -304,7 +277,6 @@
         "duration": 50.0,
         "location": "MEB 1292",
         "type": "Year 4",
-        "notes": "",
         "anticipated_enrollment": "35"
     },
     {
@@ -315,7 +287,6 @@
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
         "type": "Year 4",
-        "notes": "",
         "anticipated_enrollment": "35"
     },
     {
@@ -326,7 +297,6 @@
         "duration": 50.0,
         "location": "MEB 1292",
         "type": "Year 4",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -337,7 +307,6 @@
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
         "type": "Year 4",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -348,7 +317,6 @@
         "duration": 50.0,
         "location": "CANVAS",
         "type": "Elective",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -359,7 +327,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other, Elective",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -370,7 +337,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other, Elective",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -381,7 +347,6 @@
         "duration": 80.0,
         "location": "Online",
         "type": "Elective, Other",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -392,7 +357,6 @@
         "duration": 80.0,
         "location": "WEB 1248",
         "type": "Elective, Other",
-        "notes": "Consider teaching every other year?  Tao to 2300 on alternating years?",
         "anticipated_enrollment": "30"
     },
     {
@@ -403,7 +367,6 @@
         "duration": 80.0,
         "location": "MEB 2325",
         "type": "Elective, Other",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -414,7 +377,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": ""
     },
     {
@@ -425,7 +387,6 @@
         "duration": 80.0,
         "location": "WEB L126",
         "type": "Elective",
-        "notes": "",
         "anticipated_enrollment": "40"
     },
     {
@@ -436,7 +397,6 @@
         "duration": 80.0,
         "location": "MEB 4550",
         "type": "Elective",
-        "notes": "PIPE",
         "anticipated_enrollment": "30"
     },
     {
@@ -447,7 +407,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Elective",
-        "notes": "",
         "anticipated_enrollment": ""
     },
     {
@@ -458,7 +417,6 @@
         "duration": 80.0,
         "location": "WEB L122",
         "type": "Graduate",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -469,7 +427,6 @@
         "duration": 80.0,
         "location": "MEB 2550",
         "type": "Elective",
-        "notes": "",
         "anticipated_enrollment": "35"
     },
     {
@@ -480,7 +437,6 @@
         "duration": 80.0,
         "location": "WEB 1248",
         "type": "Elective",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -491,7 +447,6 @@
         "duration": 80.0,
         "location": "WEB L122",
         "type": "Graduate",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -502,7 +457,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": ""
     },
     {
@@ -513,7 +467,6 @@
         "duration": 50.0,
         "location": "WEB 1460",
         "type": "Graduate",
-        "notes": "Experimental Methods",
         "anticipated_enrollment": "20"
     },
     {
@@ -524,7 +477,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "10"
     },
     {
@@ -535,7 +487,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "10"
     },
     {
@@ -546,7 +497,6 @@
         "duration": 80.0,
         "location": "MEB 3289",
         "type": "Graduate",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -557,7 +507,6 @@
         "duration": 60.0,
         "location": "WEB 1248",
         "type": "Graduate",
-        "notes": "Consider putting Marc on this?",
         "anticipated_enrollment": "30"
     },
     {
@@ -568,7 +517,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": ""
     }
 ]

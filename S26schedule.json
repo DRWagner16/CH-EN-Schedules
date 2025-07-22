@@ -7,7 +7,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "60"
     },
     {
@@ -18,7 +17,6 @@
         "duration": 80.0,
         "location": "MEB 2550",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -29,7 +27,6 @@
         "duration": 80.0,
         "location": "MEB 2550",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -40,7 +37,6 @@
         "duration": 80.0,
         "location": "MEB 2550",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -51,7 +47,6 @@
         "duration": 80.0,
         "location": "MEB 2550",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -62,7 +57,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Year 1",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -73,7 +67,6 @@
         "duration": 50.0,
         "location": "MEB 1292",
         "type": "Year 1",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -84,7 +77,6 @@
         "duration": 50.0,
         "location": "TBD",
         "type": "Year 1",
-        "notes": "",
         "anticipated_enrollment": "75"
     },
     {
@@ -95,7 +87,6 @@
         "duration": 180.0,
         "location": "MEB 1292",
         "type": "Year 1",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -106,7 +97,6 @@
         "duration": 180.0,
         "location": "MEB 1292",
         "type": "Year 1",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -117,7 +107,6 @@
         "duration": 180.0,
         "location": "MEB 1292",
         "type": "Year 1",
-        "notes": "",
         "anticipated_enrollment": "15"
     },
     {
@@ -128,7 +117,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Year 2",
-        "notes": "",
         "anticipated_enrollment": "70"
     },
     {
@@ -139,7 +127,6 @@
         "duration": 50.0,
         "location": "TBD",
         "type": "Year 2",
-        "notes": "",
         "anticipated_enrollment": "70"
     },
     {
@@ -150,7 +137,6 @@
         "duration": 50.0,
         "location": "TBD",
         "type": "Year 2, Year 3",
-        "notes": "",
         "anticipated_enrollment": "90"
     },
     {
@@ -161,7 +147,6 @@
         "duration": 50.0,
         "location": "TBD",
         "type": "Year 3, Year 4",
-        "notes": "Marc starting Spring?",
         "anticipated_enrollment": "50"
     },
     {
@@ -172,7 +157,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Year 3",
-        "notes": "",
         "anticipated_enrollment": "70"
     },
     {
@@ -183,7 +167,6 @@
         "duration": 50.0,
         "location": "TBD",
         "type": "Year 3",
-        "notes": "Dave P. on heat exchangers. \nPotentially with James and/or Kevin\nPotentially Dave W. as coordinating instructor?\nEric or John on pumps & fluid mech.\nAspen+ needs to be integrated in some way to the class",
         "anticipated_enrollment": "70"
     },
     {
@@ -194,7 +177,6 @@
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
         "type": "Year 3",
-        "notes": "",
         "anticipated_enrollment": "27"
     },
     {
@@ -205,7 +187,6 @@
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
         "type": "Year 3",
-        "notes": "",
         "anticipated_enrollment": "27"
     },
     {
@@ -216,7 +197,6 @@
         "duration": 50.0,
         "location": "MEB 1292",
         "type": "Year 4",
-        "notes": "",
         "anticipated_enrollment": "35"
     },
     {
@@ -227,7 +207,6 @@
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
         "type": "Year 4",
-        "notes": "",
         "anticipated_enrollment": "35"
     },
     {
@@ -238,7 +217,6 @@
         "duration": 50.0,
         "location": "MEB 1292",
         "type": "Year 4",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -249,7 +227,6 @@
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
         "type": "Year 4",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -260,7 +237,6 @@
         "duration": 50.0,
         "location": "CANVAS",
         "type": "Elective",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -271,7 +247,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other, Elective",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -282,7 +257,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other, Elective",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -293,7 +267,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Elective",
-        "notes": "",
         "anticipated_enrollment": "60"
     },
     {
@@ -304,7 +277,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Elective",
-        "notes": "",
         "anticipated_enrollment": "40"
     },
     {
@@ -315,7 +287,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Year 4, Other",
-        "notes": "",
         "anticipated_enrollment": "50"
     },
     {
@@ -326,7 +297,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Elective, Other",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -337,7 +307,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": ""
     },
     {
@@ -348,7 +317,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Elective",
-        "notes": "Sustainable Engineering\nConsider pulling Stacy off of this.",
         "anticipated_enrollment": "40"
     },
     {
@@ -359,7 +327,6 @@
         "duration": 180.0,
         "location": "MEB 3520",
         "type": "Elective",
-        "notes": "Bioprocessing MW",
         "anticipated_enrollment": "8"
     },
     {
@@ -370,7 +337,6 @@
         "duration": 180.0,
         "location": "MEB 3520",
         "type": "Elective",
-        "notes": "Bioprocessing TTh",
         "anticipated_enrollment": "8"
     },
     {
@@ -381,7 +347,6 @@
         "duration": 50.0,
         "location": "TBD",
         "type": "Elective",
-        "notes": "Molecular Simulations",
         "anticipated_enrollment": "20"
     },
     {
@@ -392,7 +357,6 @@
         "duration": 50.0,
         "location": "TBD",
         "type": "Elective",
-        "notes": "Additive Manufacturing",
         "anticipated_enrollment": "20"
     },
     {
@@ -403,7 +367,6 @@
         "duration": 50.0,
         "location": "TBD",
         "type": "Year 4",
-        "notes": "Product Design (CH EN 5960-008",
         "anticipated_enrollment": "40"
     },
     {
@@ -414,7 +377,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Year 2",
-        "notes": "OChem for Engineers",
         "anticipated_enrollment": "80"
     },
     {
@@ -425,7 +387,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Elective",
-        "notes": "Prefers Tues/Thurs meeting block",
         "anticipated_enrollment": "15"
     },
     {
@@ -436,7 +397,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Elective",
-        "notes": "",
         "anticipated_enrollment": ""
     },
     {
@@ -447,7 +407,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Graduate",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -458,7 +417,6 @@
         "duration": 80.0,
         "location": "TBD",
         "type": "Graduate",
-        "notes": "",
         "anticipated_enrollment": "30"
     },
     {
@@ -469,7 +427,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": ""
     },
     {
@@ -480,7 +437,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "10"
     },
     {
@@ -491,7 +447,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": "10"
     },
     {
@@ -502,7 +457,6 @@
         "duration": 80.0,
         "location": "MEB 3289",
         "type": "Graduate",
-        "notes": "",
         "anticipated_enrollment": "20"
     },
     {
@@ -513,7 +467,6 @@
         "duration": 50.0,
         "location": "TBD",
         "type": "Graduate",
-        "notes": "Move Marc here; John moves off in Fall 2026",
         "anticipated_enrollment": "30"
     },
     {
@@ -524,7 +477,6 @@
         "duration": 0.0,
         "location": "",
         "type": "Other",
-        "notes": "",
         "anticipated_enrollment": ""
     }
 ]
