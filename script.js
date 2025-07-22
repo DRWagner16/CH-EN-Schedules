@@ -337,11 +337,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <strong>${course.course_number} (${course.type || 'N/A'})</strong><br>
                 Instructor(s): ${course.instructors || 'N/A'}<br>
                 Location: ${course.location || 'N/A'}<br>
-                // ${course.notes ? `Notes: ${course.notes}` : ''}
             `;
             unscheduledCoursesList.appendChild(li);
         });
     }
+                // Add this line to the createElement after Location above --> ${course.notes ? `Notes: ${course.notes}` : ''}
 
     function calculateAndDisplayMetrics(courses) {
         const primeTimeStart = 9 * 60;
