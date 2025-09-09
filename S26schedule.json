@@ -55,7 +55,7 @@
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "MEB 2325",
         "type": "Year 1",
         "anticipated_enrollment": "30"
     },
@@ -65,7 +65,7 @@
         "days": "T",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
-        "location": "MEB 2550",
+        "location": "MEB1292",
         "type": "Year 1",
         "anticipated_enrollment": "20"
     },
@@ -85,7 +85,7 @@
         "days": "M",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
-        "location": "TBD",
+        "location": "M LI 1150",
         "type": "Year 1",
         "anticipated_enrollment": "75"
     },
@@ -125,7 +125,7 @@
         "days": "TR",
         "time_of_day": "02:00 PM-03:20 PM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "WEB 2250",
         "type": "Year 2",
         "anticipated_enrollment": "70"
     },
@@ -135,7 +135,7 @@
         "days": "TR",
         "time_of_day": "12:25 PM-01:45 PM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "WEB 2250",
         "type": "Year 2",
         "anticipated_enrollment": "70"
     },
@@ -145,7 +145,7 @@
         "days": "T",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "TBD",
+        "location": "WEB L105",
         "type": "Year 2, Year 3",
         "anticipated_enrollment": "90"
     },
@@ -155,7 +155,7 @@
         "days": "MWF",
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
-        "location": "TBD",
+        "location": "WEB L114",
         "type": "Year 3, Year 4",
         "anticipated_enrollment": "50"
     },
@@ -165,7 +165,7 @@
         "days": "MW",
         "time_of_day": "11:50 AM-01:10 PM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "CSC 208",
         "type": "Year 3",
         "anticipated_enrollment": "70"
     },
@@ -175,7 +175,7 @@
         "days": "MWF",
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
-        "location": "TBD",
+        "location": "WEB 2250",
         "type": "Year 3",
         "anticipated_enrollment": "70"
     },
@@ -285,7 +285,7 @@
         "days": "TR",
         "time_of_day": "07:30 AM-08:50 AM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "MEB 2325",
         "type": "Elective",
         "anticipated_enrollment": "40"
     },
@@ -295,7 +295,7 @@
         "days": "MW",
         "time_of_day": "11:50 AM-01:10 PM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "WEB L122",
         "type": "Year 4, Other",
         "anticipated_enrollment": "50"
     },
@@ -325,7 +325,7 @@
         "days": "TR",
         "time_of_day": "02:00 PM-03:20 PM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "WBB 617",
         "type": "Elective",
         "anticipated_enrollment": "40"
     },
@@ -355,17 +355,17 @@
         "days": "MWF",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "TBD",
+        "location": "WBB 820",
         "type": "Elective",
         "anticipated_enrollment": "20"
     },
     {
         "course_number": "CH EN 5960-5",
         "instructors": "Huang",
-        "days": "MW",
+        "days": "TR",
         "time_of_day": "03:40 PM-05:00 PM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "HEB 2010",
         "type": "Elective",
         "anticipated_enrollment": "20"
     },
@@ -375,7 +375,7 @@
         "days": "MWF",
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
-        "location": "TBD",
+        "location": "WEB L122",
         "type": "Year 4",
         "anticipated_enrollment": "40"
     },
@@ -385,7 +385,7 @@
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "WEB 2230",
         "type": "Year 2",
         "anticipated_enrollment": "80"
     },
@@ -395,7 +395,7 @@
         "days": "TR",
         "time_of_day": "02:00 PM-03:20 PM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "WEB 2230",
         "type": "Elective",
         "anticipated_enrollment": "15"
     },
@@ -425,7 +425,7 @@
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "WEB 1248",
         "type": "Graduate",
         "anticipated_enrollment": "30"
     },
@@ -475,7 +475,7 @@
         "days": "F",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "TBD",
+        "location": "WEB L114",
         "type": "Graduate",
         "anticipated_enrollment": "30"
     },
