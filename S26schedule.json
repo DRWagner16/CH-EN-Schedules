@@ -275,7 +275,7 @@
         "days": "TR",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "WBB 617",
         "type": "Elective",
         "anticipated_enrollment": "60"
     },
@@ -296,7 +296,7 @@
         "time_of_day": "11:50 AM-01:10 PM",
         "duration": 80.0,
         "location": "WEB L122",
-        "type": "Year 4, Other",
+        "type": "Year 4",
         "anticipated_enrollment": "50"
     },
     {
@@ -370,7 +370,7 @@
         "anticipated_enrollment": "20"
     },
     {
-        "course_number": "CH EN 5254-8",
+        "course_number": "CH EN 5254-1",
         "instructors": "Porter; Skliar",
         "days": "MWF",
         "time_of_day": "08:35 AM-09:25 AM",
@@ -415,7 +415,7 @@
         "days": "TR",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "MEB 2325",
         "type": "Graduate",
         "anticipated_enrollment": "30"
     },
@@ -475,7 +475,7 @@
         "days": "F",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "WEB L114",
+        "location": "FASB 295",
         "type": "Graduate",
         "anticipated_enrollment": "30"
     },
