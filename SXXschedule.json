@@ -211,8 +211,8 @@
     },
     {
         "course_number": "CH EN 4707-1",
-        "instructors": "Butterfield",
-        "days": "W",
+        "instructors": "",
+        "days": "M",
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "MEB 1292",
@@ -221,8 +221,8 @@
     },
     {
         "course_number": "CH EN 4707-1",
-        "instructors": "Butterfield",
-        "days": "W",
+        "instructors": "",
+        "days": "M",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
@@ -231,8 +231,8 @@
     },
     {
         "course_number": "CH EN 4707-2",
-        "instructors": "Butterfield",
-        "days": "R",
+        "instructors": "",
+        "days": "W",
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "MEB 1292",
@@ -241,8 +241,8 @@
     },
     {
         "course_number": "CH EN 4707-2",
-        "instructors": "Butterfield",
-        "days": "R",
+        "instructors": "",
+        "days": "W",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
@@ -285,7 +285,7 @@
         "days": "TR",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "",
         "type": "Elective",
         "anticipated_enrollment": "60"
     },
@@ -302,8 +302,8 @@
     {
         "course_number": "CH EN 5253-1",
         "instructors": "Wagner",
-        "days": "MW",
-        "time_of_day": "11:50 AM-01:10 PM",
+        "days": "MWF",
+        "time_of_day": "08:35 AM-09:55 AM",
         "duration": 80.0,
         "location": "WEB L122",
         "type": "Year 4, Other",
@@ -315,7 +315,7 @@
         "days": "MW",
         "time_of_day": "08:05 AM-09:25 AM",
         "duration": 80.0,
-        "location": "WEB 1248",
+        "location": "",
         "type": "Elective, Other",
         "anticipated_enrollment": "30"
     },
@@ -345,7 +345,7 @@
         "days": "TR",
         "time_of_day": "02:00 PM-03:20 PM",
         "duration": 80.0,
-        "location": "WBB 617",
+        "location": "",
         "type": "Elective",
         "anticipated_enrollment": "40"
     },
@@ -403,9 +403,9 @@
         "course_number": "CH EN 5254-8",
         "instructors": "Skliar",
         "days": "MWF",
-        "time_of_day": "08:35 AM-09:25 AM",
+        "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
-        "location": "WEB L122",
+        "location": "",
         "type": "Year 4",
         "anticipated_enrollment": "40"
     },
@@ -415,7 +415,7 @@
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
-        "location": "WEB 2230",
+        "location": "",
         "type": "Year 2",
         "anticipated_enrollment": "80"
     },

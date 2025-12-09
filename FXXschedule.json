@@ -221,7 +221,7 @@
     },
     {
         "course_number": "CH EN 4203-1",
-        "instructors": "Powell",
+        "instructors": "",
         "days": "MWF",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
@@ -231,8 +231,8 @@
     },
     {
         "course_number": "CH EN 4701-1",
-        "instructors": "Firth",
-        "days": "W",
+        "instructors": "",
+        "days": "T",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 3520",
@@ -241,7 +241,7 @@
     },
     {
         "course_number": "CH EN 4701-2",
-        "instructors": "Firth",
+        "instructors": "",
         "days": "R",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
@@ -251,17 +251,17 @@
     },
     {
         "course_number": "CH EN 4253-1",
-        "instructors": "Wagner",
+        "instructors": "",
         "days": "MWF",
-        "time_of_day": "09:40 AM-10:30 AM",
+        "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "FASB 295",
+        "location": "",
         "type": "Year 4",
         "anticipated_enrollment": "70"
     },
     {
         "course_number": "CH EN 4706-1",
-        "instructors": "Butterfield",
+        "instructors": "",
         "days": "M",
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
@@ -271,7 +271,7 @@
     },
     {
         "course_number": "CH EN 4706-1",
-        "instructors": "Butterfield",
+        "instructors": "",
         "days": "M",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
@@ -281,8 +281,8 @@
     },
     {
         "course_number": "CH EN 4706-2",
-        "instructors": "Butterfield",
-        "days": "T",
+        "instructors": "",
+        "days": "W",
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "MEB 1292",
@@ -291,8 +291,8 @@
     },
     {
         "course_number": "CH EN 4706-2",
-        "instructors": "Butterfield",
-        "days": "T",
+        "instructors": "",
+        "days": "W",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
@@ -335,7 +335,7 @@
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "",
         "type": "Elective",
         "anticipated_enrollment": ""
     },
@@ -395,7 +395,7 @@
         "days": "TR",
         "time_of_day": "03:00 PM-04:20 PM",
         "duration": 80.0,
-        "location": "WEB L126",
+        "location": "",
         "type": "Elective",
         "anticipated_enrollment": "40"
     },
