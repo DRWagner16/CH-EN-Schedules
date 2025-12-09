@@ -303,9 +303,9 @@
         "course_number": "CH EN 5253-1",
         "instructors": "Wagner",
         "days": "MWF",
-        "time_of_day": "08:35 AM-09:55 AM",
-        "duration": 80.0,
-        "location": "WEB L122",
+        "time_of_day": "10:45 AM-11:35 AM",
+        "duration": 50.0,
+        "location": "",
         "type": "Year 4, Other",
         "anticipated_enrollment": "50"
     },
