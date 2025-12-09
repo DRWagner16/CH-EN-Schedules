@@ -5,7 +5,7 @@
         "days": "T",
         "time_of_day": "03:40 PM-05:00 PM",
         "duration": 80.0,
-        "location": "WEB 1230",
+        "location": "",
         "type": "Other",
         "anticipated_enrollment": "80"
     },
@@ -55,7 +55,7 @@
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
-        "location": "ASB 210",
+        "location": "",
         "type": "Year 1",
         "anticipated_enrollment": "100"
     },
@@ -115,7 +115,7 @@
         "days": "MW",
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
-        "location": "WEB 1230",
+        "location": "",
         "type": "Year 2",
         "anticipated_enrollment": "70"
     },
@@ -125,7 +125,7 @@
         "days": "TR",
         "time_of_day": "02:00 PM-03:20 PM",
         "duration": 80.0,
-        "location": "WEB 2250",
+        "location": "",
         "type": "Year 2",
         "anticipated_enrollment": "70"
     },
@@ -135,7 +135,7 @@
         "days": "TR",
         "time_of_day": "12:25 PM-01:45 PM",
         "duration": 80.0,
-        "location": "MEB 4550",
+        "location": "",
         "type": "Year 2",
         "anticipated_enrollment": "20"
     },
@@ -145,18 +145,18 @@
         "days": "T",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "WEB 1230",
+        "location": "",
         "type": "Year 2, Year 3",
         "anticipated_enrollment": "90"
     },
     {
         "course_number": "CH EN 3253-1",
-        "instructors": "Deo",
+        "instructors": "",
         "days": "MWF",
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
-        "location": "WEB 1250",
-        "type": "Year 3, Year 4",
+        "location": "",
+        "type": "Year 4",
         "anticipated_enrollment": "70"
     },
     {
@@ -165,7 +165,7 @@
         "days": "MWF",
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
-        "location": "GC 2660",
+        "location": "",
         "type": "Year 3",
         "anticipated_enrollment": "65"
     },
@@ -175,7 +175,7 @@
         "days": "MWF",
         "time_of_day": "11:50 AM-12:40 PM",
         "duration": 50.0,
-        "location": "WEB 1230",
+        "location": "",
         "type": "Year 3",
         "anticipated_enrollment": "70"
     },
@@ -185,7 +185,7 @@
         "days": "MWF",
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
-        "location": "M LI 1715",
+        "location": "",
         "type": "Year 3",
         "anticipated_enrollment": "30"
     },
@@ -215,7 +215,7 @@
         "days": "MWF",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "WEB 1250",
+        "location": "",
         "type": "Year 3",
         "anticipated_enrollment": "75"
     },
@@ -225,7 +225,7 @@
         "days": "MWF",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "WEB L102",
+        "location": "",
         "type": "Year 4",
         "anticipated_enrollment": "70"
     },
