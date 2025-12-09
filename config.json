@@ -28,6 +28,20 @@
       "google_sheet_file_name": "Teaching Assignments 2025-2026",
       "worksheet_tab_name": "Fall Summary",
       "output_json_file": "F25schedule.json"
+    },
+    {
+      "id": "SXX",
+      "display_title": "Spring Outline",
+      "google_sheet_file_name": "Teaching Assignments Outline",
+      "worksheet_tab_name": "Spring Summary",
+      "output_json_file": "SXXschedule.json"
+    },
+    {
+      "id": "FXX",
+      "display_title": "Fall Outline",
+      "google_sheet_file_name": "Teaching Assignments Outline",
+      "worksheet_tab_name": "Fall Summary",
+      "output_json_file": "FXXschedule.json"
     }
   ]
 }
