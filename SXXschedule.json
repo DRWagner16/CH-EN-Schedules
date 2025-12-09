@@ -301,7 +301,7 @@
     },
     {
         "course_number": "CH EN 5253-1",
-        "instructors": "Wagner",
+        "instructors": "",
         "days": "MWF",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
@@ -441,17 +441,17 @@
     },
     {
         "course_number": "CH EN 6553-1",
-        "instructors": "Duan",
+        "instructors": "",
         "days": "TR",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
-        "location": "TBD",
+        "location": "",
         "type": "Graduate",
         "anticipated_enrollment": "30"
     },
     {
         "course_number": "CH EN 6603-1",
-        "instructors": "Chen; Sutherland",
+        "instructors": "",
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,

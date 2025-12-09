@@ -421,11 +421,11 @@
     },
     {
         "course_number": "CH EN 6400-2",
-        "instructors": "Saad",
+        "instructors": "",
         "days": "TR",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
-        "location": "WEB L122",
+        "location": "",
         "type": "Graduate",
         "anticipated_enrollment": "20"
     },
@@ -451,8 +451,8 @@
     },
     {
         "course_number": "CH EN 6853-1",
-        "instructors": "Gao",
-        "days": "MWF",
+        "instructors": "",
+        "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
         "location": "WEB L122",
@@ -471,12 +471,12 @@
     },
     {
         "course_number": "CH EN 6500-2",
-        "instructors": "Zangle",
+        "instructors": "",
         "days": "MWF",
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
         "location": "WEB 1460",
-        "type": "Graduate",
+        "type": "Elective",
         "anticipated_enrollment": "20"
     },
     {
