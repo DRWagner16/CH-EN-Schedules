@@ -51,7 +51,7 @@
     },
     {
         "course_number": "CH EN 1703-1",
-        "instructors": "Holmes",
+        "instructors": "",
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
@@ -61,7 +61,7 @@
     },
     {
         "course_number": "CH EN 1703-2",
-        "instructors": "Holmes",
+        "instructors": "",
         "days": "T",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
@@ -71,7 +71,7 @@
     },
     {
         "course_number": "CH EN 1703-3",
-        "instructors": "Holmes",
+        "instructors": "",
         "days": "W",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
@@ -81,7 +81,7 @@
     },
     {
         "course_number": "CH EN 1705-1",
-        "instructors": "Butterfield; Firth",
+        "instructors": "",
         "days": "M",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
@@ -91,7 +91,7 @@
     },
     {
         "course_number": "CH EN 1705-2",
-        "instructors": "Butterfield; Firth",
+        "instructors": "",
         "days": "R",
         "time_of_day": "09:10 AM-12:10 PM",
         "duration": 180.0,
@@ -101,7 +101,7 @@
     },
     {
         "course_number": "CH EN 1705-3",
-        "instructors": "Mohanty",
+        "instructors": "",
         "days": "F",
         "time_of_day": "09:40 AM-12:40 PM",
         "duration": 180.0,
@@ -111,7 +111,7 @@
     },
     {
         "course_number": "CH EN 1705-4",
-        "instructors": "Butterfield; Firth",
+        "instructors": "",
         "days": "F",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
@@ -375,7 +375,7 @@
         "days": "MWF",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "WBB 820",
+        "location": "",
         "type": "Elective",
         "anticipated_enrollment": "20"
     },
@@ -385,7 +385,7 @@
         "days": "TR",
         "time_of_day": "03:40 PM-05:00 PM",
         "duration": 80.0,
-        "location": "HEB 2010",
+        "location": "",
         "type": "Elective",
         "anticipated_enrollment": "20"
     },
@@ -425,7 +425,7 @@
         "days": "TR",
         "time_of_day": "02:00 PM-03:20 PM",
         "duration": 80.0,
-        "location": "WEB 2230",
+        "location": "",
         "type": "Elective",
         "anticipated_enrollment": "15"
     },
@@ -455,7 +455,7 @@
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
-        "location": "WEB 1248",
+        "location": "",
         "type": "Graduate",
         "anticipated_enrollment": "30"
     },
@@ -503,9 +503,9 @@
         "course_number": "CH EN 7857-1",
         "instructors": "Hoepfner",
         "days": "F",
-        "time_of_day": "10:45 AM-11:45 AM",
-        "duration": 60.0,
-        "location": "WEB L114",
+        "time_of_day": "11:50 AM-01:10 PM",
+        "duration": 80.0,
+        "location": "",
         "type": "Graduate",
         "anticipated_enrollment": "30"
     },
