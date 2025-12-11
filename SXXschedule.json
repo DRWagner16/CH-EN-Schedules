@@ -320,16 +320,6 @@
         "anticipated_enrollment": "30"
     },
     {
-        "course_number": "CH EN 6840-1",
-        "instructors": "Wang; Fernandes",
-        "days": "TR",
-        "time_of_day": "10:45 AM-12:05 PM",
-        "duration": 80.0,
-        "location": "MEB 2550",
-        "type": "Elective, Other",
-        "anticipated_enrollment": "30"
-    },
-    {
         "course_number": "CH EN 5950-",
         "instructors": "Eddings",
         "days": "",
@@ -368,16 +358,6 @@
         "location": "MEB 3520",
         "type": "Elective",
         "anticipated_enrollment": "8"
-    },
-    {
-        "course_number": "CH EN 6960-4",
-        "instructors": "",
-        "days": "MWF",
-        "time_of_day": "10:45 AM-11:35 AM",
-        "duration": 50.0,
-        "location": "",
-        "type": "Elective",
-        "anticipated_enrollment": "20"
     },
     {
         "course_number": "CH EN 5960-5",
