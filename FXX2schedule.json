@@ -252,9 +252,9 @@
     {
         "course_number": "CH EN 3353-1",
         "instructors": "",
-        "days": "TR",
-        "time_of_day": "10:45 AM-12:05 PM",
-        "duration": 80.0,
+        "days": "MWF",
+        "time_of_day": "09:40 AM-10:30 AM",
+        "duration": 50.0,
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": "65"
@@ -262,7 +262,7 @@
     {
         "course_number": "CH EN 3353-2",
         "instructors": "TA",
-        "days": "T",
+        "days": "M",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "",
@@ -272,7 +272,7 @@
     {
         "course_number": "CH EN 3353-3",
         "instructors": "TA",
-        "days": "R",
+        "days": "W",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "",
@@ -283,8 +283,8 @@
         "course_number": "CH EN 3353-4",
         "instructors": "TA",
         "days": "",
-        "time_of_day": "Online/Asynchronous",
-        "duration": 0.0,
+        "time_of_day": "02:00 PM-02:50 PM",
+        "duration": 50.0,
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": ""
@@ -292,9 +292,9 @@
     {
         "course_number": "CH EN 3453-1",
         "instructors": "",
-        "days": "TR",
-        "time_of_day": "09:10 AM-10:30 AM",
-        "duration": 80.0,
+        "days": "MWF",
+        "time_of_day": "10:45 AM-11:35 AM",
+        "duration": 50.0,
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": "70"
@@ -302,7 +302,7 @@
     {
         "course_number": "CH EN 3453-2",
         "instructors": "TA",
-        "days": "T",
+        "days": "M",
         "time_of_day": "03:05 PM-03:55 PM",
         "duration": 50.0,
         "location": "",
@@ -312,7 +312,7 @@
     {
         "course_number": "CH EN 3453-3",
         "instructors": "TA",
-        "days": "R",
+        "days": "W",
         "time_of_day": "03:05 PM-03:55 PM",
         "duration": 50.0,
         "location": "",
@@ -323,8 +323,8 @@
         "course_number": "CH EN 3453-4",
         "instructors": "TA",
         "days": "",
-        "time_of_day": "Online/Asynchronous",
-        "duration": 0.0,
+        "time_of_day": "03:05 PM-03:55 PM",
+        "duration": 50.0,
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": ""
@@ -342,7 +342,7 @@
     {
         "course_number": "CH EN 3701-1",
         "instructors": "",
-        "days": "T",
+        "days": "M",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
@@ -352,7 +352,7 @@
     {
         "course_number": "CH EN 3701-2",
         "instructors": "",
-        "days": "R",
+        "days": "W",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
@@ -362,9 +362,9 @@
     {
         "course_number": "CH EN 3853-1",
         "instructors": "",
-        "days": "TR",
-        "time_of_day": "12:25 PM-01:45 PM",
-        "duration": 80.0,
+        "days": "MWF",
+        "time_of_day": "11:50 AM-12:40 PM",
+        "duration": 50.0,
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": "75"
@@ -372,7 +372,7 @@
     {
         "course_number": "CH EN 3853-2",
         "instructors": "TA",
-        "days": "T",
+        "days": "M",
         "time_of_day": "04:10 PM-05:00 PM",
         "duration": 50.0,
         "location": "",
@@ -382,7 +382,7 @@
     {
         "course_number": "CH EN 3853-3",
         "instructors": "TA",
-        "days": "R",
+        "days": "W",
         "time_of_day": "04:10 PM-05:00 PM",
         "duration": 50.0,
         "location": "",
@@ -412,7 +412,7 @@
     {
         "course_number": "CH EN 4701-1",
         "instructors": "",
-        "days": "M",
+        "days": "T",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 3520",
@@ -422,7 +422,7 @@
     {
         "course_number": "CH EN 4701-2",
         "instructors": "",
-        "days": "W",
+        "days": "R",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 3520",
@@ -442,7 +442,7 @@
     {
         "course_number": "CH EN 4706-1",
         "instructors": "",
-        "days": "T",
+        "days": "M",
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "MEB 1292",
@@ -452,7 +452,7 @@
     {
         "course_number": "CH EN 4706-1",
         "instructors": "",
-        "days": "T",
+        "days": "M",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
@@ -462,7 +462,7 @@
     {
         "course_number": "CH EN 4706-2",
         "instructors": "",
-        "days": "R",
+        "days": "W",
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "MEB 1292",
@@ -472,7 +472,7 @@
     {
         "course_number": "CH EN 4706-2",
         "instructors": "",
-        "days": "R",
+        "days": "W",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
