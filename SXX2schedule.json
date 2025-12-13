@@ -132,8 +132,8 @@
     {
         "course_number": "CH EN 2550-2",
         "instructors": "TA",
-        "days": "F",
-        "time_of_day": "10:45 AM-11:35 AM",
+        "days": "R",
+        "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "",
         "type": "Year 2",
@@ -172,8 +172,8 @@
     {
         "course_number": "CH EN 2800-6",
         "instructors": "TA",
-        "days": "F",
-        "time_of_day": "11:50 AM-12:40 PM",
+        "days": "R",
+        "time_of_day": "03:05 PM-03:55 PM",
         "duration": 50.0,
         "location": "",
         "type": "Year 2",
@@ -522,8 +522,8 @@
     {
         "course_number": "CH EN 2310-2",
         "instructors": "TA",
-        "days": "F",
-        "time_of_day": "09:40 AM-10:30 AM",
+        "days": "R",
+        "time_of_day": "04:10 PM-05:00 PM",
         "duration": 50.0,
         "location": "",
         "type": "Year 2",
