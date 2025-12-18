@@ -156,7 +156,7 @@
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
         "location": "",
-        "type": "Year 3, Year 4",
+        "type": "Year 4",
         "anticipated_enrollment": "70"
     },
     {
@@ -346,7 +346,7 @@
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
         "location": "Online",
-        "type": "Elective, Other",
+        "type": "Elective",
         "anticipated_enrollment": "30"
     },
     {
@@ -356,7 +356,7 @@
         "time_of_day": "02:00 PM-03:20 PM",
         "duration": 80.0,
         "location": "",
-        "type": "Elective, Other",
+        "type": "Elective",
         "anticipated_enrollment": "30"
     },
     {
@@ -366,7 +366,7 @@
         "time_of_day": "02:00 PM-03:20 PM",
         "duration": 80.0,
         "location": "",
-        "type": "Elective, Other",
+        "type": "Elective",
         "anticipated_enrollment": ""
     },
     {
@@ -376,7 +376,7 @@
         "time_of_day": "03:40 PM-05:00 PM",
         "duration": 80.0,
         "location": "MEB 2550",
-        "type": "Elective, Other",
+        "type": "Elective",
         "anticipated_enrollment": "30"
     },
     {
@@ -476,7 +476,7 @@
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
         "location": "",
-        "type": "Graduate",
+        "type": "Elective",
         "anticipated_enrollment": "20"
     },
     {

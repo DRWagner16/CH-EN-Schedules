@@ -306,7 +306,7 @@
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
         "location": "",
-        "type": "Year 4, Other",
+        "type": "Year 4",
         "anticipated_enrollment": "50"
     },
     {
@@ -316,7 +316,7 @@
         "time_of_day": "08:05 AM-09:25 AM",
         "duration": 80.0,
         "location": "",
-        "type": "Elective, Other",
+        "type": "Elective",
         "anticipated_enrollment": "30"
     },
     {
@@ -326,7 +326,7 @@
         "time_of_day": "03:40 PM-05:00 PM",
         "duration": 80.0,
         "location": "MEB 2550",
-        "type": "Elective, Other",
+        "type": "Elective",
         "anticipated_enrollment": "30"
     },
     {
