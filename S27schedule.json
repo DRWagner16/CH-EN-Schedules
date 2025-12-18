@@ -163,8 +163,8 @@
         "course_number": "CH EN 3553-1",
         "instructors": "Chen",
         "days": "MWF",
-        "time_of_day": "09:40 AM-11:00 AM",
-        "duration": 80.0,
+        "time_of_day": "09:40 AM-10:30 AM",
+        "duration": 50.0,
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": "70"
