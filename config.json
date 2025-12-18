@@ -28,48 +28,6 @@
       "google_sheet_file_name": "Teaching Assignments 2025-2026",
       "worksheet_tab_name": "Fall Summary",
       "output_json_file": "F25schedule.json"
-    },
-    {
-      "id": "SXX",
-      "display_title": "Spring Outline",
-      "google_sheet_file_name": "Teaching Assignments Outline",
-      "worksheet_tab_name": "Spring Summary",
-      "output_json_file": "SXXschedule.json"
-    },
-    {
-      "id": "FXX",
-      "display_title": "Fall Outline",
-      "google_sheet_file_name": "Teaching Assignments Outline",
-      "worksheet_tab_name": "Fall Summary",
-      "output_json_file": "FXXschedule.json"
-    },
-    {
-      "id": "SXX2",
-      "display_title": "Spring Outline 2",
-      "google_sheet_file_name": "Teaching Assignments Outline 2",
-      "worksheet_tab_name": "Spring Summary",
-      "output_json_file": "SXX2schedule.json"
-    },
-    {
-      "id": "FXX2",
-      "display_title": "Fall Outline 2",
-      "google_sheet_file_name": "Teaching Assignments Outline 2",
-      "worksheet_tab_name": "Fall Summary",
-      "output_json_file": "FXX2schedule.json"
-    },
-    {
-      "id": "SXX3",
-      "display_title": "Spring Outline 3",
-      "google_sheet_file_name": "Teaching Assignments Outline 3",
-      "worksheet_tab_name": "Spring Summary",
-      "output_json_file": "SXX3schedule.json"
-    },
-    {
-      "id": "FXX3",
-      "display_title": "Fall Outline 3",
-      "google_sheet_file_name": "Teaching Assignments Outline 3",
-      "worksheet_tab_name": "Fall Summary",
-      "output_json_file": "FXX3schedule.json"
     }
   ]
 }
