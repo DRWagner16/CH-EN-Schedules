@@ -143,7 +143,7 @@
         "course_number": "CH EN 2955-1",
         "instructors": "Eddings",
         "days": "T",
-        "time_of_day": "10:45 AM-11:35 AM",
+        "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "",
         "type": "Year 2, Year 3",
@@ -186,7 +186,7 @@
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
         "location": "",
-        "type": "Year 3",
+        "type": "Year 2",
         "anticipated_enrollment": "30"
     },
     {
