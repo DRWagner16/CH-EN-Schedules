@@ -27,20 +27,20 @@
         "Notes": "",
         "": "CH EN 4903 \u2013 Projects Laboratory I",
         "predicted_schedule": [
-            "FA25",
             "FA26",
             "FA27",
             "FA28",
             "FA29",
             "FA30",
-            "SP26",
+            "FA31",
             "SP27",
             "SP28",
             "SP29",
             "SP30",
-            "SP31"
+            "SP31",
+            "SP32"
         ],
-        "Next Offering": "FA25"
+        "Next Offering": "FA26"
     },
     {
         "Course Number (UG)": "CH EN 5103",
@@ -55,14 +55,14 @@
         "Notes": "",
         "": "CH EN 4905 \u2013 Projects Laboratory II",
         "predicted_schedule": [
-            "SP26",
             "SP27",
             "SP28",
             "SP29",
             "SP30",
-            "SP31"
+            "SP31",
+            "SP32"
         ],
-        "Next Offering": "SP26"
+        "Next Offering": "SP27"
     },
     {
         "Course Number (UG)": "CH EN 5151",
@@ -137,14 +137,14 @@
         "Notes": "",
         "": "",
         "predicted_schedule": [
-            "FA25",
             "FA26",
             "FA27",
             "FA28",
             "FA29",
-            "FA30"
+            "FA30",
+            "FA31"
         ],
-        "Next Offering": "FA25"
+        "Next Offering": "FA26"
     },
     {
         "Course Number (UG)": "CH EN 5165",
@@ -204,11 +204,11 @@
         "Notes": "",
         "": "",
         "predicted_schedule": [
-            "FA25",
             "FA27",
-            "FA29"
+            "FA29",
+            "FA31"
         ],
-        "Next Offering": "FA25"
+        "Next Offering": "FA27"
     },
     {
         "Course Number (UG)": "-",
@@ -283,14 +283,14 @@
         "Notes": "Cross-listed as CH EN ",
         "": "",
         "predicted_schedule": [
-            "SP26",
             "SP27",
             "SP28",
             "SP29",
             "SP30",
-            "SP31"
+            "SP31",
+            "SP32"
         ],
-        "Next Offering": "SP26"
+        "Next Offering": "SP27"
     },
     {
         "Course Number (UG)": "CH EN 5205",
@@ -305,14 +305,14 @@
         "Notes": "",
         "": "",
         "predicted_schedule": [
-            "SP26",
             "SP27",
             "SP28",
             "SP29",
             "SP30",
-            "SP31"
+            "SP31",
+            "SP32"
         ],
-        "Next Offering": "SP26"
+        "Next Offering": "SP27"
     },
     {
         "Course Number (UG)": "-",
@@ -342,14 +342,14 @@
         "Notes": "",
         "": "",
         "predicted_schedule": [
-            "SP26",
             "SP27",
             "SP28",
             "SP29",
             "SP30",
-            "SP31"
+            "SP31",
+            "SP32"
         ],
-        "Next Offering": "SP26"
+        "Next Offering": "SP27"
     },
     {
         "Course Number (UG)": "CH EN 5230 ",
@@ -383,11 +383,11 @@
         "Notes": "Last offered S24",
         "": "",
         "predicted_schedule": [
-            "FA25",
             "FA27",
-            "FA29"
+            "FA29",
+            "FA31"
         ],
-        "Next Offering": "FA25"
+        "Next Offering": "FA27"
     },
     {
         "Course Number (UG)": "CH EN 5306",
@@ -421,14 +421,14 @@
         "Notes": "",
         "": "",
         "predicted_schedule": [
-            "FA25",
             "FA26",
             "FA27",
             "FA28",
             "FA29",
-            "FA30"
+            "FA30",
+            "FA31"
         ],
-        "Next Offering": "FA25"
+        "Next Offering": "FA26"
     },
     {
         "Course Number (UG)": "CH EN 5310",
@@ -443,14 +443,14 @@
         "Notes": "",
         "": "",
         "predicted_schedule": [
-            "FA25",
             "FA26",
             "FA27",
             "FA28",
             "FA29",
-            "FA30"
+            "FA30",
+            "FA31"
         ],
-        "Next Offering": "FA25"
+        "Next Offering": "FA26"
     },
     {
         "Course Number (UG)": "-",
@@ -480,11 +480,11 @@
         "Notes": "",
         "": "",
         "predicted_schedule": [
-            "FA25",
             "FA27",
-            "FA29"
+            "FA29",
+            "FA31"
         ],
-        "Next Offering": "FA25"
+        "Next Offering": "FA27"
     },
     {
         "Course Number (UG)": "-",
@@ -499,14 +499,14 @@
         "Notes": "",
         "": "",
         "predicted_schedule": [
-            "FA25",
             "FA26",
             "FA27",
             "FA28",
             "FA29",
-            "FA30"
+            "FA30",
+            "FA31"
         ],
-        "Next Offering": "FA25"
+        "Next Offering": "FA26"
     },
     {
         "Course Number (UG)": "CH EN 5840",
@@ -521,14 +521,14 @@
         "Notes": "",
         "": "",
         "predicted_schedule": [
-            "SP26",
             "SP27",
             "SP28",
             "SP29",
             "SP30",
-            "SP31"
+            "SP31",
+            "SP32"
         ],
-        "Next Offering": "SP26"
+        "Next Offering": "SP27"
     },
     {
         "Course Number (UG)": "-",
@@ -588,14 +588,14 @@
         "Notes": "Will be permanent elective AY 26-27",
         "": "",
         "predicted_schedule": [
-            "SP26",
             "SP27",
             "SP28",
             "SP29",
             "SP30",
-            "SP31"
+            "SP31",
+            "SP32"
         ],
-        "Next Offering": "SP26"
+        "Next Offering": "SP27"
     },
     {
         "Course Number (UG)": "CH EN 5960",
@@ -625,11 +625,11 @@
         "Notes": "Will be permanent elective AY 26-27",
         "": "",
         "predicted_schedule": [
-            "FA25",
             "FA27",
-            "FA29"
+            "FA29",
+            "FA31"
         ],
-        "Next Offering": "FA25"
+        "Next Offering": "FA27"
     },
     {
         "Course Number (UG)": "CH EN 5960",
@@ -659,14 +659,14 @@
         "Notes": "Will be CH EN 6500",
         "": "",
         "predicted_schedule": [
-            "FA25",
             "FA26",
             "FA27",
             "FA28",
             "FA29",
-            "FA30"
+            "FA30",
+            "FA31"
         ],
-        "Next Offering": "FA25"
+        "Next Offering": "FA26"
     },
     {
         "Course Number (UG)": "CH EN 5960",
@@ -681,13 +681,13 @@
         "Notes": "Will be permanent elective AY 26-27",
         "": "",
         "predicted_schedule": [
-            "SP26",
             "SP27",
             "SP28",
             "SP29",
             "SP30",
-            "SP31"
+            "SP31",
+            "SP32"
         ],
-        "Next Offering": "SP26"
+        "Next Offering": "SP27"
     }
 ]
