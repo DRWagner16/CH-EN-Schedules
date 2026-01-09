@@ -32,14 +32,14 @@
     {
       "id": "F26X",
       "display_title": "Fall 2026-2",
-      "google_sheet_file_name": "Teaching Assignments Outline 4",
+      "google_sheet_file_name": "Teaching Assignments 4",
       "worksheet_tab_name": "Fall Summary",
       "output_json_file": "F26Xschedule.json"
     },
     {
       "id": "S27X",
       "display_title": "Spring 2027-2",
-      "google_sheet_file_name": "Teaching Assignments Outline 4",
+      "google_sheet_file_name": "Teaching Assignments 4",
       "worksheet_tab_name": "Spring Summary",
       "output_json_file": "S27Xschedule.json"
     }
