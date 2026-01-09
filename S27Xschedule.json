@@ -212,7 +212,7 @@
     {
         "course_number": "CH EN 4707-1",
         "instructors": "Butterfield",
-        "days": "M",
+        "days": "T",
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "MEB 1292",
@@ -222,7 +222,7 @@
     {
         "course_number": "CH EN 4707-1",
         "instructors": "Butterfield",
-        "days": "M",
+        "days": "T",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
@@ -232,7 +232,7 @@
     {
         "course_number": "CH EN 4707-2",
         "instructors": "Butterfield",
-        "days": "W",
+        "days": "R",
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "MEB 1292",
@@ -242,7 +242,7 @@
     {
         "course_number": "CH EN 4707-2",
         "instructors": "Butterfield",
-        "days": "W",
+        "days": "R",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
