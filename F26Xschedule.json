@@ -222,9 +222,9 @@
     {
         "course_number": "CH EN 4203-1",
         "instructors": "Powell",
-        "days": "MWF",
-        "time_of_day": "09:40 AM-10:30 AM",
-        "duration": 50.0,
+        "days": "TR",
+        "time_of_day": "09:10 AM-10:30 AM",
+        "duration": 80.0,
         "location": "",
         "type": "Year 4",
         "anticipated_enrollment": "70"
@@ -252,9 +252,9 @@
     {
         "course_number": "CH EN 4253-1",
         "instructors": "Wagner",
-        "days": "MWF",
-        "time_of_day": "10:45 AM-11:35 AM",
-        "duration": 50.0,
+        "days": "TR",
+        "time_of_day": "10:45 AM-12:05 PM",
+        "duration": 80.0,
         "location": "",
         "type": "Year 4",
         "anticipated_enrollment": "70"
