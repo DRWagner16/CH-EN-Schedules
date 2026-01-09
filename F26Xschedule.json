@@ -400,16 +400,6 @@
         "anticipated_enrollment": "40"
     },
     {
-        "course_number": "CH EN 5173-2",
-        "instructors": "",
-        "days": "TR",
-        "time_of_day": "10:45 AM-12:05 PM",
-        "duration": 80.0,
-        "location": "",
-        "type": "Elective",
-        "anticipated_enrollment": "30"
-    },
-    {
         "course_number": "CH EN 6253-1",
         "instructors": "Powell",
         "days": "",
