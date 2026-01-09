@@ -120,6 +120,36 @@
         "anticipated_enrollment": "70"
     },
     {
+        "course_number": "CH EN 2300-2",
+        "instructors": "TA",
+        "days": "F",
+        "time_of_day": "08:35 AM-09:25 AM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2300-3",
+        "instructors": "TA",
+        "days": "F",
+        "time_of_day": "03:05 PM-03:55 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2300-4",
+        "instructors": "TA",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
         "course_number": "CH EN 2450-1",
         "instructors": "",
         "days": "TR",
@@ -128,6 +158,36 @@
         "location": "",
         "type": "Year 2",
         "anticipated_enrollment": "70"
+    },
+    {
+        "course_number": "CH EN 2450-2",
+        "instructors": "TA",
+        "days": "F",
+        "time_of_day": "09:40 AM-10:30 AM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2450-3",
+        "instructors": "TA",
+        "days": "F",
+        "time_of_day": "04:10 PM-05:00 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2450-4",
+        "instructors": "TA",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
     },
     {
         "course_number": "CH EN 2800-1",
@@ -140,13 +200,43 @@
         "anticipated_enrollment": "20"
     },
     {
-        "course_number": "CH EN 2953-1",
-        "instructors": "Eddings",
-        "days": "T",
+        "course_number": "CH EN 2800-2",
+        "instructors": "TA",
+        "days": "F",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
         "location": "",
-        "type": "Year 1",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2800-3",
+        "instructors": "TA",
+        "days": "F",
+        "time_of_day": "02:00 PM-02:50 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2800-4",
+        "instructors": "TA",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2953-1",
+        "instructors": "Eddings",
+        "days": "T",
+        "time_of_day": "02:00 PM-02:50 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 2, Year 3",
         "anticipated_enrollment": "90"
     },
     {
@@ -170,6 +260,36 @@
         "anticipated_enrollment": "65"
     },
     {
+        "course_number": "CH EN 3353-2",
+        "instructors": "TA",
+        "days": "M",
+        "time_of_day": "02:00 PM-02:50 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 3353-3",
+        "instructors": "TA",
+        "days": "W",
+        "time_of_day": "02:00 PM-02:50 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 3353-4",
+        "instructors": "TA",
+        "days": "",
+        "time_of_day": "02:00 PM-02:50 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
+    },
+    {
         "course_number": "CH EN 3453-1",
         "instructors": "",
         "days": "MWF",
@@ -178,6 +298,36 @@
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": "70"
+    },
+    {
+        "course_number": "CH EN 3453-2",
+        "instructors": "TA",
+        "days": "M",
+        "time_of_day": "03:05 PM-03:55 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 3453-3",
+        "instructors": "TA",
+        "days": "W",
+        "time_of_day": "03:05 PM-03:55 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 3453-4",
+        "instructors": "TA",
+        "days": "",
+        "time_of_day": "03:05 PM-03:55 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
     },
     {
         "course_number": "CH EN 3700-1",
@@ -220,6 +370,36 @@
         "anticipated_enrollment": "75"
     },
     {
+        "course_number": "CH EN 3853-2",
+        "instructors": "TA",
+        "days": "M",
+        "time_of_day": "04:10 PM-05:00 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 3853-3",
+        "instructors": "TA",
+        "days": "W",
+        "time_of_day": "04:10 PM-05:00 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 3853-4",
+        "instructors": "TA",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
+    },
+    {
         "course_number": "CH EN 4203-1",
         "instructors": "",
         "days": "MWF",
@@ -228,6 +408,26 @@
         "location": "",
         "type": "Year 4",
         "anticipated_enrollment": "70"
+    },
+    {
+        "course_number": "CH EN 4203-2",
+        "instructors": "TA",
+        "days": "T",
+        "time_of_day": "12:55 PM-01:45 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 4",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 4203-3",
+        "instructors": "TA",
+        "days": "R",
+        "time_of_day": "12:55 PM-01:45 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 4",
+        "anticipated_enrollment": ""
     },
     {
         "course_number": "CH EN 4701-1",
@@ -373,7 +573,7 @@
         "course_number": "CH EN 6840-1",
         "instructors": "Wang; Fernandes",
         "days": "TR",
-        "time_of_day": "12:25 PM-01:45 PM",
+        "time_of_day": "03:40 PM-05:00 PM",
         "duration": 80.0,
         "location": "MEB 2550",
         "type": "Elective, Other",
@@ -393,7 +593,7 @@
         "course_number": "CH EN 5960-6",
         "instructors": "Sant",
         "days": "TR",
-        "time_of_day": "03:40 PM-05:00 PM",
+        "time_of_day": "03:40 AM-05:00 AM",
         "duration": 80.0,
         "location": "",
         "type": "Elective",
