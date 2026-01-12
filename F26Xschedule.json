@@ -360,10 +360,10 @@
         "anticipated_enrollment": ""
     },
     {
-        "course_number": "CH EN 6840-1",
+        "course_number": "CH EN 5840-1",
         "instructors": "Wang; Fernandes",
         "days": "MW",
-        "time_of_day": "11:50 AM-01:10 PM",
+        "time_of_day": "03:05 PM-04:25 PM",
         "duration": 80.0,
         "location": "MEB 2550",
         "type": "Elective",
