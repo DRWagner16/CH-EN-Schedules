@@ -331,7 +331,7 @@
     },
     {
         "course_number": "CH EN 5230-1",
-        "instructors": "",
+        "instructors": "Mohanty",
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
@@ -346,16 +346,6 @@
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
         "location": "Online",
-        "type": "Elective",
-        "anticipated_enrollment": "30"
-    },
-    {
-        "course_number": "CH EN 5305-1",
-        "instructors": "",
-        "days": "TR",
-        "time_of_day": "02:00 PM-03:20 PM",
-        "duration": 80.0,
-        "location": "",
         "type": "Elective",
         "anticipated_enrollment": "30"
     },
