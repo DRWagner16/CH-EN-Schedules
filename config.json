@@ -42,6 +42,20 @@
       "google_sheet_file_name": "Teaching Assignments 4",
       "worksheet_tab_name": "Spring Summary",
       "output_json_file": "S27Xschedule.json"
+    },
+    {
+      "id": "F26Test",
+      "display_title": "Fall 2026 - Test",
+      "google_sheet_file_name": "Teaching Assignments Outline 2",
+      "worksheet_tab_name": "Fall Summary",
+      "output_json_file": "F26Tschedule.json"
+    },
+    {
+      "id": "S27Test",
+      "display_title": "Spring 2027 - Test",
+      "google_sheet_file_name": "Teaching Assignments Outline 2",
+      "worksheet_tab_name": "Spring Summary",
+      "output_json_file": "S27Tschedule.json"
     }
   ]
 }
