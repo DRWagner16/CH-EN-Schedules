@@ -352,9 +352,9 @@
     {
         "course_number": "CH EN 5306-1",
         "instructors": "Holmes",
-        "days": "TR",
-        "time_of_day": "02:00 PM-03:20 PM",
-        "duration": 80.0,
+        "days": "T",
+        "time_of_day": "02:00 PM-05:00 PM",
+        "duration": 180.0,
         "location": "",
         "type": "Elective",
         "anticipated_enrollment": ""
