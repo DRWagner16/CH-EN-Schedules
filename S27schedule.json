@@ -342,8 +342,8 @@
     {
         "course_number": "CH EN 3780-3",
         "instructors": "Firth",
-        "days": "MW",
-        "time_of_day": "03:00 PM-04:20 PM",
+        "days": "TR",
+        "time_of_day": "12:25 PM-01:45 PM",
         "duration": 80.0,
         "location": "",
         "type": "Elective",
