@@ -130,6 +130,26 @@
         "anticipated_enrollment": "70"
     },
     {
+        "course_number": "CH EN 2450-2",
+        "instructors": "",
+        "days": "T",
+        "time_of_day": "02:00 PM-02:50 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2450-3",
+        "instructors": "",
+        "days": "R",
+        "time_of_day": "02:00 PM-02:50 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
         "course_number": "CH EN 2800-1",
         "instructors": "Chen",
         "days": "TR",
@@ -301,7 +321,7 @@
     },
     {
         "course_number": "CH EN 4870-1",
-        "instructors": "Sieving",
+        "instructors": "Sieving; Wagner",
         "days": "W",
         "time_of_day": "04:10 PM-05:00 PM",
         "duration": 50.0,
@@ -362,7 +382,7 @@
     {
         "course_number": "CH EN 6840-1",
         "instructors": "Wang; Fernandes",
-        "days": "TR",
+        "days": "MW",
         "time_of_day": "03:00 PM-04:20 PM",
         "duration": 80.0,
         "location": "",
@@ -503,7 +523,7 @@
         "course_number": "CH EN 7857-1",
         "instructors": "Duan",
         "days": "F",
-        "time_of_day": "11:50 AM-01:10 PM",
+        "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
         "location": "",
         "type": "Graduate",
