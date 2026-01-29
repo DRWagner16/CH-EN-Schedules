@@ -182,9 +182,9 @@
     {
         "course_number": "CH EN 3700-2",
         "instructors": "Mathis",
-        "days": "MWF",
-        "time_of_day": "08:35 AM-09:25 AM",
-        "duration": 50.0,
+        "days": "MW",
+        "time_of_day": "11:50 AM-01:10 PM",
+        "duration": 80.0,
         "location": "",
         "type": "Year 2",
         "anticipated_enrollment": "30"
