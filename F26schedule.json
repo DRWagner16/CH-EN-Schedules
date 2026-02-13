@@ -211,7 +211,7 @@
     },
     {
         "course_number": "CH EN 3701-1",
-        "instructors": "Duan; Pershing; Wagner",
+        "instructors": "Pershing; Wagner",
         "days": "M",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
@@ -221,7 +221,7 @@
     },
     {
         "course_number": "CH EN 3701-2",
-        "instructors": "Duan; Pershing; Wagner",
+        "instructors": "Pershing; Wagner",
         "days": "W",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
