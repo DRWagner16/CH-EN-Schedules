@@ -5,7 +5,7 @@
         "days": "T",
         "time_of_day": "12:25 PM-01:45 PM",
         "duration": 80.0,
-        "location": "",
+        "location": "TBD",
         "type": "Other",
         "anticipated_enrollment": "80"
     },
@@ -55,7 +55,7 @@
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
-        "location": "",
+        "location": "M LI 1150",
         "type": "Year 1",
         "anticipated_enrollment": "100"
     },
@@ -115,7 +115,7 @@
         "days": "TR",
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
-        "location": "",
+        "location": "GC 2950",
         "type": "Year 2",
         "anticipated_enrollment": "70"
     },
@@ -125,7 +125,7 @@
         "days": "TR",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
-        "location": "",
+        "location": "ARCH 127",
         "type": "Year 2",
         "anticipated_enrollment": "70"
     },
@@ -155,7 +155,7 @@
         "days": "TR",
         "time_of_day": "12:25 PM-01:45 PM",
         "duration": 80.0,
-        "location": "",
+        "location": "MEB 4550",
         "type": "Year 2",
         "anticipated_enrollment": "20"
     },
@@ -165,7 +165,7 @@
         "days": "T",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "",
+        "location": "WEB 1230",
         "type": "Year 1",
         "anticipated_enrollment": "90"
     },
@@ -175,9 +175,9 @@
         "days": "MWF",
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
-        "location": "",
+        "location": "WEB 1250",
         "type": "Year 4",
-        "anticipated_enrollment": "70"
+        "anticipated_enrollment": "25"
     },
     {
         "course_number": "CH EN 3353-1",
@@ -185,7 +185,7 @@
         "days": "MWF",
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
-        "location": "",
+        "location": "WEB L102",
         "type": "Year 3",
         "anticipated_enrollment": "65"
     },
@@ -195,7 +195,7 @@
         "days": "MWF",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "",
+        "location": "WEB 2230 (?)",
         "type": "Year 3",
         "anticipated_enrollment": "70"
     },
@@ -205,7 +205,7 @@
         "days": "MW",
         "time_of_day": "11:50 AM-01:10 PM",
         "duration": 80.0,
-        "location": "",
+        "location": "WEB L112 (?)",
         "type": "Year 3",
         "anticipated_enrollment": "30"
     },
@@ -235,7 +235,7 @@
         "days": "MWF",
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
-        "location": "",
+        "location": "WEB L112 (?)",
         "type": "Year 3",
         "anticipated_enrollment": "75"
     },
@@ -245,7 +245,7 @@
         "days": "MWF",
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
-        "location": "",
+        "location": "FASB 295",
         "type": "Year 4",
         "anticipated_enrollment": "70"
     },
@@ -275,7 +275,7 @@
         "days": "MWF",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "",
+        "location": "WEB 1250",
         "type": "Year 4",
         "anticipated_enrollment": "70"
     },
@@ -355,7 +355,7 @@
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
-        "location": "",
+        "location": "WEB 2470",
         "type": "Elective",
         "anticipated_enrollment": ""
     },
@@ -375,7 +375,7 @@
         "days": "R",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
-        "location": "",
+        "location": "TBD",
         "type": "Elective",
         "anticipated_enrollment": ""
     },
@@ -385,7 +385,7 @@
         "days": "MW",
         "time_of_day": "03:00 PM-04:20 PM",
         "duration": 80.0,
-        "location": "",
+        "location": "FASB 101",
         "type": "Elective",
         "anticipated_enrollment": "30"
     },
@@ -405,7 +405,7 @@
         "days": "TR",
         "time_of_day": "03:00 PM-04:20 PM",
         "duration": 80.0,
-        "location": "",
+        "location": "WEB L126",
         "type": "Elective",
         "anticipated_enrollment": "40"
     },
@@ -435,7 +435,7 @@
         "days": "TR",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
-        "location": "",
+        "location": "WEB L122",
         "type": "Graduate",
         "anticipated_enrollment": "20"
     },
@@ -445,17 +445,17 @@
         "days": "MW",
         "time_of_day": "11:50 AM-01:10 PM",
         "duration": 80.0,
-        "location": "MEB 2550",
+        "location": "MEB 2550 or BEH S 104",
         "type": "Elective",
         "anticipated_enrollment": "35"
     },
     {
         "course_number": "CH EN 6703-1",
-        "instructors": "",
+        "instructors": "Sutherland",
         "days": "MW",
         "time_of_day": "01:25 PM-02:45 PM",
         "duration": 80.0,
-        "location": "",
+        "location": "WEB 1248",
         "type": "Elective",
         "anticipated_enrollment": "30"
     },
@@ -465,7 +465,7 @@
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
-        "location": "",
+        "location": "WEB L122",
         "type": "Graduate",
         "anticipated_enrollment": "20"
     },
@@ -485,7 +485,7 @@
         "days": "MWF",
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
-        "location": "",
+        "location": "WEB 1248",
         "type": "Elective",
         "anticipated_enrollment": "20"
     },
@@ -525,7 +525,7 @@
         "days": "F",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
-        "location": "",
+        "location": "ARCH 228 or FASB 250",
         "type": "Graduate",
         "anticipated_enrollment": "30"
     },

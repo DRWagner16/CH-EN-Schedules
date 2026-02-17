@@ -325,7 +325,7 @@
         "days": "MW",
         "time_of_day": "03:00 PM-04:20 PM",
         "duration": 80.0,
-        "location": "",
+        "location": "FASB 101",
         "type": "Elective",
         "anticipated_enrollment": "30"
     },
