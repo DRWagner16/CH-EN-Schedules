@@ -131,7 +131,7 @@
     },
     {
         "course_number": "CH EN 2800-2",
-        "instructors": "Fernandes",
+        "instructors": "TBD",
         "days": "TR",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
@@ -321,7 +321,7 @@
     },
     {
         "course_number": "CH EN 6840-1",
-        "instructors": "Wang; Fernandes",
+        "instructors": "Wang",
         "days": "MW",
         "time_of_day": "03:00 PM-04:20 PM",
         "duration": 80.0,

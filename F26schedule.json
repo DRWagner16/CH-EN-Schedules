@@ -195,7 +195,7 @@
         "days": "MWF",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
-        "location": "WEB 2230 (?)",
+        "location": "WEB 2230",
         "type": "Year 3",
         "anticipated_enrollment": "70"
     },
@@ -205,7 +205,7 @@
         "days": "MW",
         "time_of_day": "11:50 AM-01:10 PM",
         "duration": 80.0,
-        "location": "WEB L112 (?)",
+        "location": "WEB L112",
         "type": "Year 3",
         "anticipated_enrollment": "30"
     },
@@ -231,11 +231,11 @@
     },
     {
         "course_number": "CH EN 3853-1",
-        "instructors": "Wang",
+        "instructors": "Wang; Eddings",
         "days": "MWF",
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
-        "location": "WEB L112 (?)",
+        "location": "WEB L112",
         "type": "Year 3",
         "anticipated_enrollment": "75"
     },
@@ -380,16 +380,6 @@
         "anticipated_enrollment": ""
     },
     {
-        "course_number": "CH EN 6840-1",
-        "instructors": "Wang; Fernandes",
-        "days": "MW",
-        "time_of_day": "03:00 PM-04:20 PM",
-        "duration": 80.0,
-        "location": "FASB 101",
-        "type": "Elective",
-        "anticipated_enrollment": "30"
-    },
-    {
         "course_number": "CH EN 5950-",
         "instructors": "Eddings",
         "days": "",
@@ -451,7 +441,7 @@
     },
     {
         "course_number": "CH EN 6703-1",
-        "instructors": "Sutherland",
+        "instructors": "",
         "days": "MW",
         "time_of_day": "01:25 PM-02:45 PM",
         "duration": 80.0,
