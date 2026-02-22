@@ -325,7 +325,7 @@
         "days": "MW",
         "time_of_day": "03:00 PM-04:20 PM",
         "duration": 80.0,
-        "location": "FASB 101",
+        "location": "",
         "type": "Elective",
         "anticipated_enrollment": "30"
     },
@@ -390,7 +390,7 @@
         "anticipated_enrollment": "20"
     },
     {
-        "course_number": "CH EN 5960-7",
+        "course_number": "CH EN 5960-",
         "instructors": "Deo; McLennan; Kohl",
         "days": "",
         "time_of_day": "Online/Asynchronous",
