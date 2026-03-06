@@ -111,7 +111,7 @@
     },
     {
         "course_number": "CH EN 2300-1",
-        "instructors": "Duan",
+        "instructors": "",
         "days": "TR",
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
@@ -271,7 +271,7 @@
     },
     {
         "course_number": "CH EN 3853-1",
-        "instructors": "Wang; Eddings",
+        "instructors": "Wang; Duan",
         "days": "MWF",
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
