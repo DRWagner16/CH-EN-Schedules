@@ -1,55 +1,5 @@
 [
     {
-        "course_number": "ENGIN 1022-2",
-        "instructors": "",
-        "days": "T",
-        "time_of_day": "12:25 PM-01:45 PM",
-        "duration": 80.0,
-        "location": "WEB L101",
-        "type": "Other",
-        "anticipated_enrollment": "80"
-    },
-    {
-        "course_number": "ENGIN 1022-3",
-        "instructors": "",
-        "days": "R",
-        "time_of_day": "12:25 PM-01:45 PM",
-        "duration": 80.0,
-        "location": "MEB 2550",
-        "type": "Other",
-        "anticipated_enrollment": "20"
-    },
-    {
-        "course_number": "ENGIN 1022-4",
-        "instructors": "",
-        "days": "F",
-        "time_of_day": "11:50 AM-01:10 PM",
-        "duration": 80.0,
-        "location": "MEB 2550",
-        "type": "Other",
-        "anticipated_enrollment": "20"
-    },
-    {
-        "course_number": "ENGIN 1022-5",
-        "instructors": "",
-        "days": "F",
-        "time_of_day": "01:25 PM-02:45 PM",
-        "duration": 80.0,
-        "location": "MEB 2550",
-        "type": "Other",
-        "anticipated_enrollment": "20"
-    },
-    {
-        "course_number": "ENGIN 1022-6",
-        "instructors": "",
-        "days": "F",
-        "time_of_day": "03:00 PM-04:20 PM",
-        "duration": 80.0,
-        "location": "MEB 2550",
-        "type": "Other",
-        "anticipated_enrollment": "20"
-    },
-    {
         "course_number": "CH EN 1703-1",
         "instructors": "Butterfield",
         "days": "TR",
@@ -171,7 +121,7 @@
     },
     {
         "course_number": "CH EN 3253-1",
-        "instructors": "Deo; Wagner",
+        "instructors": "Deo",
         "days": "MWF",
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
@@ -483,9 +433,9 @@
         "course_number": "CH EN 5960-6",
         "instructors": "Sant",
         "days": "TR",
-        "time_of_day": "03:00 PM-04:20 PM",
+        "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
-        "location": "WEB L126",
+        "location": "TBD",
         "type": "Elective",
         "anticipated_enrollment": "40"
     },
