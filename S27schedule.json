@@ -260,16 +260,6 @@
         "anticipated_enrollment": "50"
     },
     {
-        "course_number": "CH EN 5308-1",
-        "instructors": "Gao",
-        "days": "MW",
-        "time_of_day": "08:05 AM-09:25 AM",
-        "duration": 80.0,
-        "location": "",
-        "type": "Elective",
-        "anticipated_enrollment": "30"
-    },
-    {
         "course_number": "CH EN 6840-1",
         "instructors": "Wang",
         "days": "MW",
