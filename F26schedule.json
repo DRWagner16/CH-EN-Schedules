@@ -241,7 +241,7 @@
     },
     {
         "course_number": "CH EN 3853-1",
-        "instructors": "Duan",
+        "instructors": "Duan; Eddings",
         "days": "MWF",
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
@@ -551,7 +551,7 @@
     },
     {
         "course_number": "CH EN 7857-1",
-        "instructors": "Duan",
+        "instructors": "",
         "days": "F",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
