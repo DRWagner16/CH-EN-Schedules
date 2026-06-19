@@ -37,6 +37,7 @@
         /* Calendar Specific Styles */
         .calendar-grid {
             display: grid;
+            position: relative; /* Fixed: Added relative positioning so absolute events stay inside */
             grid-template-columns: 60px repeat(5, 1fr);
             grid-template-rows: auto repeat(19, 30px); /* 30 min slots from 7:30 to 17:00 */
             gap: 1px;
@@ -279,30 +280,30 @@
 
     <script>
         // --- CONSTRAINTS & DEFINITIONS ---
-
+        // Updated to use exact start minutes from midnight (e.g. 7:30am = 450 mins) for perfect grid alignment
         const timeBlocks = {
             mwf: [
-                { id: 'mwf_0730', label: '7:30 am', isPrimetime: false, start: 7.5, duration: 50 },
-                { id: 'mwf_0835', label: '8:35 am', isPrimetime: false, start: 8.58, duration: 50 },
-                { id: 'mwf_0940', label: '9:40 am', isPrimetime: true, start: 9.66, duration: 50 },
-                { id: 'mwf_1045', label: '10:45 am', isPrimetime: true, start: 10.75, duration: 50 },
-                { id: 'mwf_1150', label: '11:50 am', isPrimetime: true, start: 11.83, duration: 50 },
-                { id: 'mwf_1255', label: '12:55 pm', isPrimetime: true, start: 12.91, duration: 50 },
-                { id: 'mwf_1400', label: '2:00 pm', isPrimetime: false, start: 14.0, duration: 50 },
-                { id: 'mwf_1505', label: '3:05 pm', isPrimetime: false, start: 15.08, duration: 50 },
-                { id: 'mwf_1610', label: '4:10 pm', isPrimetime: false, start: 16.16, duration: 50 }
+                { id: 'mwf_0730', label: '7:30 am', isPrimetime: false, startMin: 450, duration: 50 },
+                { id: 'mwf_0835', label: '8:35 am', isPrimetime: false, startMin: 515, duration: 50 },
+                { id: 'mwf_0940', label: '9:40 am', isPrimetime: true, startMin: 580, duration: 50 },
+                { id: 'mwf_1045', label: '10:45 am', isPrimetime: true, startMin: 645, duration: 50 },
+                { id: 'mwf_1150', label: '11:50 am', isPrimetime: true, startMin: 710, duration: 50 },
+                { id: 'mwf_1255', label: '12:55 pm', isPrimetime: true, startMin: 775, duration: 50 },
+                { id: 'mwf_1400', label: '2:00 pm', isPrimetime: false, startMin: 840, duration: 50 },
+                { id: 'mwf_1505', label: '3:05 pm', isPrimetime: false, startMin: 905, duration: 50 },
+                { id: 'mwf_1610', label: '4:10 pm', isPrimetime: false, startMin: 970, duration: 50 }
             ],
             tth: [
-                { id: 'tth_0730', label: '7:30 am', isPrimetime: false, start: 7.5, duration: 80 },
-                { id: 'tth_0910', label: '9:10 am', isPrimetime: true, start: 9.16, duration: 80 },
-                { id: 'tth_1045', label: '10:45 am', isPrimetime: true, start: 10.75, duration: 80 },
-                { id: 'tth_1225', label: '12:25 pm', isPrimetime: true, start: 12.41, duration: 80 },
-                { id: 'tth_1400', label: '2:00 pm', isPrimetime: false, start: 14.0, duration: 80 },
-                { id: 'tth_1540', label: '3:40 pm', isPrimetime: false, start: 15.66, duration: 80 }
+                { id: 'tth_0730', label: '7:30 am', isPrimetime: false, startMin: 450, duration: 80 },
+                { id: 'tth_0910', label: '9:10 am', isPrimetime: true, startMin: 550, duration: 80 },
+                { id: 'tth_1045', label: '10:45 am', isPrimetime: true, startMin: 645, duration: 80 },
+                { id: 'tth_1225', label: '12:25 pm', isPrimetime: true, startMin: 745, duration: 80 },
+                { id: 'tth_1400', label: '2:00 pm', isPrimetime: false, startMin: 840, duration: 80 },
+                { id: 'tth_1540', label: '3:40 pm', isPrimetime: false, startMin: 940, duration: 80 }
             ],
             lab: [
-                { id: 'lab_1400_mw', label: '14:00 (MW 180min)', isPrimetime: false, start: 14.0, duration: 180, days: [1, 3] },
-                { id: 'lab_1400_tth', label: '14:00 (TTh 180min)', isPrimetime: false, start: 14.0, duration: 180, days: [2, 4] }
+                { id: 'lab_1400_mw', label: '14:00 (MW 180min)', isPrimetime: false, startMin: 840, duration: 180, days: [1, 3] },
+                { id: 'lab_1400_tth', label: '14:00 (TTh 180min)', isPrimetime: false, startMin: 840, duration: 180, days: [2, 4] }
             ]
         };
 
@@ -532,12 +533,8 @@
                 container.removeChild(container.lastChild);
             }
             
-            // Generate grid cells (7:30 to 17:00, 30 min increments = 19 rows)
-            const startTime = 7.5; // 7:30 AM in decimal hours
-            
-            // To fix grid rendering, we ensure absolute positioning calculations align perfectly 
-            // with the row heights (30px per half hour) and container padding.
-            const rowHeightPx = 30;
+            // Grid spans exactly 7:30 AM to 5:00 PM (19 slots of 30 mins)
+            const startTime = 7.5; 
             
             let gridHTML = '';
             for (let r = 0; r < 19; r++) {
@@ -554,9 +551,9 @@
                 }
                 gridHTML += `</div>`;
                 
-                // 5 days columns
+                // 5 days columns (purely visual backgrounds)
                 for (let d = 1; d <= 5; d++) {
-                    gridHTML += `<div class="calendar-cell border-b border-r" data-day="${d}" data-time="${currentTime}"></div>`;
+                    gridHTML += `<div class="calendar-cell border-b border-r"></div>`;
                 }
             }
             
@@ -568,37 +565,40 @@
 
             // --- Plot Courses ---
             const getColors = (level) => {
-                if (level === 'firstYear') return 'bg-blue-100 border-blue-300 text-blue-900';
-                if (level === 'sophomore') return 'bg-indigo-100 border-indigo-300 text-indigo-900';
-                if (level === 'junior') return 'bg-purple-100 border-purple-300 text-purple-900';
-                if (level === 'senior') return 'bg-pink-100 border-pink-300 text-pink-900';
-                if (level === 'graduate') return 'bg-teal-100 border-teal-300 text-teal-900';
-                return 'bg-gray-100 border-gray-300 text-gray-900'; // elective
+                if (level === 'firstYear') return 'bg-blue-100/90 border-blue-400 text-blue-900';
+                if (level === 'sophomore') return 'bg-indigo-100/90 border-indigo-400 text-indigo-900';
+                if (level === 'junior') return 'bg-purple-100/90 border-purple-400 text-purple-900';
+                if (level === 'senior') return 'bg-pink-100/90 border-pink-400 text-pink-900';
+                if (level === 'graduate') return 'bg-teal-100/90 border-teal-400 text-teal-900';
+                return 'bg-gray-100/90 border-gray-400 text-gray-900'; // elective
             };
+
+            const gridStartMin = 450; // 7:30 AM
+            const gridTotalMins = 570; // 19 rows * 30 mins = 570 mins
 
             const plotEvent = (course, blockDef, daysArray) => {
                 const level = getCourseLevel(course);
                 const colors = getColors(level);
                 
-                const startRowOffset = ((blockDef.start - 7.5) / 0.5) + 2; 
-                const spanRows = blockDef.duration / 30;
-                
                 daysArray.forEach(dayIndex => {
                     const eventEl = document.createElement('div');
-                    // Removed flex classes that can interfere with absolute grid positioning
-                    eventEl.className = `calendar-event border ${colors} p-1`;
+                    // Add flex back for content alignment
+                    eventEl.className = `calendar-event border ${colors} p-1 flex flex-col justify-center`;
                     
+                    // Span the entire vertical space of the time rows (row 2 to 21)
+                    // We let CSS absolute positioning + percentages calculate the exact height/top within this space.
                     eventEl.style.gridColumn = `${dayIndex + 1}`;
-                    eventEl.style.gridRow = `${startRowOffset} / span ${spanRows}`;
-                    // Force the element to fill the grid cell area cleanly
-                    eventEl.style.top = '1px'; 
-                    eventEl.style.bottom = '1px';
-                    eventEl.style.left = '1px';
-                    eventEl.style.right = '1px';
+                    eventEl.style.gridRow = `2 / 21`; 
+                    
+                    const topPercent = ((blockDef.startMin - gridStartMin) / gridTotalMins) * 100;
+                    const heightPercent = (blockDef.duration / gridTotalMins) * 100;
+                    
+                    eventEl.style.top = `${topPercent}%`;
+                    eventEl.style.height = `${heightPercent}%`;
                     
                     eventEl.innerHTML = `
                         <div class="font-bold text-[10px] leading-tight">${course.prefix} ${course.num}</div>
-                        <div class="truncate opacity-80 text-[9px] leading-tight">${course.name}</div>
+                        <div class="truncate opacity-80 text-[9px] leading-tight mt-0.5">${course.name}</div>
                     `;
                     
                     const editorCard = document.getElementById(`course-${course.id}`);
@@ -610,12 +610,20 @@
                 });
             };
 
+            const filterSemester = document.getElementById('filterSemester').value;
+            const matchesSemesterFilter = (course) => {
+                if (filterSemester === 'all') return true;
+                if (!course.semesters) return true;
+                return course.semesters.toLowerCase().includes(filterSemester.toLowerCase());
+            };
+
             // Loop through scheduled blocks
             Object.keys(scheduleState).forEach(blockId => {
                 if (blockId === 'unscheduled') return;
                 
                 const coursesInBlock = scheduleState[blockId].map(id => courses.find(c => c.id === id)).filter(Boolean);
-                if (coursesInBlock.length === 0) return;
+                const visibleCourses = coursesInBlock.filter(matchesSemesterFilter);
+                if (visibleCourses.length === 0) return;
 
                 let blockDef = null;
                 let days = [];
@@ -632,7 +640,7 @@
                 }
 
                 if (blockDef) {
-                    coursesInBlock.forEach(course => plotEvent(course, blockDef, days));
+                    visibleCourses.forEach(course => plotEvent(course, blockDef, days));
                 }
             });
         }
