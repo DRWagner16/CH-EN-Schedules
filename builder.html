@@ -37,12 +37,13 @@
         /* Calendar Specific Styles */
         .calendar-grid {
             display: grid;
-            position: relative; /* Fixed: Added relative positioning so absolute events stay inside */
+            position: relative; 
             grid-template-columns: 60px repeat(5, 1fr);
             grid-template-rows: auto repeat(19, 30px); /* 30 min slots from 7:30 to 17:00 */
             gap: 1px;
             background-color: #e5e7eb;
             border: 1px solid #e5e7eb;
+            min-width: 700px; 
         }
         .calendar-header {
             background-color: #f9fafb;
@@ -64,10 +65,13 @@
             background-color: white;
             position: relative;
         }
+        .calendar-day-col {
+            position: relative;
+            background-color: white;
+            grid-row: 2 / span 19;
+        }
         .calendar-event {
             position: absolute;
-            left: 2px;
-            right: 2px;
             border-radius: 4px;
             padding: 4px;
             font-size: 0.7rem;
@@ -248,8 +252,8 @@
                 </div>
 
                 <!-- CALENDAR VIEW -->
-                <div id="view-calendar" class="hidden bg-white p-4 rounded-lg shadow-sm border border-gray-200">
-                    <div class="flex justify-between items-center mb-4">
+                <div id="view-calendar" class="hidden bg-white p-4 rounded-lg shadow-sm border border-gray-200 overflow-x-auto">
+                    <div class="flex justify-between items-center mb-4 min-w-[700px]">
                         <h3 class="text-lg font-bold text-gray-800">Weekly Schedule</h3>
                         <div class="flex gap-2 text-xs">
                             <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-blue-200 border border-blue-300"></span> First-Year</span>
@@ -529,7 +533,7 @@
             const container = document.getElementById('calendar-container');
             
             // Keep the first 6 elements (headers)
-            while (container.childNodes.length > 12) {
+            while (container.childNodes.length > 6) {
                 container.removeChild(container.lastChild);
             }
             
@@ -547,68 +551,39 @@
                 // Time label column
                 gridHTML += `<div class="calendar-cell border-b border-r bg-gray-50 relative">`;
                 if (r > 0) { 
-                     gridHTML += `<div class="calendar-time-label absolute w-full top-0">${displayHour}:${min} ${ampm}</div>`;
+                     gridHTML += `<div class="calendar-time-label absolute w-full top-0 z-20">${displayHour}:${min} ${ampm}</div>`;
                 }
                 gridHTML += `</div>`;
                 
-                // 5 days columns (purely visual backgrounds)
+                // 5 days columns (purely visual row backgrounds)
                 for (let d = 1; d <= 5; d++) {
-                    gridHTML += `<div class="calendar-cell border-b border-r"></div>`;
+                    gridHTML += `<div class="calendar-cell border-b border-r border-gray-100"></div>`;
                 }
             }
             
+            // Create a positioning container for each of the 5 days to hold absolutely positioned events
+            for (let d = 1; d <= 5; d++) {
+                gridHTML += `<div class="calendar-day-col border-r border-gray-200" id="cal-day-${d}" style="grid-column: ${d + 1};"></div>`;
+            }
+
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = gridHTML;
             while (tempDiv.firstChild) {
                 container.appendChild(tempDiv.firstChild);
             }
 
-            // --- Plot Courses ---
+            // --- Collect and Plot Courses ---
             const getColors = (level) => {
-                if (level === 'firstYear') return 'bg-blue-100/90 border-blue-400 text-blue-900';
-                if (level === 'sophomore') return 'bg-indigo-100/90 border-indigo-400 text-indigo-900';
-                if (level === 'junior') return 'bg-purple-100/90 border-purple-400 text-purple-900';
-                if (level === 'senior') return 'bg-pink-100/90 border-pink-400 text-pink-900';
-                if (level === 'graduate') return 'bg-teal-100/90 border-teal-400 text-teal-900';
-                return 'bg-gray-100/90 border-gray-400 text-gray-900'; // elective
+                if (level === 'firstYear') return 'bg-blue-100/95 border-blue-400 text-blue-900';
+                if (level === 'sophomore') return 'bg-indigo-100/95 border-indigo-400 text-indigo-900';
+                if (level === 'junior') return 'bg-purple-100/95 border-purple-400 text-purple-900';
+                if (level === 'senior') return 'bg-pink-100/95 border-pink-400 text-pink-900';
+                if (level === 'graduate') return 'bg-teal-100/95 border-teal-400 text-teal-900';
+                return 'bg-gray-100/95 border-gray-400 text-gray-900'; // elective
             };
 
             const gridStartMin = 450; // 7:30 AM
             const gridTotalMins = 570; // 19 rows * 30 mins = 570 mins
-
-            const plotEvent = (course, blockDef, daysArray) => {
-                const level = getCourseLevel(course);
-                const colors = getColors(level);
-                
-                daysArray.forEach(dayIndex => {
-                    const eventEl = document.createElement('div');
-                    // Add flex back for content alignment
-                    eventEl.className = `calendar-event border ${colors} p-1 flex flex-col justify-center`;
-                    
-                    // Span the entire vertical space of the time rows (row 2 to 21)
-                    // We let CSS absolute positioning + percentages calculate the exact height/top within this space.
-                    eventEl.style.gridColumn = `${dayIndex + 1}`;
-                    eventEl.style.gridRow = `2 / 21`; 
-                    
-                    const topPercent = ((blockDef.startMin - gridStartMin) / gridTotalMins) * 100;
-                    const heightPercent = (blockDef.duration / gridTotalMins) * 100;
-                    
-                    eventEl.style.top = `${topPercent}%`;
-                    eventEl.style.height = `${heightPercent}%`;
-                    
-                    eventEl.innerHTML = `
-                        <div class="font-bold text-[10px] leading-tight">${course.prefix} ${course.num}</div>
-                        <div class="truncate opacity-80 text-[9px] leading-tight mt-0.5">${course.name}</div>
-                    `;
-                    
-                    const editorCard = document.getElementById(`course-${course.id}`);
-                    if (editorCard && editorCard.classList.contains('conflict-glow')) {
-                        eventEl.classList.add('border-red-500', 'border-2', 'conflict-glow');
-                    }
-                    
-                    container.appendChild(eventEl);
-                });
-            };
 
             const filterSemester = document.getElementById('filterSemester').value;
             const matchesSemesterFilter = (course) => {
@@ -617,7 +592,10 @@
                 return course.semesters.toLowerCase().includes(filterSemester.toLowerCase());
             };
 
-            // Loop through scheduled blocks
+            // Array to hold all events scheduled to map them by day for overlap calculation
+            let eventsByDay = { 1: [], 2: [], 3: [], 4: [], 5: [] };
+
+            // 1. Gather all events
             Object.keys(scheduleState).forEach(blockId => {
                 if (blockId === 'unscheduled') return;
                 
@@ -640,8 +618,84 @@
                 }
 
                 if (blockDef) {
-                    visibleCourses.forEach(course => plotEvent(course, blockDef, days));
+                    visibleCourses.forEach(course => {
+                        days.forEach(day => {
+                            eventsByDay[day].push({
+                                course: course,
+                                startMin: blockDef.startMin,
+                                endMin: blockDef.startMin + blockDef.duration,
+                                duration: blockDef.duration
+                            });
+                        });
+                    });
                 }
+            });
+
+            // 2. Calculate Overlaps & Render
+            Object.keys(eventsByDay).forEach(day => {
+                let dayEvents = eventsByDay[day];
+                // Sort by start time
+                dayEvents.sort((a, b) => a.startMin - b.startMin);
+
+                // Group overlapping events
+                let eventGroups = [];
+                let currentGroup = [];
+
+                dayEvents.forEach(evt => {
+                    if (currentGroup.length === 0) {
+                        currentGroup.push(evt);
+                    } else {
+                        // Check if it overlaps with any event in the current group
+                        let overlaps = currentGroup.some(gEvt => {
+                            return Math.max(gEvt.startMin, evt.startMin) < Math.min(gEvt.endMin, evt.endMin);
+                        });
+
+                        if (overlaps) {
+                            currentGroup.push(evt);
+                        } else {
+                            eventGroups.push(currentGroup);
+                            currentGroup = [evt];
+                        }
+                    }
+                });
+                if (currentGroup.length > 0) eventGroups.push(currentGroup);
+
+                // 3. Render each group into the day column
+                const dayColContainer = document.getElementById(`cal-day-${day}`);
+                if (!dayColContainer) return;
+
+                eventGroups.forEach(group => {
+                    const groupSize = group.length;
+                    const widthPercent = 100 / groupSize;
+
+                    group.forEach((evt, index) => {
+                        const level = getCourseLevel(evt.course);
+                        const colors = getColors(level);
+                        
+                        const eventEl = document.createElement('div');
+                        eventEl.className = `calendar-event border ${colors} p-1 flex flex-col justify-center`;
+                        
+                        const topPercent = ((evt.startMin - gridStartMin) / gridTotalMins) * 100;
+                        const heightPercent = (evt.duration / gridTotalMins) * 100;
+                        
+                        eventEl.style.top = `${topPercent}%`;
+                        eventEl.style.height = `${heightPercent}%`;
+                        eventEl.style.left = `${index * widthPercent}%`;
+                        eventEl.style.width = `${widthPercent}%`;
+                        
+                        eventEl.innerHTML = `
+                            <div class="font-bold text-[10px] leading-tight">${evt.course.prefix} ${evt.course.num}</div>
+                            <div class="truncate opacity-80 text-[9px] leading-tight mt-0.5" title="${evt.course.name}">${evt.course.name}</div>
+                        `;
+                        
+                        const editorCard = document.getElementById(`course-${evt.course.id}`);
+                        if (editorCard && editorCard.classList.contains('conflict-glow')) {
+                            eventEl.classList.add('border-red-500', 'border-2', 'conflict-glow');
+                        }
+                        
+                        dayColContainer.appendChild(eventEl);
+                    });
+                });
             });
         }
 
