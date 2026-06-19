@@ -104,6 +104,12 @@
         <div class="p-4 border-b border-gray-100 flex flex-col gap-2">
             <input type="text" id="courseSearch" placeholder="Search courses..." class="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-red-500">
             <div class="flex gap-2">
+                <select id="filterSemester" class="w-full px-2 py-1 text-xs border border-gray-300 rounded-md bg-gray-50 focus:outline-none">
+                    <option value="all">All Semesters</option>
+                    <option value="Fall">Fall</option>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                </select>
                 <select id="filterLevel" class="w-full px-2 py-1 text-xs border border-gray-300 rounded-md bg-gray-50 focus:outline-none">
                     <option value="all">All Levels</option>
                     <option value="firstYear">First-Year Core</option>
@@ -448,6 +454,7 @@
                         ${level !== 'elective' ? `<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-medium ${levelBadgeColor}">${level}</span>` : ''}
                         ${emphasisBadges}
                     </div>
+                    ${course.semesters ? `<div class="mt-1 text-[10px] font-medium text-blue-600 bg-blue-50 px-1 rounded inline-block"><i class="far fa-calendar-alt"></i> ${course.semesters}</div>` : ''}
                     <!-- Hidden conflict indicator -->
                     <div class="conflict-indicator hidden mt-1 text-[10px] text-red-600 font-bold bg-red-50 p-1 rounded"></div>
                 </div>
@@ -466,6 +473,14 @@
 
             const searchTerm = document.getElementById('courseSearch').value.toLowerCase();
             const filterLevel = document.getElementById('filterLevel').value;
+            const filterSemester = document.getElementById('filterSemester').value;
+
+            // Helper function to check if a course should be visible based on the semester filter
+            const matchesSemesterFilter = (course) => {
+                if (filterSemester === 'all') return true;
+                if (!course.semesters) return true; // If no data, show it
+                return course.semesters.toLowerCase().includes(filterSemester.toLowerCase());
+            };
 
             // Render Unscheduled
             let unscheduledCount = 0;
@@ -480,7 +495,7 @@
                                      (filterLevel === 'elective' && level === 'elective') || 
                                      level === filterLevel;
 
-                if (matchesSearch && matchesLevel) {
+                if (matchesSearch && matchesLevel && matchesSemesterFilter(course)) {
                     document.getElementById('unscheduled-list').innerHTML += createCourseCard(course);
                     unscheduledCount++;
                 }
@@ -495,7 +510,7 @@
 
                     scheduleState[blockId].forEach(courseId => {
                         const course = courses.find(c => c.id === courseId);
-                        if (course) {
+                        if (course && matchesSemesterFilter(course)) {
                             blockContainer.innerHTML += createCourseCard(course);
                         }
                     });
@@ -519,6 +534,10 @@
             
             // Generate grid cells (7:30 to 17:00, 30 min increments = 19 rows)
             const startTime = 7.5; // 7:30 AM in decimal hours
+            
+            // To fix grid rendering, we ensure absolute positioning calculations align perfectly 
+            // with the row heights (30px per half hour) and container padding.
+            const rowHeightPx = 30;
             
             let gridHTML = '';
             for (let r = 0; r < 19; r++) {
@@ -566,14 +585,20 @@
                 
                 daysArray.forEach(dayIndex => {
                     const eventEl = document.createElement('div');
-                    eventEl.className = `calendar-event border ${colors} flex flex-col justify-center`;
+                    // Removed flex classes that can interfere with absolute grid positioning
+                    eventEl.className = `calendar-event border ${colors} p-1`;
                     
                     eventEl.style.gridColumn = `${dayIndex + 1}`;
                     eventEl.style.gridRow = `${startRowOffset} / span ${spanRows}`;
+                    // Force the element to fill the grid cell area cleanly
+                    eventEl.style.top = '1px'; 
+                    eventEl.style.bottom = '1px';
+                    eventEl.style.left = '1px';
+                    eventEl.style.right = '1px';
                     
                     eventEl.innerHTML = `
-                        <div class="font-bold">${course.prefix} ${course.num}</div>
-                        <div class="truncate opacity-80">${course.name}</div>
+                        <div class="font-bold text-[10px] leading-tight">${course.prefix} ${course.num}</div>
+                        <div class="truncate opacity-80 text-[9px] leading-tight">${course.name}</div>
                     `;
                     
                     const editorCard = document.getElementById(`course-${course.id}`);
@@ -697,8 +722,17 @@
             // Pass 1: Calculate Global Eligible Denominator
             Object.keys(scheduleState).forEach(blockId => {
                 if (blockId === 'unscheduled') return;
-                const blockCourses = scheduleState[blockId].map(id => courses.find(c => c.id === id));
-                blockCourses.forEach(c => {
+                const blockCourses = scheduleState[blockId].map(id => courses.find(c => c.id === id)).filter(Boolean);
+                
+                // ONLY evaluate constraints for courses currently visible via the Semester filter
+                const filterSemester = document.getElementById('filterSemester').value;
+                const visibleCourses = blockCourses.filter(c => {
+                    if (filterSemester === 'all') return true;
+                    if (!c.semesters) return true;
+                    return c.semesters.toLowerCase().includes(filterSemester.toLowerCase());
+                });
+
+                visibleCourses.forEach(c => {
                     if (isUndergradGrad(c)) {
                         globalTotalEligible++;
                     }
@@ -709,8 +743,17 @@
             Object.keys(scheduleState).forEach(blockId => {
                 if (blockId === 'unscheduled') return;
 
-                const blockCourses = scheduleState[blockId].map(id => courses.find(c => c.id === id));
-                if (blockCourses.length === 0) return;
+                const blockCourses = scheduleState[blockId].map(id => courses.find(c => c.id === id)).filter(Boolean);
+                
+                // ONLY evaluate constraints for courses currently visible via the Semester filter
+                const filterSemester = document.getElementById('filterSemester').value;
+                const visibleCourses = blockCourses.filter(c => {
+                    if (filterSemester === 'all') return true;
+                    if (!c.semesters) return true;
+                    return c.semesters.toLowerCase().includes(filterSemester.toLowerCase());
+                });
+
+                if (visibleCourses.length === 0) return;
 
                 // --- Analytics Collection ---
                 let blockConfig = null;
@@ -718,7 +761,7 @@
                 if(blockId.startsWith('mwf')) { blockConfig = timeBlocks.mwf.find(b => b.id === blockId); dayType = 'mwf'; }
                 else if(blockId.startsWith('tth')) { blockConfig = timeBlocks.tth.find(b => b.id === blockId); dayType = 'tth'; }
                 
-                blockCourses.forEach(c => {
+                visibleCourses.forEach(c => {
                     if (isUndergradGrad(c)) {
                         if (blockConfig && blockConfig.isPrimetime) {
                             totalPT++;
@@ -733,7 +776,7 @@
 
                 // 1. Check Cohort Overlaps
                 const cohortsPresent = {};
-                blockCourses.forEach(c => {
+                visibleCourses.forEach(c => {
                     const level = getCourseLevel(c);
                     if (level !== 'elective') {
                         if (!cohortsPresent[level]) cohortsPresent[level] = [];
@@ -750,7 +793,7 @@
 
                 // 2. Check Emphasis Overlaps
                 const emphasesPresent = {};
-                blockCourses.forEach(c => {
+                visibleCourses.forEach(c => {
                     const tags = getCourseEmphases(c);
                     tags.forEach(t => {
                         if (!emphasesPresent[t]) emphasesPresent[t] = [];
