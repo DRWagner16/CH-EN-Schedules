@@ -553,10 +553,11 @@
         function renderCalendar() {
             const container = document.getElementById('calendar-container');
             
-            // Keep the first 6 elements (headers)
-            while (container.childNodes.length > 6) {
-                container.removeChild(container.lastChild);
-            }
+            // IMPORTANT FIX: Remove all non-header elements safely using querySelectorAll 
+            // instead of childNodes length, because browsers count invisible whitespace/newlines 
+            // as child nodes, which was accidentally deleting the Wed/Thu/Fri columns!
+            const oldGridElements = container.querySelectorAll(':scope > div:not(.calendar-header)');
+            oldGridElements.forEach(el => el.remove());
             
             // Grid spans exactly 7:30 AM to 5:00 PM (19 slots of 30 mins)
             const startTime = 7.5; 
