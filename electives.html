@@ -50,8 +50,9 @@
                 <div id="elective-grid" class="offering-grid"></div>
             </div>
 
-            <div id="emphasis-calculator" class="calculator-panel" style="margin: 20px 0; padding: 15px; border: 1px solid #ccc; background-color: #fff;">
-                <h3 style="margin-top: 0;">Emphasis Coverage (2-Year Requirement Check)</h3>
+            <div id="emphasis-calculator" class="calculator-panel" style="margin: 20px 0; padding: 15px; border: 1px solid #ccc; background-color: #fff; border-radius: 6px;">
+                <h3 style="margin-top: 0;">Program Health (2-Year Requirement Check)</h3>
+                <p style="font-size: 0.85em; color: #666; margin-bottom: 15px;">This audits the master catalog to ensure 100% of courses in an emphasis are offered within the next two years, regardless of active UI filters.</p>
                 <div id="coverage-results" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;"></div>
             </div>
 
@@ -79,84 +80,5 @@
     </div>
 
     <script src="electives.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Slight delay to ensure electives.js finishes populating the table
-            setTimeout(calculateEmphasisCoverage, 500);
-        });
-
-        function calculateEmphasisCoverage() {
-            // Emphases mapping
-            const emphases = ["Energy Engineering", "Materials", "Biochemical", "Process Control", "Environmental"]; 
-            const currentYear = new Date().getFullYear();
-            const tableRows = document.querySelectorAll("#electives-table-body tr"); 
-            
-            let coverage = {};
-            emphases.forEach(e => coverage[e] = { total: 0, compliant: 0, missing: [] });
-
-            tableRows.forEach(row => {
-                const cells = row.querySelectorAll("td");
-                if(cells.length < 5) return;
-                
-                const courseName = cells[0].innerText.trim();
-                const programsStr = cells[2].innerText.trim(); // "Program(s)" column
-                const nextOffering = cells[4].innerText.trim(); // "Next Offering" column
-                
-                const yearMatch = nextOffering.match(/\d{4}/);
-                let isCompliant = false;
-                
-                if (yearMatch) {
-                    const offeringYear = parseInt(yearMatch[0], 10);
-                    // Check if offering is within the next 2 years
-                    if (offeringYear <= currentYear + 2) {
-                        isCompliant = true;
-                    }
-                }
-                
-                emphases.forEach(emp => {
-                    if (programsStr.includes(emp)) {
-                        coverage[emp].total++;
-                        if (isCompliant) {
-                            coverage[emp].compliant++;
-                        } else {
-                            coverage[emp].missing.push(courseName);
-                        }
-                    }
-                });
-            });
-            
-            renderCoverageResults(coverage);
-        }
-
-        function renderCoverageResults(coverage) {
-            const container = document.getElementById("coverage-results");
-            container.innerHTML = "";
-            
-            for (const [emp, data] of Object.entries(coverage)) {
-                // Determine satisfaction: At least one course scheduled, and no critical gaps (or adjust logic as needed)
-                const isSatisfied = data.compliant > 0; 
-                const color = isSatisfied ? "#2e7d32" : "#c62828";
-                const bgColor = isSatisfied ? "#e8f5e9" : "#ffebee";
-                
-                let html = `
-                    <div style="padding: 10px; border-left: 4px solid ${color}; background: ${bgColor};">
-                        <h4 style="margin: 0 0 5px 0;">${emp}</h4>
-                        <p style="margin: 0; font-size: 0.9em;">
-                            Status: <strong style="color: ${color}">${isSatisfied ? 'Compliant' : 'Action Required'}</strong><br>
-                            Courses <= 2 years: ${data.compliant} / ${data.total}
-                        </p>
-                `;
-                
-                if (!isSatisfied && data.missing.length > 0) {
-                    html += `<p style="margin: 5px 0 0 0; font-size: 0.85em; color: #666;">
-                             <em>At Risk: ${data.missing.join(", ")}</em></p>`;
-                }
-                
-                html += `</div>`;
-                container.innerHTML += html;
-            }
-        }
-    </script>
 </body>
 </html>
