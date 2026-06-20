@@ -99,29 +99,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // --- EMPHASIS CALCULATOR ENGINE ---
+    // --- EMPHASIS CALCULATOR ENGINE ---
     function calculateEmphasisCoverage(courses) {
         const emphases = Object.keys(builderEmphases); // Dynamically grab names from our source of truth
         const currentYear = new Date().getFullYear();
+        
+        // 1. Generate valid semester codes for current year + next 2 years (e.g., FA26, SP27)
+        const validSemesters = [];
+        for (let i = 0; i <= 2; i++) {
+            const yy = String(currentYear + i).slice(-2);
+            validSemesters.push(`FA${yy}`, `SP${yy}`, `SU${yy}`);
+        }
         
         let coverage = {};
         emphases.forEach(e => coverage[e] = { total: 0, compliant: 0, missing: [] });
 
         courses.forEach(course => {
             const programsStr = course.Program || "";
-            const nextOffering = course['Next Offering'] || "";
-            
             const ug = course['Course Number (UG)'];
             const gr = course['Course Number (GR)'];
             const courseName = ug ? ug : (gr ? gr : 'Unknown');
             
-            // Check the "Next Offering" column for a year
-            const yearMatch = nextOffering.match(/\d{4}/);
             let isCompliant = false;
+
+            // 2. PRIMARY CHECK: Does it have a checkmark in the grid within the next 2 years?
+            const schedule = course.predicted_schedule || [];
+            if (Array.isArray(schedule) && schedule.length > 0) {
+                isCompliant = schedule.some(sem => validSemesters.includes(sem));
+            } else if (typeof schedule === 'string' && schedule.trim() !== '') {
+                // Failsafe in case it imports as a comma-separated string
+                isCompliant = validSemesters.some(sem => schedule.includes(sem));
+            }
             
-            if (yearMatch) {
-                const offeringYear = parseInt(yearMatch[0], 10);
-                if (offeringYear <= currentYear + 2) {
-                    isCompliant = true;
+            // 3. FALLBACK CHECK: Look at the "Next Offering" text column just in case
+            if (!isCompliant) {
+                const nextOffering = course['Next Offering'] || "";
+                const yearMatch = nextOffering.match(/\d{4}/);
+                if (yearMatch) {
+                    const offeringYear = parseInt(yearMatch[0], 10);
+                    if (offeringYear <= currentYear + 2) {
+                        isCompliant = true;
+                    }
                 }
             }
             
