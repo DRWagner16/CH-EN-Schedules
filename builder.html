@@ -553,9 +553,6 @@
         function renderCalendar() {
             const container = document.getElementById('calendar-container');
             
-            // IMPORTANT FIX: Remove all non-header elements safely using querySelectorAll 
-            // instead of childNodes length, because browsers count invisible whitespace/newlines 
-            // as child nodes, which was accidentally deleting the Wed/Thu/Fri columns!
             const oldGridElements = container.querySelectorAll(':scope > div:not(.calendar-header)');
             oldGridElements.forEach(el => el.remove());
             
@@ -567,18 +564,13 @@
                 const currentTime = startTime + (r * 0.5);
                 const hour = Math.floor(currentTime);
                 const min = (currentTime % 1 === 0) ? '00' : '30';
-                const ampm = hour >= 12 && hour < 24 ? 'pm' : 'am';
-                const displayHour = hour > 12 ? hour - 12 : hour;
                 
                 // Time label column
                 gridHTML += `<div class="calendar-cell bg-gray-50 relative">`;
                 
-                // Top inline style ensures alignment with the horizontal lines without being clipped
-                if (r === 0) {
-                     gridHTML += `<div class="calendar-time-label absolute w-full z-20" style="transform: none; top: 4px;">${displayHour}:${min} ${ampm}</div>`;
-                } else {
-                     gridHTML += `<div class="calendar-time-label absolute w-full top-0 z-20">${displayHour}:${min} ${ampm}</div>`;
-                }
+                // FIX: Override the CSS transform so the text aligns with the top of the grid cell, exactly where the event blocks start.
+                gridHTML += `<div class="calendar-time-label absolute w-full z-20" style="transform: none; top: 0px; padding-top: 4px;">${hour}:${min}</div>`;
+                
                 gridHTML += `</div>`;
                 
                 // 5 days columns (purely visual cells to generate grid gaps)
@@ -587,8 +579,6 @@
                 }
             }
             
-            // Create a positioning container for each of the 5 days to hold absolutely positioned events
-            // Since this no longer has a white background, it won't cover up the horizontal grid lines
             for (let d = 1; d <= 5; d++) {
                 gridHTML += `<div class="calendar-day-col" id="cal-day-${d}" style="grid-column: ${d + 1};"></div>`;
             }
@@ -619,10 +609,8 @@
                 return course.semesters.toLowerCase().includes(filterSemester.toLowerCase());
             };
 
-            // Array to hold all events scheduled to map them by day for overlap calculation
             let eventsByDay = { 1: [], 2: [], 3: [], 4: [], 5: [] };
 
-            // 1. Gather all events
             Object.keys(scheduleState).forEach(blockId => {
                 if (blockId === 'unscheduled') return;
                 
@@ -646,7 +634,6 @@
 
                 if (blockDef) {
                     visibleCourses.forEach(course => {
-                        // Apply grade level toggles to the calendar view
                         const level = getCourseLevel(course);
                         if (!calendarFilters[level]) return;
                         
@@ -662,13 +649,10 @@
                 }
             });
 
-            // 2. Calculate Overlaps & Render Side-by-Side
             Object.keys(eventsByDay).forEach(day => {
                 let dayEvents = eventsByDay[day];
-                // Sort by start time
                 dayEvents.sort((a, b) => a.startMin - b.startMin);
 
-                // Group overlapping events
                 let eventGroups = [];
                 let currentGroup = [];
 
@@ -676,7 +660,6 @@
                     if (currentGroup.length === 0) {
                         currentGroup.push(evt);
                     } else {
-                        // Check if it overlaps with any event in the current group
                         let overlaps = currentGroup.some(gEvt => {
                             return Math.max(gEvt.startMin, evt.startMin) < Math.min(gEvt.endMin, evt.endMin);
                         });
@@ -691,7 +674,6 @@
                 });
                 if (currentGroup.length > 0) eventGroups.push(currentGroup);
 
-                // 3. Render each group into the day column
                 const dayColContainer = document.getElementById(`cal-day-${day}`);
                 if (!dayColContainer) return;
 
