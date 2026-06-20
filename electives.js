@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 let mappedPrograms = [];
                 
                 for (const [empName, coreCourses] of Object.entries(builderEmphases)) {
-                    // If the course number exists in our builder array, map it to this program
-                    if (coreCourses.some(num => courseNums.includes(num))) {
+                    // Fuzzy match: checks if the spreadsheet cell text contains the 4-digit number
+                    if (coreCourses.some(num => courseNums.some(cn => cn.includes(num)))) {
                         mappedPrograms.push(empName);
                     }
                 }
