@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
             allElectives = data;
             populateElectiveFilters(data);
             filterAndDisplayElectives();
+            
+            // Trigger the calculator exactly when data is ready, using the raw data
+            calculateEmphasisCoverage(data); 
         })
         .catch(error => {
             console.error('Error fetching electives data:', error);
@@ -56,15 +59,85 @@ document.addEventListener('DOMContentLoaded', () => {
             return programMatch && frequencyMatch && certaintyMatch;
         });
 
-        // Call both display functions
         displayOfferingGrid(filteredCourses);
         displayElectivesTable(filteredCourses);
     }
     
-    function displayOfferingGrid(courses) {
-        electiveGrid.innerHTML = ''; // Clear previous grid
+    // --- EMPHASIS CALCULATOR ENGINE ---
+    function calculateEmphasisCoverage(courses) {
+        const emphases = ["Energy Engineering", "Materials", "Biochemical", "Process Control", "Environmental"]; 
+        const currentYear = new Date().getFullYear();
+        
+        let coverage = {};
+        emphases.forEach(e => coverage[e] = { total: 0, compliant: 0, missing: [] });
 
-        // Create headers
+        courses.forEach(course => {
+            const programsStr = course.Program || "";
+            const nextOffering = course['Next Offering'] || "";
+            
+            // Prefer UG number, fallback to GR number
+            const ug = course['Course Number (UG)'];
+            const gr = course['Course Number (GR)'];
+            const courseName = ug ? ug : (gr ? gr : 'Unknown');
+            
+            const yearMatch = nextOffering.match(/\d{4}/);
+            let isCompliant = false;
+            
+            if (yearMatch) {
+                const offeringYear = parseInt(yearMatch[0], 10);
+                if (offeringYear <= currentYear + 2) {
+                    isCompliant = true;
+                }
+            }
+            
+            emphases.forEach(emp => {
+                if (programsStr.includes(emp)) {
+                    coverage[emp].total++;
+                    if (isCompliant) {
+                        coverage[emp].compliant++;
+                    } else {
+                        coverage[emp].missing.push(courseName);
+                    }
+                }
+            });
+        });
+        
+        renderCoverageResults(coverage);
+    }
+
+    function renderCoverageResults(coverage) {
+        const container = document.getElementById("coverage-results");
+        container.innerHTML = "";
+        
+        for (const [emp, data] of Object.entries(coverage)) {
+            // New strict rule: 100% of courses must be compliant (missing array must be empty)
+            const isSatisfied = data.total > 0 && data.missing.length === 0; 
+            
+            const color = isSatisfied ? "#2e7d32" : "#c62828";
+            const bgColor = isSatisfied ? "#e8f5e9" : "#ffebee";
+            
+            let html = `
+                <div style="padding: 10px; border-left: 4px solid ${color}; background: ${bgColor}; border-radius: 0 4px 4px 0;">
+                    <h4 style="margin: 0 0 5px 0;">${emp}</h4>
+                    <p style="margin: 0; font-size: 0.9em;">
+                        Status: <strong style="color: ${color}">${isSatisfied ? 'Compliant' : 'Action Required'}</strong><br>
+                        Courses <= 2 years: ${data.compliant} / ${data.total}
+                    </p>
+            `;
+            
+            if (!isSatisfied && data.missing.length > 0) {
+                html += `<p style="margin: 5px 0 0 0; font-size: 0.85em; color: #666;">
+                         <em>At Risk: ${data.missing.join(", ")}</em></p>`;
+            }
+            
+            html += `</div>`;
+            container.innerHTML += html;
+        }
+    }
+
+    function displayOfferingGrid(courses) {
+        electiveGrid.innerHTML = ''; 
+
         const currentYear = new Date().getFullYear();
         const headers = ['Course', 'Title'];
         const semesterCodes = [];
@@ -82,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
             electiveGrid.appendChild(headerDiv);
         });
 
-        // Create rows
         courses.forEach(course => {
             const courseNumCell = document.createElement('div');
             courseNumCell.className = 'grid-cell course-name';
