@@ -286,23 +286,23 @@
         // Updated to use exact start minutes from midnight (e.g. 7:30am = 450 mins) for perfect grid alignment
         const timeBlocks = {
             mwf: [
-                { id: 'mwf_0730', label: '7:30 am', isPrimetime: false, startMin: 450, duration: 50 },
-                { id: 'mwf_0835', label: '8:35 am', isPrimetime: false, startMin: 515, duration: 50 },
-                { id: 'mwf_0940', label: '9:40 am', isPrimetime: true, startMin: 580, duration: 50 },
-                { id: 'mwf_1045', label: '10:45 am', isPrimetime: true, startMin: 645, duration: 50 },
-                { id: 'mwf_1150', label: '11:50 am', isPrimetime: true, startMin: 710, duration: 50 },
-                { id: 'mwf_1255', label: '12:55 pm', isPrimetime: true, startMin: 775, duration: 50 },
-                { id: 'mwf_1400', label: '2:00 pm', isPrimetime: false, startMin: 840, duration: 50 },
-                { id: 'mwf_1505', label: '3:05 pm', isPrimetime: false, startMin: 905, duration: 50 },
-                { id: 'mwf_1610', label: '4:10 pm', isPrimetime: false, startMin: 970, duration: 50 }
+                { id: 'mwf_0730', label: '7:30', isPrimetime: false, startMin: 450, duration: 50 },
+                { id: 'mwf_0835', label: '8:35', isPrimetime: false, startMin: 515, duration: 50 },
+                { id: 'mwf_0940', label: '9:40', isPrimetime: true, startMin: 580, duration: 50 },
+                { id: 'mwf_1045', label: '10:45', isPrimetime: true, startMin: 645, duration: 50 },
+                { id: 'mwf_1150', label: '11:50', isPrimetime: true, startMin: 710, duration: 50 },
+                { id: 'mwf_1255', label: '12:55', isPrimetime: true, startMin: 775, duration: 50 },
+                { id: 'mwf_1400', label: '14:00', isPrimetime: false, startMin: 840, duration: 50 },
+                { id: 'mwf_1505', label: '15:05', isPrimetime: false, startMin: 905, duration: 50 },
+                { id: 'mwf_1610', label: '16:10', isPrimetime: false, startMin: 970, duration: 50 }
             ],
             tth: [
-                { id: 'tth_0730', label: '7:30 am', isPrimetime: false, startMin: 450, duration: 80 },
-                { id: 'tth_0910', label: '9:10 am', isPrimetime: true, startMin: 550, duration: 80 },
-                { id: 'tth_1045', label: '10:45 am', isPrimetime: true, startMin: 645, duration: 80 },
-                { id: 'tth_1225', label: '12:25 pm', isPrimetime: true, startMin: 745, duration: 80 },
-                { id: 'tth_1400', label: '2:00 pm', isPrimetime: false, startMin: 840, duration: 80 },
-                { id: 'tth_1540', label: '3:40 pm', isPrimetime: false, startMin: 940, duration: 80 }
+                { id: 'tth_0730', label: '7:30', isPrimetime: false, startMin: 450, duration: 80 },
+                { id: 'tth_0910', label: '9:10', isPrimetime: true, startMin: 550, duration: 80 },
+                { id: 'tth_1045', label: '10:45', isPrimetime: true, startMin: 645, duration: 80 },
+                { id: 'tth_1225', label: '12:25', isPrimetime: true, startMin: 745, duration: 80 },
+                { id: 'tth_1400', label: '14:00', isPrimetime: false, startMin: 840, duration: 80 },
+                { id: 'tth_1540', label: '15:40', isPrimetime: false, startMin: 940, duration: 80 }
             ],
             lab: [
                 { id: 'lab_1400_mw', label: '14:00 (MW 180min)', isPrimetime: false, startMin: 840, duration: 180, days: [1, 3] },
@@ -553,70 +553,102 @@
         function renderCalendar() {
             const container = document.getElementById('calendar-container');
             
-            // 1. BULLETPROOF CLEAR: Removes everything except the top headers safely
-            Array.from(container.children).forEach(child => {
-                if (!child.classList.contains('calendar-header')) {
-                    child.remove();
-                }
-            });
+            // --- THE BULLETPROOF LAYOUT FIX ---
+            // We abandon CSS Grid to avoid gap/percentage calculation bugs. 
+            // Instead, we use Flexbox and absolute pixel positioning with a unified formula.
             
-            const startTime = 7.5; // Starts at 7:30
+            container.style.display = 'flex';
+            container.style.backgroundColor = '#fff';
+            container.style.border = '1px solid #e5e7eb';
+            container.style.borderRadius = '0.375rem'; 
+            container.className = ''; // Kills the old .calendar-grid CSS rules
+            container.innerHTML = ''; // Nuke the old contents
             
-            // 2. BUILD THE GRID CELLS NATIVELY
-            for (let r = 0; r < 19; r++) {
-                const currentTime = startTime + (r * 0.5);
-                const hour = Math.floor(currentTime);
-                const min = (currentTime % 1 === 0) ? '00' : '30';
-                
-                // Time label column (Leftmost cell)
-                const timeCell = document.createElement('div');
-                timeCell.className = 'calendar-cell bg-gray-50 relative';
-                
-                const timeLabel = document.createElement('div');
-                timeLabel.className = 'calendar-time-label absolute w-full z-20';
-                timeLabel.style.transform = 'none';
-                timeLabel.style.top = '0px';
-                timeLabel.style.paddingTop = '4px';
-                
-                // FORMAT FIX: Prints 7:30, then only whole hours (8:00, 9:00) to match Main Page
-                if (min === '00' || r === 0) {
-                    timeLabel.innerText = `${hour}:${min}`;
-                } else {
-                    timeLabel.innerText = ''; // Keep the :30 rows clean and empty
-                }
-                
-                timeCell.appendChild(timeLabel);
-                container.appendChild(timeCell);
-                
-                // 5 days columns (purely visual cells to generate grid gaps)
-                for (let d = 1; d <= 5; d++) {
-                    const dayCell = document.createElement('div');
-                    dayCell.className = 'calendar-cell';
-                    container.appendChild(dayCell);
-                }
-            }
+            const START_MIN = 7 * 60;  // 7:00 AM (420)
+            const END_MIN = 19 * 60;   // 7:00 PM (1140)
+            const TOTAL_MINS = END_MIN - START_MIN; // 720 mins
+            const PIXELS_PER_MIN = 1.2; // 1 hour = 72px
+            const HEADER_HEIGHT = 40;   // 40px tall header
             
-            // 3. BUILD THE ABSOLUTE POSITIONING COLUMNS FOR COURSES
-            for (let d = 1; d <= 5; d++) {
-                const dayCol = document.createElement('div');
-                dayCol.className = 'calendar-day-col';
-                dayCol.id = `cal-day-${d}`;
-                dayCol.style.gridColumn = d + 1;
-                container.appendChild(dayCol);
-            }
+            // Set exact height of the whole calendar
+            container.style.minHeight = `${HEADER_HEIGHT + (TOTAL_MINS * PIXELS_PER_MIN)}px`;
 
-            // --- Collect and Plot Courses ---
+            // 1. Build Time Labels Column (Left Side)
+            const timeCol = document.createElement('div');
+            timeCol.style.width = '60px';
+            timeCol.style.flexShrink = '0';
+            timeCol.style.position = 'relative';
+            timeCol.style.borderRight = '1px solid #e5e7eb';
+            timeCol.style.backgroundColor = '#f9fafb';
+            
+            const timeHeader = document.createElement('div');
+            timeHeader.className = 'font-semibold text-gray-700 text-xs flex items-center justify-center border-b border-gray-200';
+            timeHeader.style.height = `${HEADER_HEIGHT}px`;
+            timeHeader.innerText = 'Time';
+            timeCol.appendChild(timeHeader);
+            
+            // Draw time labels exactly on the hour
+            for(let m = 0; m <= TOTAL_MINS; m += 60) {
+                const label = document.createElement('div');
+                label.className = 'absolute w-full pr-2 text-right text-xs font-medium text-gray-500';
+                label.style.top = `${HEADER_HEIGHT + (m * PIXELS_PER_MIN)}px`;
+                label.style.transform = 'translateY(-50%)'; // perfectly center on the line
+                const hour = Math.floor((START_MIN + m) / 60);
+                label.innerText = `${hour}:00`;
+                timeCol.appendChild(label);
+            }
+            container.appendChild(timeCol);
+
+            // 2. Build 5 Day Columns
+            const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+            days.forEach((dayName, index) => {
+                const col = document.createElement('div');
+                col.className = 'flex-1 relative';
+                col.style.borderRight = index < 4 ? '1px solid #e5e7eb' : 'none';
+                
+                // Day Header
+                const header = document.createElement('div');
+                header.className = 'font-semibold text-gray-700 text-xs flex items-center justify-center border-b border-gray-200 bg-gray-50';
+                header.style.height = `${HEADER_HEIGHT}px`;
+                header.innerText = dayName;
+                col.appendChild(header);
+                
+                // Draw horizontal grid lines (every 30 mins) using exact math
+                for(let m = 30; m <= TOTAL_MINS; m += 30) {
+                    const line = document.createElement('div');
+                    line.style.position = 'absolute';
+                    line.style.left = '0';
+                    line.style.right = '0';
+                    line.style.height = '1px';
+                    line.style.top = `${HEADER_HEIGHT + (m * PIXELS_PER_MIN)}px`;
+                    line.style.backgroundColor = m % 60 === 0 ? '#e5e7eb' : '#f3f4f6';
+                    line.style.zIndex = '1'; 
+                    col.appendChild(line);
+                }
+                
+                // Container for the actual colored course blocks
+                const eventContainer = document.createElement('div');
+                eventContainer.id = `cal-day-${index + 1}`;
+                eventContainer.style.position = 'absolute';
+                eventContainer.style.top = `${HEADER_HEIGHT}px`;
+                eventContainer.style.left = '0';
+                eventContainer.style.right = '0';
+                eventContainer.style.bottom = '0';
+                eventContainer.style.zIndex = '10'; 
+                col.appendChild(eventContainer);
+                
+                container.appendChild(col);
+            });
+
+            // 3. Collect and Plot Courses
             const getColors = (level) => {
                 if (level === 'firstYear') return 'bg-blue-100/95 border-blue-500 text-blue-900';
                 if (level === 'sophomore') return 'bg-indigo-100/95 border-indigo-500 text-indigo-900';
                 if (level === 'junior') return 'bg-purple-100/95 border-purple-500 text-purple-900';
                 if (level === 'senior') return 'bg-pink-100/95 border-pink-500 text-pink-900';
                 if (level === 'graduate') return 'bg-teal-100/95 border-teal-500 text-teal-900';
-                return 'bg-gray-100/95 border-gray-500 text-gray-900'; // elective
+                return 'bg-gray-100/95 border-gray-500 text-gray-900'; 
             };
-
-            const gridStartMin = 450; // 7:30 AM
-            const gridTotalMins = 570; // 19 rows * 30 mins = 570 mins
 
             const filterSemester = document.getElementById('filterSemester').value;
             const matchesSemesterFilter = (course) => {
@@ -665,6 +697,7 @@
                 }
             });
 
+            // Layout overlapping events
             Object.keys(eventsByDay).forEach(day => {
                 let dayEvents = eventsByDay[day];
                 dayEvents.sort((a, b) => a.startMin - b.startMin);
@@ -702,15 +735,17 @@
                         const colors = getColors(level);
                         
                         const eventEl = document.createElement('div');
-                        eventEl.className = `calendar-event border ${colors} p-1 flex flex-col justify-center`;
+                        eventEl.className = `calendar-event border ${colors} p-1 flex flex-col justify-center overflow-hidden absolute rounded-md shadow-sm`;
                         
-                        const topPercent = ((evt.startMin - gridStartMin) / gridTotalMins) * 100;
-                        const heightPercent = (evt.duration / gridTotalMins) * 100;
+                        // PIXEL PERFECT MATH
+                        const topPx = (evt.startMin - START_MIN) * PIXELS_PER_MIN;
+                        const heightPx = evt.duration * PIXELS_PER_MIN;
                         
-                        eventEl.style.top = `${topPercent}%`;
-                        eventEl.style.height = `${heightPercent}%`;
+                        eventEl.style.top = `${topPx}px`;
+                        eventEl.style.height = `${heightPx}px`;
                         eventEl.style.left = `${index * widthPercent}%`;
-                        eventEl.style.width = `${widthPercent}%`;
+                        eventEl.style.width = `calc(${widthPercent}% - 2px)`; 
+                        eventEl.style.pointerEvents = 'auto'; 
                         
                         eventEl.innerHTML = `
                             <div class="font-bold text-[10px] leading-tight">${evt.course.prefix} ${evt.course.num}</div>
