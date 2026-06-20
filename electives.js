@@ -7,14 +7,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let allElectives = [];
 
+    // --- THE SOURCE OF TRUTH (Matches builder.html) ---
+    const builderEmphases = {
+        "Energy Engineering": ['4870', '5205', '5305', '5308', '5310', '5555'],
+        "Biochemical": ['5103', '5230', '5840', '5310', '5555'],
+        "Environmental": ['3780', '4870', '5305', '5306', '5308', '5310', '5555'],
+        "Semiconductor": ['5655', '5203', '5205', '5208', '5230', '5305', '5308'],
+        "AI": ['5203', '5205', '5208', '5306', '5103']
+    };
+
     fetch('electives.json')
         .then(response => response.json())
         .then(data => {
+            
+            // --- THE INTERCEPTOR ---
+            // Overwrite the Google Sheet 'Program' column with our hardcoded arrays
+            data.forEach(course => {
+                const ug = (course['Course Number (UG)'] || '').toString().trim();
+                const gr = (course['Course Number (GR)'] || '').toString().trim();
+                const courseNums = [ug, gr].filter(Boolean);
+
+                let mappedPrograms = [];
+                
+                for (const [empName, coreCourses] of Object.entries(builderEmphases)) {
+                    // If the course number exists in our builder array, map it to this program
+                    if (coreCourses.some(num => courseNums.includes(num))) {
+                        mappedPrograms.push(empName);
+                    }
+                }
+
+                // If we found matches, completely replace whatever the Google Sheet said
+                if (mappedPrograms.length > 0) {
+                    course.Program = mappedPrograms.join('; ');
+                } else {
+                    // Optional: If it doesn't match anything, clear it or leave it as is
+                    // course.Program = "General Elective"; 
+                }
+            });
+
             allElectives = data;
             populateElectiveFilters(data);
             filterAndDisplayElectives();
             
-            // Trigger the calculator exactly when data is ready, using the raw data
+            // Run the calculator using our freshly mapped data
             calculateEmphasisCoverage(data); 
         })
         .catch(error => {
@@ -65,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- EMPHASIS CALCULATOR ENGINE ---
     function calculateEmphasisCoverage(courses) {
-        const emphases = ["Energy Engineering", "Biochemical", "Environmental", "Semiconductor", "Computational"];
+        const emphases = Object.keys(builderEmphases); // Dynamically grab names from our source of truth
         const currentYear = new Date().getFullYear();
         
         let coverage = {};
@@ -75,11 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const programsStr = course.Program || "";
             const nextOffering = course['Next Offering'] || "";
             
-            // Prefer UG number, fallback to GR number
             const ug = course['Course Number (UG)'];
             const gr = course['Course Number (GR)'];
             const courseName = ug ? ug : (gr ? gr : 'Unknown');
             
+            // Check the "Next Offering" column for a year
             const yearMatch = nextOffering.match(/\d{4}/);
             let isCompliant = false;
             
@@ -110,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = "";
         
         for (const [emp, data] of Object.entries(coverage)) {
-            // New strict rule: 100% of courses must be compliant (missing array must be empty)
+            // Strict rule: 100% of courses mapped must be compliant
             const isSatisfied = data.total > 0 && data.missing.length === 0; 
             
             const color = isSatisfied ? "#2e7d32" : "#c62828";
