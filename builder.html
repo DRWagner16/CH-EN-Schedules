@@ -553,40 +553,56 @@
         function renderCalendar() {
             const container = document.getElementById('calendar-container');
             
-            const oldGridElements = container.querySelectorAll(':scope > div:not(.calendar-header)');
-            oldGridElements.forEach(el => el.remove());
+            // 1. BULLETPROOF CLEAR: Removes everything except the top headers safely
+            Array.from(container.children).forEach(child => {
+                if (!child.classList.contains('calendar-header')) {
+                    child.remove();
+                }
+            });
             
-            // Grid spans exactly 7:30 AM to 5:00 PM (19 slots of 30 mins)
-            const startTime = 7.5; 
+            const startTime = 7.5; // Starts at 7:30
             
-            let gridHTML = '';
+            // 2. BUILD THE GRID CELLS NATIVELY
             for (let r = 0; r < 19; r++) {
                 const currentTime = startTime + (r * 0.5);
                 const hour = Math.floor(currentTime);
                 const min = (currentTime % 1 === 0) ? '00' : '30';
                 
-                // Time label column
-                gridHTML += `<div class="calendar-cell bg-gray-50 relative">`;
+                // Time label column (Leftmost cell)
+                const timeCell = document.createElement('div');
+                timeCell.className = 'calendar-cell bg-gray-50 relative';
                 
-                // FIX: Override the CSS transform so the text aligns with the top of the grid cell, exactly where the event blocks start.
-                gridHTML += `<div class="calendar-time-label absolute w-full z-20" style="transform: none; top: 0px; padding-top: 4px;">${hour}:${min}</div>`;
+                const timeLabel = document.createElement('div');
+                timeLabel.className = 'calendar-time-label absolute w-full z-20';
+                timeLabel.style.transform = 'none';
+                timeLabel.style.top = '0px';
+                timeLabel.style.paddingTop = '4px';
                 
-                gridHTML += `</div>`;
+                // FORMAT FIX: Prints 7:30, then only whole hours (8:00, 9:00) to match Main Page
+                if (min === '00' || r === 0) {
+                    timeLabel.innerText = `${hour}:${min}`;
+                } else {
+                    timeLabel.innerText = ''; // Keep the :30 rows clean and empty
+                }
+                
+                timeCell.appendChild(timeLabel);
+                container.appendChild(timeCell);
                 
                 // 5 days columns (purely visual cells to generate grid gaps)
                 for (let d = 1; d <= 5; d++) {
-                    gridHTML += `<div class="calendar-cell"></div>`;
+                    const dayCell = document.createElement('div');
+                    dayCell.className = 'calendar-cell';
+                    container.appendChild(dayCell);
                 }
             }
             
+            // 3. BUILD THE ABSOLUTE POSITIONING COLUMNS FOR COURSES
             for (let d = 1; d <= 5; d++) {
-                gridHTML += `<div class="calendar-day-col" id="cal-day-${d}" style="grid-column: ${d + 1};"></div>`;
-            }
-
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = gridHTML;
-            while (tempDiv.firstChild) {
-                container.appendChild(tempDiv.firstChild);
+                const dayCol = document.createElement('div');
+                dayCol.className = 'calendar-day-col';
+                dayCol.id = `cal-day-${d}`;
+                dayCol.style.gridColumn = d + 1;
+                container.appendChild(dayCol);
             }
 
             // --- Collect and Plot Courses ---
