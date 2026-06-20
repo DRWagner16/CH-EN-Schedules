@@ -128,7 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     courseCheckboxesContainer.addEventListener('change', filterAndRedrawCalendar);
-
+    const levelToggles = document.querySelectorAll('.level-toggle');
+    levelToggles.forEach(toggle => {
+        toggle.addEventListener('change', filterAndRedrawCalendar);
+    });
     resetBtn.addEventListener('click', () => {
         resetAndRepopulateAllFilters(allCourses);
         filterAndRedrawCalendar();
@@ -241,25 +244,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function filterAndRedrawCalendar() {
-        const selectedInstructor = instructorFilter.value;
-        const selectedType = typeFilter.value;
-        const selectedLocation = locationFilter.value;
-        const selectedCourses = Array.from(document.querySelectorAll('#course-checkboxes input:checked')).map(cb => cb.value);
+    const selectedInstructor = instructorFilter.value;
+    const selectedType = typeFilter.value;
+    const selectedLocation = locationFilter.value;
+    const selectedCourses = Array.from(document.querySelectorAll('#course-checkboxes input:checked')).map(cb => cb.value);
+    
+    // NEW: Get active level toggles (splitting comma-separated values like 'Year 1,First-year')
+    const activeLevels = Array.from(document.querySelectorAll('.level-toggle:checked'))
+        .flatMap(cb => cb.value.split(','));
+
+    const filteredCourses = allCourses.filter(course => {
+        const instructorMatch = (selectedInstructor === 'all' || (course.instructors && course.instructors.includes(selectedInstructor)));
+        const typeMatch = (selectedType === 'all' || (course.type && course.type.includes(selectedType)));
+        const locationMatch = (selectedLocation === 'all' || (course.location && course.location.includes(selectedLocation)));
         
-        const filteredCourses = allCourses.filter(course => {
-            const instructorMatch = (selectedInstructor === 'all' || (course.instructors && course.instructors.includes(selectedInstructor)));
-            const typeMatch = (selectedType === 'all' || (course.type && course.type.includes(selectedType)));
-            const locationMatch = (selectedLocation === 'all' || (course.location && course.location.includes(selectedLocation)));
-            
-            // If any dropdown is active, checkbox selection is ignored for filtering
-            if (selectedInstructor !== 'all' || selectedType !== 'all' || selectedLocation !== 'all') {
-                return instructorMatch && typeMatch && locationMatch;
-            }
-            
-            // If all dropdowns are 'all', filter by checkboxes
-            return (selectedCourses.length === 0) ? true : selectedCourses.includes(course.course_number);
-        });
+        // NEW: Check if course type matches an active toggle
+        const levelMatch = course.type && activeLevels.some(level => course.type.includes(level));
         
+        // If the level isn't checked, immediately filter it out of the calendar view
+        if (!levelMatch) return false;
+
+        // If any dropdown is active, checkbox selection is ignored for filtering
+        if (selectedInstructor !== 'all' || selectedType !== 'all' || selectedLocation !== 'all') {
+            return instructorMatch && typeMatch && locationMatch;
+        }
+        
+        // If all dropdowns are 'all', filter by checkboxes
+        return (selectedCourses.length === 0) ? true : selectedCourses.includes(course.course_number);
+    });
+         
         const schedulableCourses = filteredCourses.filter(c => c.startMinutes !== null && c.days && c.days.trim() !== '');
         const unschedulableCourses = filteredCourses.filter(c => c.startMinutes === null || !c.days || c.days.trim() === '');
         
