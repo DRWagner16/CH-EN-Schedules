@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- THE SOURCE OF TRUTH (Matches builder.html) ---
     const builderEmphases = {
-        "Energy Engineering": ['4870', '5205', '5305', '5308', '5310', '5555'],
+        "Energy": ['4870', '5205', '5305', '5308', '5310', '5555'],
         "Biochemical": ['5103', '5230', '5840', '5310', '5555'],
         "Environmental": ['3780', '4870', '5305', '5306', '5308', '5310', '5555'],
         "Semiconductor": ['5655', '5203', '5205', '5208', '5230', '5305', '5308'],
