@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- EMPHASIS CALCULATOR ENGINE ---
     function calculateEmphasisCoverage(courses) {
-        const emphases = ["Energy Engineering", "Materials", "Biochemical", "Process Control", "Environmental"]; 
+        const emphases = ["Energy Engineering", "Biochemical", "Environmental", "Semiconductor", "Computational"];
         const currentYear = new Date().getFullYear();
         
         let coverage = {};
