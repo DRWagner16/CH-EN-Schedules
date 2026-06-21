@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- THE SOURCE OF TRUTH (Matches builder.html) ---
     const builderEmphases = {
-        "Energy": ['4870', '5205', '5305', '5308', '5310', '5555'],
+        "Energy Engineering": ['4870', '5205', '5305', '5308', '5310', '5555'],
         "Biochemical": ['5103', '5230', '5840', '5310', '5555'],
         "Environmental": ['3780', '4870', '5305', '5306', '5308', '5310', '5555'],
         "Semiconductor": ['5655', '5203', '5205', '5208', '5230', '5305', '5308'],
-        "Computational": ['5203', '5205', '5208', '5306', '5103']
+        "AI": ['5203', '5205', '5208', '5306', '5103']
     };
 
     fetch('electives.json')
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             
             // --- THE INTERCEPTOR ---
-            // Overwrite the Google Sheet 'Program' column with our hardcoded arrays
             data.forEach(course => {
                 const ug = (course['Course Number (UG)'] || '').toString().trim();
                 const gr = (course['Course Number (GR)'] || '').toString().trim();
@@ -30,19 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 let mappedPrograms = [];
                 
                 for (const [empName, coreCourses] of Object.entries(builderEmphases)) {
-                    // Fuzzy match: checks if the spreadsheet cell text contains the 4-digit number
+                    // Fuzzy match to catch '5103 / 6103' formats
                     if (coreCourses.some(num => courseNums.some(cn => cn.includes(num)))) {
                         mappedPrograms.push(empName);
                     }
                 }
 
-                // If we found matches, completely replace whatever the Google Sheet said
-                if (mappedPrograms.length > 0) {
-                    course.Program = mappedPrograms.join('; ');
-                } else {
-                    // Optional: If it doesn't match anything, clear it or leave it as is
-                    // course.Program = "General Elective"; 
-                }
+                // FIX: Instead of overwriting course.Program (which breaks the filter), 
+                // we store the emphases in a new, hidden property specifically for the calculator.
+                course.EmphasisTags = mappedPrograms; 
             });
 
             allElectives = data;
@@ -63,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const certainties = new Set();
 
         courses.forEach(course => {
+            // Now this safely reads the original Google Sheet values again!
             (course.Program || '').split(';').forEach(p => p.trim() && programs.add(p.trim()));
             if (course['Offering Frequency']) frequencies.add(course['Offering Frequency']);
             if (course.Certainty) certainties.add(course.Certainty);
@@ -99,12 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // --- EMPHASIS CALCULATOR ENGINE ---
-    // --- EMPHASIS CALCULATOR ENGINE ---
     function calculateEmphasisCoverage(courses) {
-        const emphases = Object.keys(builderEmphases); // Dynamically grab names from our source of truth
+        const emphases = Object.keys(builderEmphases); 
         const currentYear = new Date().getFullYear();
         
-        // 1. Generate valid semester codes for current year + next 2 years (e.g., FA26, SP27)
         const validSemesters = [];
         for (let i = 0; i <= 2; i++) {
             const yy = String(currentYear + i).slice(-2);
@@ -115,23 +109,21 @@ document.addEventListener('DOMContentLoaded', () => {
         emphases.forEach(e => coverage[e] = { total: 0, compliant: 0, missing: [] });
 
         courses.forEach(course => {
-            const programsStr = course.Program || "";
+            // Read from our new hidden array instead of course.Program
+            const tags = course.EmphasisTags || [];
             const ug = course['Course Number (UG)'];
             const gr = course['Course Number (GR)'];
             const courseName = ug ? ug : (gr ? gr : 'Unknown');
             
             let isCompliant = false;
 
-            // 2. PRIMARY CHECK: Does it have a checkmark in the grid within the next 2 years?
             const schedule = course.predicted_schedule || [];
             if (Array.isArray(schedule) && schedule.length > 0) {
                 isCompliant = schedule.some(sem => validSemesters.includes(sem));
             } else if (typeof schedule === 'string' && schedule.trim() !== '') {
-                // Failsafe in case it imports as a comma-separated string
                 isCompliant = validSemesters.some(sem => schedule.includes(sem));
             }
             
-            // 3. FALLBACK CHECK: Look at the "Next Offering" text column just in case
             if (!isCompliant) {
                 const nextOffering = course['Next Offering'] || "";
                 const yearMatch = nextOffering.match(/\d{4}/);
@@ -144,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             emphases.forEach(emp => {
-                if (programsStr.includes(emp)) {
+                if (tags.includes(emp)) {
                     coverage[emp].total++;
                     if (isCompliant) {
                         coverage[emp].compliant++;
@@ -163,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = "";
         
         for (const [emp, data] of Object.entries(coverage)) {
-            // Strict rule: 100% of courses mapped must be compliant
             const isSatisfied = data.total > 0 && data.missing.length === 0; 
             
             const color = isSatisfied ? "#2e7d32" : "#c62828";
