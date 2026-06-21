@@ -472,13 +472,14 @@
                         ${block.isPrimetime ? '<i class="fas fa-sun text-yellow-500 text-xs" title="Primetime"></i>' : ''}
                     </div>
                     <div class="flex-1 p-2 overflow-y-auto space-y-2 block-content" id="content-${block.id}">
-                        <!-- Courses dropped here -->
-                    </div>
+                        </div>
                 </div>
             `;
 
             document.getElementById('mwf-grid').innerHTML = timeBlocks.mwf.map(b => createBlockHTML(b, 'mwf')).join('');
+            document.getElementById('mwf-80-grid').innerHTML = timeBlocks.mwf_80.map(b => createBlockHTML(b, 'mwf_80')).join('');
             document.getElementById('tth-grid').innerHTML = timeBlocks.tth.map(b => createBlockHTML(b, 'tth')).join('');
+            document.getElementById('tth-50-grid').innerHTML = timeBlocks.tth_50.map(b => createBlockHTML(b, 'tth_50')).join('');
             document.getElementById('lab-grid').innerHTML = timeBlocks.lab.map(b => createBlockHTML(b, 'lab')).join('');
         }
 
@@ -699,16 +700,22 @@
                 let blockDef = null;
                 let days = [];
 
-                if (blockId.startsWith('mwf')) {
+                if (blockId.startsWith('mwf80')) {
+                    blockDef = timeBlocks.mwf_80.find(b => b.id === blockId);
+                    days = [1, 3]; // M/W for 80 min blocks
+                } else if (blockId.startsWith('mwf')) {
                     blockDef = timeBlocks.mwf.find(b => b.id === blockId);
-                    days = [1, 3, 5]; 
+                    days = [1, 3, 5]; // M/W/F for 50 min blocks
+                } else if (blockId.startsWith('tth50')) {
+                    blockDef = timeBlocks.tth_50.find(b => b.id === blockId);
+                    days = [2, 4]; // T/Th
                 } else if (blockId.startsWith('tth')) {
                     blockDef = timeBlocks.tth.find(b => b.id === blockId);
-                    days = [2, 4]; 
+                    days = [2, 4]; // T/Th
                 } else if (blockId.startsWith('lab')) {
                     blockDef = timeBlocks.lab.find(b => b.id === blockId);
                     days = blockDef.days;
-                }
+                }Fev
 
                 if (blockDef) {
                     visibleCourses.forEach(course => {
@@ -914,8 +921,16 @@
                 // --- Analytics Collection ---
                 let blockConfig = null;
                 let dayType = '';
-                if(blockId.startsWith('mwf')) { blockConfig = timeBlocks.mwf.find(b => b.id === blockId); dayType = 'mwf'; }
-                else if(blockId.startsWith('tth')) { blockConfig = timeBlocks.tth.find(b => b.id === blockId); dayType = 'tth'; }
+                
+                if(blockId.startsWith('mwf80')) { 
+                    blockConfig = timeBlocks.mwf_80.find(b => b.id === blockId); dayType = 'mwf'; 
+                } else if(blockId.startsWith('mwf')) { 
+                    blockConfig = timeBlocks.mwf.find(b => b.id === blockId); dayType = 'mwf'; 
+                } else if(blockId.startsWith('tth50')) { 
+                    blockConfig = timeBlocks.tth_50.find(b => b.id === blockId); dayType = 'tth'; 
+                } else if(blockId.startsWith('tth')) { 
+                    blockConfig = timeBlocks.tth.find(b => b.id === blockId); dayType = 'tth'; 
+                }
                 
                 visibleCourses.forEach(c => {
                     if (isUndergradGrad(c)) {
