@@ -148,6 +148,12 @@
                     </button>
                     <div class="h-6 border-l border-gray-300 mx-1 hidden sm:block"></div>
                     <button onclick="resetSchedule()" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 transition-colors">Reset</button>
+                    <button id="save-local-btn" onclick="saveToLocal()" class="px-4 py-2 text-sm font-medium text-white bg-green-600 border border-transparent rounded-md shadow-sm hover:bg-green-700 transition-colors">
+                        <i class="fas fa-save mr-1"></i> Save State
+                    </button>
+                    <button id="load-local-btn" onclick="loadFromLocal()" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 transition-colors">
+                        <i class="fas fa-folder-open mr-1"></i> Load State
+                    </button>
                     <button onclick="loadSampleData()" class="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 transition-colors">Load Mock Data</button>
                 </div>
             </div>
@@ -875,7 +881,7 @@
             let globalTotalEligible = 0; 
             let globalConflicts = [];
 
-            // Reset UI
+            //  UI
             document.querySelectorAll('.course-card').forEach(c => {
                 c.classList.remove('border-red-500', 'conflict-glow');
                 const ind = c.querySelector('.conflict-indicator');
@@ -1201,6 +1207,64 @@
             });
 
             renderState();
+        }
+
+        // --- LOCAL STORAGE PERSISTENCE ---
+
+        function saveToLocal() {
+            if (courses.length === 0) {
+                alert("There is no schedule data to save yet. Please load from your sheet first.");
+                return;
+            }
+            
+            const snapshot = {
+                state: scheduleState,
+                data: courses
+            };
+            
+            // Writes directly to your local hardware
+            localStorage.setItem('chen_schedule_backup', JSON.stringify(snapshot));
+            
+            const btn = document.getElementById('save-local-btn');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = `<i class="fas fa-check mr-1"></i> Saved!`;
+            btn.classList.replace('bg-green-600', 'bg-teal-600');
+            
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.classList.replace('bg-teal-600', 'bg-green-600');
+            }, 2000);
+        }
+
+        function loadFromLocal() {
+            const savedString = localStorage.getItem('chen_schedule_backup');
+            
+            if (!savedString) {
+                alert("No saved schedule found in this browser.");
+                return;
+            }
+            
+            try {
+                const snapshot = JSON.parse(savedString);
+                
+                // Overwrite the current active memory with the saved snapshot
+                scheduleState = snapshot.state;
+                courses = snapshot.data;
+                
+                renderState();
+                
+                const btn = document.getElementById('load-local-btn');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = `<i class="fas fa-check mr-1"></i> Restored!`;
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                }, 2000);
+                
+            } catch (e) {
+                console.error("Error parsing local storage", e);
+                alert("Saved data could not be read.");
+            }
         }
 
         // Run on load
