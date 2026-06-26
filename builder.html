@@ -1014,6 +1014,40 @@
                 
                 // --- Conflict Checking within a specific block ---
                 let blockConflicts = [];
+                
+                // Define default days for the current block to check actual overlap
+                let defaultDays = [];
+                if (blockId.startsWith('mwf80')) defaultDays = [1, 3];
+                else if (blockId.startsWith('mwf')) defaultDays = [1, 3, 5];
+                else if (blockId.startsWith('tth50')) defaultDays = [2, 4];
+                else if (blockId.startsWith('tth')) defaultDays = [2, 4];
+                else if (blockId.startsWith('lab')) {
+                    const labDef = timeBlocks.lab.find(b => b.id === blockId);
+                    if (labDef) defaultDays = labDef.days;
+                }
+
+                // Helper: Gets active days (overrides if they exist, otherwise block defaults)
+                const getActiveDays = (course) => {
+                    return (course.dayOverrides && course.dayOverrides.length > 0) ? course.dayOverrides : defaultDays;
+                };
+
+                // Helper: Checks if any courses in a group actually overlap on the same day
+                const findDayConflicts = (courseGroup) => {
+                    let conflictingCourseIds = new Set();
+                    for (let i = 0; i < courseGroup.length; i++) {
+                        for (let j = i + 1; j < courseGroup.length; j++) {
+                            const daysI = getActiveDays(courseGroup[i]);
+                            const daysJ = getActiveDays(courseGroup[j]);
+                            // If they share at least one day, it's a conflict
+                            const overlap = daysI.some(day => daysJ.includes(day));
+                            if (overlap) {
+                                conflictingCourseIds.add(courseGroup[i].id);
+                                conflictingCourseIds.add(courseGroup[j].id);
+                            }
+                        }
+                    }
+                    return Array.from(conflictingCourseIds);
+                };
 
                 // 1. Check Cohort Overlaps
                 const cohortsPresent = {};
@@ -1027,8 +1061,11 @@
 
                 Object.keys(cohortsPresent).forEach(level => {
                     if (cohortsPresent[level].length > 1) {
-                        const conflictNames = cohortsPresent[level].map(c => c.num).join(', ');
-                        blockConflicts.push({ type: 'cohort', desc: `${level} core overlap (${conflictNames})`, courses: cohortsPresent[level].map(c=>c.id) });
+                        const conflictIds = findDayConflicts(cohortsPresent[level]);
+                        if (conflictIds.length > 0) {
+                            const conflictNames = cohortsPresent[level].filter(c => conflictIds.includes(c.id)).map(c => c.num).join(', ');
+                            blockConflicts.push({ type: 'cohort', desc: `${level} core overlap (${conflictNames})`, courses: conflictIds });
+                        }
                     }
                 });
 
@@ -1044,8 +1081,11 @@
 
                 Object.keys(emphasesPresent).forEach(emp => {
                     if (emphasesPresent[emp].length > 1) {
-                        const conflictNames = emphasesPresent[emp].map(c => c.num).join(', ');
-                        blockConflicts.push({ type: 'emphasis', desc: `${emp} emphasis overlap (${conflictNames})`, courses: emphasesPresent[emp].map(c=>c.id) });
+                        const conflictIds = findDayConflicts(emphasesPresent[emp]);
+                        if (conflictIds.length > 0) {
+                            const conflictNames = emphasesPresent[emp].filter(c => conflictIds.includes(c.id)).map(c => c.num).join(', ');
+                            blockConflicts.push({ type: 'emphasis', desc: `${emp} emphasis overlap (${conflictNames})`, courses: conflictIds });
+                        }
                     }
                 });
 
