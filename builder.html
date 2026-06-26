@@ -422,6 +422,15 @@
             }
             return false;
         }
+        
+        function isParentUndergrad(course) {
+            // Grabs the very first number before any slash (e.g., "6310" from "6310/5310")
+            const firstNumStr = course.num.split('/')[0].trim();
+            const n = parseInt(firstNumStr, 10);
+            
+            // Returns true only if the primary/parent course is an undergrad level
+            return (n >= 1000 && n <= 5999);
+        }
 
         function isLabCourse(course) {
             const nums = [course.num, course.ugNum, course.gradNum].filter(Boolean);
@@ -989,15 +998,20 @@
                 }
                 
                 visibleCourses.forEach(c => {
+                    // Check if it should be in the global denominator
                     if (isUndergradGrad(c)) {
+                        
                         if (blockConfig && blockConfig.isPrimetime) {
-                            totalPT++;
-                            if (dayType === 'mwf') mwfPT++;
-                            if (dayType === 'tth') tthPT++;
+                            // NEW: Only increment the primetime numerator if the parent course is undergrad
+                            if (isParentUndergrad(c)) {
+                                totalPT++;
+                                if (dayType === 'mwf') mwfPT++;
+                                if (dayType === 'tth') tthPT++;
+                            }
                         }
                     }
                 });
-
+                
                 // --- Conflict Checking within a specific block ---
                 let blockConflicts = [];
 
