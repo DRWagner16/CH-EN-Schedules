@@ -120,6 +120,26 @@
         "anticipated_enrollment": "70"
     },
     {
+        "course_number": "CH EN 3553-2",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 3553-3",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
+    },
+    {
         "course_number": "CH EN 3603-1",
         "instructors": "Wagner; Sutherland; Pershing",
         "days": "MWF",
@@ -128,6 +148,26 @@
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": "70"
+    },
+    {
+        "course_number": "CH EN 3603-2",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 3603-3",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "Year 3",
+        "anticipated_enrollment": ""
     },
     {
         "course_number": "CH EN 3700-2",
