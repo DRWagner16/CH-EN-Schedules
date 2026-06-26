@@ -122,9 +122,9 @@
     {
         "course_number": "CH EN 3553-2",
         "instructors": "",
-        "days": "",
-        "time_of_day": "Online/Asynchronous",
-        "duration": 0.0,
+        "days": "M",
+        "time_of_day": "12:55 PM-01:45 PM",
+        "duration": 50.0,
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": ""
@@ -132,9 +132,9 @@
     {
         "course_number": "CH EN 3553-3",
         "instructors": "",
-        "days": "",
-        "time_of_day": "Online/Asynchronous",
-        "duration": 0.0,
+        "days": "F",
+        "time_of_day": "11:50 AM-12:40 PM",
+        "duration": 50.0,
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": ""
@@ -152,9 +152,9 @@
     {
         "course_number": "CH EN 3603-2",
         "instructors": "",
-        "days": "",
-        "time_of_day": "Online/Asynchronous",
-        "duration": 0.0,
+        "days": "W",
+        "time_of_day": "12:55 PM-01:45 PM",
+        "duration": 50.0,
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": ""
@@ -162,9 +162,9 @@
     {
         "course_number": "CH EN 3603-3",
         "instructors": "",
-        "days": "",
-        "time_of_day": "Online/Asynchronous",
-        "duration": 0.0,
+        "days": "F",
+        "time_of_day": "12:55 PM-01:45 PM",
+        "duration": 50.0,
         "location": "",
         "type": "Year 3",
         "anticipated_enrollment": ""
