@@ -503,6 +503,14 @@
 
             const emphasisBadges = empTags.map(tag => `<span class="inline-block px-1.5 py-0.5 rounded text-[10px] font-medium bg-amber-100 text-amber-800 truncate" title="${tag}">${tag}</span>`).join('');
 
+            // NEW: Day Overrides Badges
+            const dOverrides = course.dayOverrides || [];
+            const dayBtn = (dayNum, label) => {
+                const isActive = dOverrides.includes(dayNum);
+                const bgClass = isActive ? 'bg-blue-500 text-white border-blue-600' : 'bg-gray-50 text-gray-400 border-gray-200 hover:bg-gray-100';
+                return `<button type="button" onclick="toggleCourseDay('${course.id}', ${dayNum}, event)" class="w-5 h-5 flex items-center justify-center rounded border text-[9px] font-bold transition-colors ${bgClass}" title="Isolate to ${label}">${label}</button>`;
+            };
+
             return `
                 <div class="course-card bg-white border border-gray-200 rounded-md p-2 shadow-sm text-sm" 
                      draggable="true" ondragstart="drag(event)" id="course-${course.id}" data-course-id="${course.id}">
@@ -518,12 +526,49 @@
                         ${emphasisBadges}
                     </div>
                     ${course.semesters ? `<div class="mt-1 text-[10px] font-medium text-blue-600 bg-blue-50 px-1 rounded inline-block"><i class="far fa-calendar-alt"></i> ${course.semesters}</div>` : ''}
-                    <!-- Hidden conflict indicator -->
+                    
+                    <!-- NEW: Day Selection -->
+                    <div class="mt-2 pt-2 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-[9px] text-gray-400 font-semibold uppercase tracking-wider" title="Leave all gray to use default block days">Isolate Days:</span>
+                        <div class="flex gap-1">
+                            ${dayBtn(1, 'M')}
+                            ${dayBtn(2, 'T')}
+                            ${dayBtn(3, 'W')}
+                            ${dayBtn(4, 'Th')}
+                            ${dayBtn(5, 'F')}
+                        </div>
+                    </div>
+
                     <div class="conflict-indicator hidden mt-1 text-[10px] text-red-600 font-bold bg-red-50 p-1 rounded"></div>
                 </div>
             `;
         }
 
+        // --- NEW: SINGLE-DAY TOGGLE LOGIC ---
+        function toggleCourseDay(courseId, dayNum, event) {
+            // Prevent the click from dragging the card or triggering parent events
+            event.stopPropagation();
+            event.preventDefault();
+            
+            const course = courses.find(c => c.id === courseId);
+            if (!course) return;
+            
+            // Initialize the array if it doesn't exist
+            if (!course.dayOverrides) course.dayOverrides = [];
+            
+            const index = course.dayOverrides.indexOf(dayNum);
+            if (index > -1) {
+                // If the day is already selected, turn it off
+                course.dayOverrides.splice(index, 1);
+            } else {
+                // Otherwise, turn it on
+                course.dayOverrides.push(dayNum);
+            }
+            
+            // Re-render the UI to reflect changes immediately
+            renderState();
+        }
+        
         function renderState() {
             // Clear all containers
             document.getElementById('unscheduled-list').innerHTML = '';
@@ -728,7 +773,12 @@
                         const level = getCourseLevel(course);
                         if (!calendarFilters[level]) return;
                         
-                        days.forEach(day => {
+                        // NEW: Respect the Day Overrides if the user has clicked any badges
+                        const targetDays = (course.dayOverrides && course.dayOverrides.length > 0) 
+                            ? course.dayOverrides 
+                            : days;
+                        
+                        targetDays.forEach(day => {
                             eventsByDay[day].push({
                                 course: course,
                                 startMin: blockDef.startMin,
