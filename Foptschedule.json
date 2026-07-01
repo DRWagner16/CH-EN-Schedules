@@ -6,7 +6,7 @@
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
         "location": "M LI 1150",
-        "type": "1-First-Year",
+        "type": "Year 1",
         "anticipated_enrollment": "100"
     },
     {
@@ -16,7 +16,7 @@
         "time_of_day": "11:50 AM-12:40 PM",
         "duration": 50.0,
         "location": "MEB 1292",
-        "type": "1-First-Year",
+        "type": "Year 1",
         "anticipated_enrollment": "25"
     },
     {
@@ -26,7 +26,7 @@
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "MEB 1292",
-        "type": "1-First-Year",
+        "type": "Year 1",
         "anticipated_enrollment": "25"
     },
     {
@@ -36,7 +36,7 @@
         "time_of_day": "12:25 PM-01:15 PM",
         "duration": 50.0,
         "location": "MEB 1292",
-        "type": "1-First-Year",
+        "type": "Year 1",
         "anticipated_enrollment": "25"
     },
     {
@@ -46,7 +46,7 @@
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "MEB 1292",
-        "type": "1-First-Year",
+        "type": "Year 1",
         "anticipated_enrollment": "25"
     },
     {
@@ -56,7 +56,7 @@
         "time_of_day": "05:10 PM-06:00 PM",
         "duration": 50.0,
         "location": "MEB 1292",
-        "type": "1-First-Year",
+        "type": "Year 1",
         "anticipated_enrollment": "25"
     },
     {
@@ -66,7 +66,7 @@
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
         "location": "GC 2950",
-        "type": "2-Sophomore",
+        "type": "Year 2",
         "anticipated_enrollment": "70"
     },
     {
@@ -76,7 +76,7 @@
         "time_of_day": "03:05 PM-03:55 PM",
         "duration": 50.0,
         "location": "LCB 225",
-        "type": "2-Sophomore",
+        "type": "Year 2",
         "anticipated_enrollment": ""
     },
     {
@@ -86,7 +86,7 @@
         "time_of_day": "03:05 PM-03:55 PM",
         "duration": 50.0,
         "location": "GC 5750",
-        "type": "2-Sophomore",
+        "type": "Year 2",
         "anticipated_enrollment": ""
     },
     {
@@ -96,7 +96,7 @@
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
         "location": "LNCO 1110",
-        "type": "2-Sophomore",
+        "type": "Year 2",
         "anticipated_enrollment": "70"
     },
     {
@@ -106,7 +106,7 @@
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "CSC 25",
-        "type": "2-Sophomore",
+        "type": "Year 2",
         "anticipated_enrollment": "40"
     },
     {
@@ -116,7 +116,7 @@
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "WBB 207",
-        "type": "2-Sophomore",
+        "type": "Year 2",
         "anticipated_enrollment": "35"
     },
     {
@@ -126,7 +126,7 @@
         "time_of_day": "12:25 PM-01:45 PM",
         "duration": 80.0,
         "location": "GC 3015",
-        "type": "2-Sophomore",
+        "type": "Year 2",
         "anticipated_enrollment": "20"
     },
     {
@@ -136,7 +136,7 @@
         "time_of_day": "Online/Asynchronous",
         "duration": 0.0,
         "location": "",
-        "type": "2-Sophomore",
+        "type": "Year 2",
         "anticipated_enrollment": ""
     },
     {
@@ -146,7 +146,7 @@
         "time_of_day": "Online/Asynchronous",
         "duration": 0.0,
         "location": "",
-        "type": "2-Sophomore",
+        "type": "Year 2",
         "anticipated_enrollment": ""
     },
     {
@@ -156,7 +156,7 @@
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
         "location": "WEB 1230",
-        "type": "1-First-Year",
+        "type": "Year 1",
         "anticipated_enrollment": "90"
     },
     {
@@ -166,7 +166,7 @@
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
         "location": "WEB 1250",
-        "type": "4-Senior",
+        "type": "Year 4",
         "anticipated_enrollment": "25"
     },
     {
@@ -176,7 +176,7 @@
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
         "location": "WEB L110",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": "65"
     },
     {
@@ -186,7 +186,7 @@
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "M LI 1160",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": "40"
     },
     {
@@ -196,7 +196,7 @@
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "WEB L122",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": "35"
     },
     {
@@ -206,7 +206,7 @@
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
         "location": "WEB 2230",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": "70"
     },
     {
@@ -216,7 +216,7 @@
         "time_of_day": "03:05 PM-03:55 PM",
         "duration": 50.0,
         "location": "M LI 1160",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": ""
     },
     {
@@ -226,7 +226,7 @@
         "time_of_day": "03:05 PM-03:55 PM",
         "duration": 50.0,
         "location": "WEB L122",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": ""
     },
     {
@@ -236,7 +236,7 @@
         "time_of_day": "11:50 AM-01:10 PM",
         "duration": 80.0,
         "location": "WEB L112",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": "30"
     },
     {
@@ -246,7 +246,7 @@
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": "27"
     },
     {
@@ -256,7 +256,7 @@
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": "27"
     },
     {
@@ -266,7 +266,7 @@
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
         "location": "WEB L112",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": "75"
     },
     {
@@ -276,7 +276,7 @@
         "time_of_day": "04:10 PM-05:00 PM",
         "duration": 50.0,
         "location": "M LI 1160",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": "40"
     },
     {
@@ -286,7 +286,7 @@
         "time_of_day": "04:10 PM-05:00 PM",
         "duration": 50.0,
         "location": "WEB L122",
-        "type": "3-Junior",
+        "type": "Year 3",
         "anticipated_enrollment": "35"
     },
     {
@@ -296,7 +296,7 @@
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
         "location": "FASB 295",
-        "type": "4-Senior",
+        "type": "Year 4",
         "anticipated_enrollment": "70"
     },
     {
@@ -306,7 +306,7 @@
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "WEB L110",
-        "type": "4-Senior",
+        "type": "Year 4",
         "anticipated_enrollment": "40"
     },
     {
@@ -316,7 +316,7 @@
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "WEB L110",
-        "type": "4-Senior",
+        "type": "Year 4",
         "anticipated_enrollment": "40"
     },
     {
@@ -326,7 +326,7 @@
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
-        "type": "4-Senior",
+        "type": "Year 4",
         "anticipated_enrollment": "25"
     },
     {
@@ -336,7 +336,7 @@
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
-        "type": "4-Senior",
+        "type": "Year 4",
         "anticipated_enrollment": "35"
     },
     {
@@ -346,7 +346,7 @@
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
         "location": "WEB 1250",
-        "type": "4-Senior",
+        "type": "Year 4",
         "anticipated_enrollment": "70"
     },
     {
@@ -356,7 +356,7 @@
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "MEB 1292",
-        "type": "4-Senior",
+        "type": "Year 4",
         "anticipated_enrollment": "35"
     },
     {
@@ -366,7 +366,7 @@
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
-        "type": "4-Senior",
+        "type": "Year 4",
         "anticipated_enrollment": "35"
     },
     {
@@ -376,7 +376,7 @@
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "MEB 1292",
-        "type": "4-Senior",
+        "type": "Year 4",
         "anticipated_enrollment": "30"
     },
     {
@@ -386,7 +386,7 @@
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
-        "type": "4-Senior",
+        "type": "Year 4",
         "anticipated_enrollment": "30"
     },
     {
@@ -420,7 +420,7 @@
         "anticipated_enrollment": "30"
     },
     {
-        "course_number": "CH EN 5163-1",
+        "course_number": "CH EN 6163-1",
         "instructors": "Sorkhabi",
         "days": "TR",
         "time_of_day": "02:00 PM-03:20 PM",
@@ -440,7 +440,7 @@
         "anticipated_enrollment": ""
     },
     {
-        "course_number": "CH EN 6310-90",
+        "course_number": "CH EN 5310-90",
         "instructors": "Mohanty",
         "days": "",
         "time_of_day": "09:10 AM-10:30 AM",
@@ -490,7 +490,7 @@
         "anticipated_enrollment": ""
     },
     {
-        "course_number": "CH EN -1",
+        "course_number": "CH EN 6253-1",
         "instructors": "Powell",
         "days": "",
         "time_of_day": "Online/Asynchronous",
@@ -500,7 +500,7 @@
         "anticipated_enrollment": ""
     },
     {
-        "course_number": "CH EN -2",
+        "course_number": "CH EN 6400-2",
         "instructors": "Saad",
         "days": "TR",
         "time_of_day": "10:45 AM-12:05 PM",
@@ -510,7 +510,7 @@
         "anticipated_enrollment": "20"
     },
     {
-        "course_number": "CH EN -1",
+        "course_number": "CH EN 6853-1",
         "instructors": "Nigra",
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
@@ -520,7 +520,7 @@
         "anticipated_enrollment": "20"
     },
     {
-        "course_number": "CH EN -1",
+        "course_number": "CH EN 6877-1",
         "instructors": "Sutherland",
         "days": "",
         "time_of_day": "Online/Asynchronous",
@@ -530,7 +530,7 @@
         "anticipated_enrollment": ""
     },
     {
-        "course_number": "CH EN -2",
+        "course_number": "CH EN 6500-2",
         "instructors": "Zangle",
         "days": "MWF",
         "time_of_day": "09:40 AM-10:30 AM",
@@ -540,7 +540,7 @@
         "anticipated_enrollment": "20"
     },
     {
-        "course_number": "CH EN -1",
+        "course_number": "CH EN 6973-1",
         "instructors": "Powell",
         "days": "",
         "time_of_day": "Online/Asynchronous",
@@ -550,7 +550,7 @@
         "anticipated_enrollment": "10"
     },
     {
-        "course_number": "CH EN -1",
+        "course_number": "CH EN 6983-1",
         "instructors": "Powell",
         "days": "",
         "time_of_day": "Online/Asynchronous",
@@ -560,7 +560,7 @@
         "anticipated_enrollment": "10"
     },
     {
-        "course_number": "CH EN -1",
+        "course_number": "CH EN 7753-1",
         "instructors": "Skliar",
         "days": "T",
         "time_of_day": "12:25 PM-01:45 PM",
@@ -570,7 +570,7 @@
         "anticipated_enrollment": "20"
     },
     {
-        "course_number": "CH EN -1",
+        "course_number": "CH EN 7857-1",
         "instructors": "",
         "days": "F",
         "time_of_day": "10:45 AM-12:05 PM",
@@ -580,13 +580,33 @@
         "anticipated_enrollment": "30"
     },
     {
-        "course_number": "CH EN -",
+        "course_number": "CH EN 7973-",
         "instructors": "Powell",
         "days": "",
         "time_of_day": "Online/Asynchronous",
         "duration": 0.0,
         "location": "",
         "type": "Other",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "ENRG 6100-1",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "ENRG",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "ENRG 6200-1",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "ENRG",
         "anticipated_enrollment": ""
     }
 ]
