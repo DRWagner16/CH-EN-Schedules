@@ -903,14 +903,19 @@
             const isLab = isLabCourse(courseData);
             const isTargetLab = newBlockId.startsWith('lab_');
             
+            // Still enforce that actual labs MUST go into lab blocks
             if (isLab && newBlockId !== 'unscheduled' && !isTargetLab) {
                 alert(`Course ${courseData.num} is an extended sequence and MUST be placed in an Extended Lab Block.`);
                 return;
             }
+            
+            // COMMENTED OUT: Allow standard courses to be dragged into lab blocks
+            /*
             if (!isLab && isTargetLab) {
                 alert(`Standard courses should not be placed in Extended Lab Blocks.`);
                 return;
             }
+            */
 
             // Remove from old block
             Object.keys(scheduleState).forEach(block => {
