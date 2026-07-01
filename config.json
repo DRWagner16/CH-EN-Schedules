@@ -32,14 +32,14 @@
     {
       "id": "S28opt",
       "display_title": "Spring 2028 - Working",
-      "google_sheet_file_name": "Copy of Teaching Assignments 2026-2027",
+      "google_sheet_file_name": "Copy of Teaching Assignments 2026-2027 Git",
       "worksheet_tab_name": "Spring Summary",
       "output_json_file": "Soptschedule.json"
     },
     {
       "id": "F27opt",
       "display_title": "Fall 2027 - Working",
-      "google_sheet_file_name": "Copy of Teaching Assignments 2026-2027",
+      "google_sheet_file_name": "Copy of Teaching Assignments 2026-2027 Git",
       "worksheet_tab_name": "Fall Summary",
       "output_json_file": "Foptschedule.json"
     }
