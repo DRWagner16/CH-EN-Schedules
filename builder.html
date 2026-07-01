@@ -339,10 +339,10 @@
                 { id: 'tth50_1610', label: '16:10', isPrimetime: false, startMin: 970, duration: 50 }
             ],
             lab: [
-                { id: 'lab_1400_m', label: '14:00 (M 180min)', isPrimetime: false, startMin: 840, duration: 180, days: [1] },
-                { id: 'lab_1400_w', label: '14:00 (W 180min)', isPrimetime: false, startMin: 840, duration: 180, days: [3] },
-                { id: 'lab_1400_t', label: '14:00 (T 180min)', isPrimetime: false, startMin: 840, duration: 180, days: [2] },
-                { id: 'lab_1400_th', label: '14:00 (Th 180min)', isPrimetime: false, startMin: 840, duration: 180, days: [4] }
+                { id: 'lab_0835_mwf', label: '8:35 (MWF 180min)', isPrimetime: false, startMin: 515, duration: 180, days: [1, 3, 5] },
+                { id: 'lab_1400_mwf', label: '14:00 (MWF 180min)', isPrimetime: false, startMin: 840, duration: 180, days: [1, 3, 5] },
+                { id: 'lab_0910_tth', label: '9:10 (TTh 180min)', isPrimetime: true, startMin: 550, duration: 180, days: [2, 4] },
+                { id: 'lab_1400_tth', label: '14:00 (TTh 180min)', isPrimetime: false, startMin: 840, duration: 180, days: [2, 4] }
             ]
         };
 
@@ -995,6 +995,10 @@
                     blockConfig = timeBlocks.tth_50.find(b => b.id === blockId); dayType = 'tth'; 
                 } else if(blockId.startsWith('tth')) { 
                     blockConfig = timeBlocks.tth.find(b => b.id === blockId); dayType = 'tth'; 
+                } else if(blockId.startsWith('lab')) {
+                    blockConfig = timeBlocks.lab.find(b => b.id === blockId); 
+                    // Deduce the day bucket for the primetime numerator
+                    dayType = blockId.includes('mwf') ? 'mwf' : 'tth';
                 }
                 
                 visibleCourses.forEach(c => {
