@@ -6,7 +6,7 @@
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
         "location": "",
-        "type": "Year 1",
+        "type": "1-First-Year",
         "anticipated_enrollment": "30"
     },
     {
@@ -16,7 +16,7 @@
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "MEB1292",
-        "type": "Year 1",
+        "type": "1-First-Year",
         "anticipated_enrollment": "20"
     },
     {
@@ -26,7 +26,7 @@
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "MEB 2550",
-        "type": "Year 1",
+        "type": "1-First-Year",
         "anticipated_enrollment": "20"
     },
     {
@@ -36,7 +36,7 @@
         "time_of_day": "11:50 AM-12:40 PM",
         "duration": 50.0,
         "location": "",
-        "type": "Year 1",
+        "type": "1-First-Year",
         "anticipated_enrollment": "75"
     },
     {
@@ -46,7 +46,7 @@
         "time_of_day": "09:10 AM-12:10 PM",
         "duration": 180.0,
         "location": "MEB 1292",
-        "type": "Year 1",
+        "type": "1-First-Year",
         "anticipated_enrollment": "30"
     },
     {
@@ -56,7 +56,7 @@
         "time_of_day": "09:40 AM-12:40 PM",
         "duration": 180.0,
         "location": "MEB 1292",
-        "type": "Year 1",
+        "type": "1-First-Year",
         "anticipated_enrollment": "30"
     },
     {
@@ -66,7 +66,7 @@
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292",
-        "type": "Year 1",
+        "type": "1-First-Year",
         "anticipated_enrollment": "15"
     },
     {
@@ -76,18 +76,58 @@
         "time_of_day": "12:25 PM-01:45 PM",
         "duration": 80.0,
         "location": "",
-        "type": "Year 2",
+        "type": "2-Sophomore",
         "anticipated_enrollment": "70"
     },
     {
-        "course_number": "CH EN 2800-2",
+        "course_number": "CH EN 2550-2",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "2-Sophomore",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2550-3",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "2-Sophomore",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2800-4",
         "instructors": "Chen",
         "days": "TR",
-        "time_of_day": "02:00 PM-03:20 PM",
+        "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
         "location": "",
-        "type": "Year 2",
+        "type": "2-Sophomore",
         "anticipated_enrollment": "70"
+    },
+    {
+        "course_number": "CH EN 2800-5",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "2-Sophomore",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2800-6",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "2-Sophomore",
+        "anticipated_enrollment": ""
     },
     {
         "course_number": "CH EN 2955-1",
@@ -96,7 +136,7 @@
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
         "location": "",
-        "type": "Year 2, Year 3",
+        "type": "2-Sophomore, 3-Junior",
         "anticipated_enrollment": "90"
     },
     {
@@ -106,7 +146,7 @@
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
         "location": "",
-        "type": "Year 3, Year 4",
+        "type": "3-Junior, 4-Senior",
         "anticipated_enrollment": "50"
     },
     {
@@ -116,27 +156,27 @@
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
         "location": "",
-        "type": "Year 3",
+        "type": "3-Junior",
         "anticipated_enrollment": "70"
     },
     {
         "course_number": "CH EN 3553-2",
         "instructors": "",
-        "days": "M",
-        "time_of_day": "02:00 PM-02:50 PM",
-        "duration": 50.0,
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
         "location": "",
-        "type": "Year 3",
+        "type": "3-Junior",
         "anticipated_enrollment": ""
     },
     {
         "course_number": "CH EN 3553-3",
         "instructors": "",
-        "days": "W",
-        "time_of_day": "02:00 PM-02:50 PM",
-        "duration": 50.0,
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
         "location": "",
-        "type": "Year 3",
+        "type": "3-Junior",
         "anticipated_enrollment": ""
     },
     {
@@ -146,27 +186,27 @@
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
         "location": "",
-        "type": "Year 3",
+        "type": "3-Junior",
         "anticipated_enrollment": "70"
     },
     {
         "course_number": "CH EN 3603-2",
         "instructors": "",
-        "days": "M",
-        "time_of_day": "03:10 PM-04:00 PM",
-        "duration": 50.0,
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
         "location": "",
-        "type": "Year 3",
+        "type": "3-Junior",
         "anticipated_enrollment": ""
     },
     {
         "course_number": "CH EN 3603-3",
         "instructors": "",
-        "days": "W",
-        "time_of_day": "03:10 PM-04:00 PM",
-        "duration": 50.0,
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
         "location": "",
-        "type": "Year 3",
+        "type": "3-Junior",
         "anticipated_enrollment": ""
     },
     {
@@ -176,7 +216,7 @@
         "time_of_day": "11:50 AM-01:10 PM",
         "duration": 80.0,
         "location": "",
-        "type": "Year 2",
+        "type": "2-Sophomore",
         "anticipated_enrollment": "30"
     },
     {
@@ -186,7 +226,7 @@
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
-        "type": "Year 3",
+        "type": "3-Junior",
         "anticipated_enrollment": "27"
     },
     {
@@ -196,7 +236,7 @@
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 2550; MEB 3520",
-        "type": "Year 3",
+        "type": "3-Junior",
         "anticipated_enrollment": "27"
     },
     {
@@ -206,7 +246,7 @@
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "MEB 1292",
-        "type": "Year 4",
+        "type": "4-Senior",
         "anticipated_enrollment": "35"
     },
     {
@@ -216,7 +256,7 @@
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
-        "type": "Year 4",
+        "type": "4-Senior",
         "anticipated_enrollment": "35"
     },
     {
@@ -226,7 +266,7 @@
         "time_of_day": "12:55 PM-01:45 PM",
         "duration": 50.0,
         "location": "MEB 1292",
-        "type": "Year 4",
+        "type": "4-Senior",
         "anticipated_enrollment": "30"
     },
     {
@@ -236,7 +276,7 @@
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
         "location": "MEB 1292; MEB 2550; MEB 3520",
-        "type": "Year 4",
+        "type": "4-Senior",
         "anticipated_enrollment": "30"
     },
     {
@@ -296,7 +336,7 @@
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
         "location": "",
-        "type": "Year 4",
+        "type": "4-Senior",
         "anticipated_enrollment": "50"
     },
     {
@@ -310,7 +350,7 @@
         "anticipated_enrollment": ""
     },
     {
-        "course_number": "CH EN 5780-3",
+        "course_number": "CH EN 3780-3",
         "instructors": "Firth",
         "days": "TR",
         "time_of_day": "12:25 PM-01:45 PM",
@@ -320,7 +360,7 @@
         "anticipated_enrollment": "40"
     },
     {
-        "course_number": "CH EN 5960-1",
+        "course_number": "CH EN 5050-1",
         "instructors": "Skliar; Zangle",
         "days": "WF",
         "time_of_day": "02:00 PM-05:00 PM",
@@ -330,7 +370,7 @@
         "anticipated_enrollment": "8"
     },
     {
-        "course_number": "CH EN 5960-2",
+        "course_number": "CH EN 5050-2",
         "instructors": "Skliar; Zangle",
         "days": "TR",
         "time_of_day": "02:00 PM-05:00 PM",
@@ -340,7 +380,7 @@
         "anticipated_enrollment": "8"
     },
     {
-        "course_number": "CH EN 5960-5",
+        "course_number": "CH EN 5455-5",
         "instructors": "Huang",
         "days": "TR",
         "time_of_day": "03:40 PM-05:00 PM",
@@ -366,18 +406,38 @@
         "time_of_day": "09:40 AM-10:30 AM",
         "duration": 50.0,
         "location": "",
-        "type": "Year 4",
+        "type": "4-Senior",
         "anticipated_enrollment": "40"
     },
     {
-        "course_number": "CH EN 5960-9",
+        "course_number": "CH EN 2330-1",
         "instructors": "Nigra",
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
         "location": "",
-        "type": "Year 2",
+        "type": "2-Sophomore",
         "anticipated_enrollment": "80"
+    },
+    {
+        "course_number": "CH EN 2330-2",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "2-Sophomore",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2330-3",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "2-Sophomore",
+        "anticipated_enrollment": ""
     },
     {
         "course_number": "CH EN 5208-1",
@@ -390,7 +450,7 @@
         "anticipated_enrollment": "15"
     },
     {
-        "course_number": "CH EN 6253-1",
+        "course_number": "CH EN -1",
         "instructors": "Powell",
         "days": "",
         "time_of_day": "Online/Asynchronous",
@@ -400,7 +460,7 @@
         "anticipated_enrollment": ""
     },
     {
-        "course_number": "CH EN 6553-1",
+        "course_number": "CH EN -1",
         "instructors": "Duan",
         "days": "TR",
         "time_of_day": "10:45 AM-12:05 PM",
@@ -410,7 +470,7 @@
         "anticipated_enrollment": "30"
     },
     {
-        "course_number": "CH EN 6603-1",
+        "course_number": "CH EN -1",
         "instructors": "Holmes; Sutherland",
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
@@ -420,7 +480,7 @@
         "anticipated_enrollment": "30"
     },
     {
-        "course_number": "CH EN 6877-1",
+        "course_number": "CH EN -1",
         "instructors": "Sutherland",
         "days": "",
         "time_of_day": "Online/Asynchronous",
@@ -430,7 +490,7 @@
         "anticipated_enrollment": ""
     },
     {
-        "course_number": "CH EN 6973-1",
+        "course_number": "CH EN -1",
         "instructors": "Powell",
         "days": "",
         "time_of_day": "Online/Asynchronous",
@@ -440,7 +500,7 @@
         "anticipated_enrollment": "10"
     },
     {
-        "course_number": "CH EN 6983-1",
+        "course_number": "CH EN -1",
         "instructors": "Powell",
         "days": "",
         "time_of_day": "Online/Asynchronous",
@@ -450,7 +510,7 @@
         "anticipated_enrollment": "10"
     },
     {
-        "course_number": "CH EN 7755-1",
+        "course_number": "CH EN -1",
         "instructors": "Skliar",
         "days": "T",
         "time_of_day": "12:25 PM-01:45 PM",
@@ -460,7 +520,7 @@
         "anticipated_enrollment": "20"
     },
     {
-        "course_number": "CH EN 7857-1",
+        "course_number": "CH EN -1",
         "instructors": "Hoepfner",
         "days": "F",
         "time_of_day": "10:45 AM-12:05 PM",
@@ -470,7 +530,7 @@
         "anticipated_enrollment": "30"
     },
     {
-        "course_number": "CH EN 7973-",
+        "course_number": "CH EN -",
         "instructors": "Powell",
         "days": "",
         "time_of_day": "Online/Asynchronous",
