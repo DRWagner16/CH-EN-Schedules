@@ -92,7 +92,7 @@
     {
         "course_number": "CH EN 2550-3",
         "instructors": "",
-        "days": "R",
+        "days": "T",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "",
@@ -350,10 +350,10 @@
         "anticipated_enrollment": ""
     },
     {
-        "course_number": "CH EN 5780-3",
+        "course_number": "CH EN 3780-3",
         "instructors": "Firth",
-        "days": "TR",
-        "time_of_day": "12:25 PM-01:45 PM",
+        "days": "MW",
+        "time_of_day": "02:00 PM-03:20 PM",
         "duration": 80.0,
         "location": "",
         "type": "Elective",
