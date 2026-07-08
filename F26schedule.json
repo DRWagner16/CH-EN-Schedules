@@ -130,6 +130,26 @@
         "anticipated_enrollment": "20"
     },
     {
+        "course_number": "CH EN 2800-2",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2800-3",
+        "instructors": "",
+        "days": "",
+        "time_of_day": "Online/Asynchronous",
+        "duration": 0.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
         "course_number": "CH EN 2953-1",
         "instructors": "Eddings",
         "days": "T",
