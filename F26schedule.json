@@ -460,16 +460,6 @@
         "anticipated_enrollment": "40"
     },
     {
-        "course_number": "CH EN 5960-7",
-        "instructors": "",
-        "days": "TR",
-        "time_of_day": "12:25 PM-01:45 PM",
-        "duration": 80.0,
-        "location": "WEB 1460",
-        "type": "Elective",
-        "anticipated_enrollment": ""
-    },
-    {
         "course_number": "CH EN 6253-1",
         "instructors": "Powell",
         "days": "",
@@ -551,7 +541,7 @@
     },
     {
         "course_number": "CH EN 7857-1",
-        "instructors": "",
+        "instructors": "Whitty",
         "days": "F",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
