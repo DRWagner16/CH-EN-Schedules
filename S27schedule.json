@@ -80,26 +80,6 @@
         "anticipated_enrollment": "70"
     },
     {
-        "course_number": "CH EN 2550-2",
-        "instructors": "",
-        "days": "W",
-        "time_of_day": "08:35 AM-09:25 AM",
-        "duration": 50.0,
-        "location": "",
-        "type": "Year 2",
-        "anticipated_enrollment": ""
-    },
-    {
-        "course_number": "CH EN 2550-3",
-        "instructors": "",
-        "days": "T",
-        "time_of_day": "02:00 PM-02:50 PM",
-        "duration": 50.0,
-        "location": "",
-        "type": "Year 2",
-        "anticipated_enrollment": ""
-    },
-    {
         "course_number": "CH EN 2800-4",
         "instructors": "Chen",
         "days": "MWF",
