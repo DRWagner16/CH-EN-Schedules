@@ -41,7 +41,7 @@
     },
     {
         "course_number": "CH EN 1705-2",
-        "instructors": "Butterfield; Firth, Mohanty",
+        "instructors": "Butterfield; Firth; Mohanty",
         "days": "R",
         "time_of_day": "09:10 AM-12:10 PM",
         "duration": 180.0,
@@ -51,7 +51,7 @@
     },
     {
         "course_number": "CH EN 1705-3",
-        "instructors": "Butterfield; Firth, Mohanty",
+        "instructors": "Butterfield; Firth; Mohanty",
         "days": "F",
         "time_of_day": "09:40 AM-12:40 PM",
         "duration": 180.0,
@@ -61,7 +61,7 @@
     },
     {
         "course_number": "CH EN 1705-4",
-        "instructors": "Butterfield; Firth, Mohanty",
+        "instructors": "Butterfield; Firth; Mohanty",
         "days": "F",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
@@ -370,11 +370,11 @@
         "anticipated_enrollment": "20"
     },
     {
-        "course_number": "CH EN 5960-",
+        "course_number": "CH EN 6960-",
         "instructors": "Deo; McLennan",
-        "days": "",
-        "time_of_day": "Online/Asynchronous",
-        "duration": 0.0,
+        "days": "MW",
+        "time_of_day": "11:50 AM-01:10 PM",
+        "duration": 80.0,
         "location": "",
         "type": "Elective",
         "anticipated_enrollment": ""
