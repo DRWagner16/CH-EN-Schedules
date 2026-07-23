@@ -91,7 +91,7 @@
     },
     {
         "course_number": "CH EN 2800-5",
-        "instructors": "",
+        "instructors": "Chen",
         "days": "F",
         "time_of_day": "08:35 AM-09:25 AM",
         "duration": 50.0,
@@ -101,7 +101,7 @@
     },
     {
         "course_number": "CH EN 2800-6",
-        "instructors": "",
+        "instructors": "Chen",
         "days": "R",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
@@ -141,7 +141,7 @@
     },
     {
         "course_number": "CH EN 3553-2",
-        "instructors": "",
+        "instructors": "Chen",
         "days": "M",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
@@ -151,7 +151,7 @@
     },
     {
         "course_number": "CH EN 3553-3",
-        "instructors": "",
+        "instructors": "Chen",
         "days": "W",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
