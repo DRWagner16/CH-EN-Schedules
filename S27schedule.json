@@ -70,6 +70,16 @@
         "anticipated_enrollment": "15"
     },
     {
+        "course_number": "CH EN 2450-4",
+        "instructors": "Chen",
+        "days": "R",
+        "time_of_day": "12:55 PM-01:45 PM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
         "course_number": "CH EN 2550-1",
         "instructors": "Saad",
         "days": "TR",
