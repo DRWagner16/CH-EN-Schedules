@@ -102,7 +102,17 @@
     {
         "course_number": "CH EN 2800-6",
         "instructors": "Chen",
-        "days": "R",
+        "days": "F",
+        "time_of_day": "10:45 AM-11:35 AM",
+        "duration": 50.0,
+        "location": "",
+        "type": "Year 2",
+        "anticipated_enrollment": ""
+    },
+    {
+        "course_number": "CH EN 2800-7",
+        "instructors": "Chen",
+        "days": "F",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
         "location": "",
