@@ -1,7 +1,7 @@
 [
     {
         "course_number": "CH EN 1703-1",
-        "instructors": "",
+        "instructors": "TBD",
         "days": "TR",
         "time_of_day": "09:10 AM-10:30 AM",
         "duration": 80.0,
@@ -11,7 +11,7 @@
     },
     {
         "course_number": "CH EN 1703-2",
-        "instructors": "",
+        "instructors": "TBD",
         "days": "T",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
@@ -21,7 +21,7 @@
     },
     {
         "course_number": "CH EN 1703-3",
-        "instructors": "",
+        "instructors": "TBD",
         "days": "W",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
@@ -81,7 +81,7 @@
     },
     {
         "course_number": "CH EN 2550-2",
-        "instructors": "",
+        "instructors": "Saad",
         "days": "T",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
@@ -91,7 +91,7 @@
     },
     {
         "course_number": "CH EN 2550-3",
-        "instructors": "",
+        "instructors": "Saad",
         "days": "W",
         "time_of_day": "02:00 PM-02:50 PM",
         "duration": 50.0,
@@ -101,7 +101,7 @@
     },
     {
         "course_number": "CH EN 2550-4",
-        "instructors": "",
+        "instructors": "Saad",
         "days": "W",
         "time_of_day": "10:45 AM-11:35 AM",
         "duration": 50.0,
@@ -211,7 +211,7 @@
     },
     {
         "course_number": "CH EN 3603-2",
-        "instructors": "",
+        "instructors": "Wagner",
         "days": "M",
         "time_of_day": "03:05 PM-03:55 PM",
         "duration": 50.0,
@@ -221,7 +221,7 @@
     },
     {
         "course_number": "CH EN 3603-3",
-        "instructors": "",
+        "instructors": "Wagner",
         "days": "W",
         "time_of_day": "03:05 PM-03:55 PM",
         "duration": 50.0,
@@ -351,7 +351,7 @@
     },
     {
         "course_number": "CH EN 6203-1",
-        "instructors": "",
+        "instructors": "TBD",
         "days": "TR",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
