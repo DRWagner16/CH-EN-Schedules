@@ -241,7 +241,7 @@
     },
     {
         "course_number": "CH EN 3702-1",
-        "instructors": "McLennan; Mohanty; Hoepfner",
+        "instructors": "McLennan; Hoepfner",
         "days": "M",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
@@ -251,7 +251,7 @@
     },
     {
         "course_number": "CH EN 3702-2",
-        "instructors": "McLennan; Mohanty; Hoepfner",
+        "instructors": "McLennan; Hoepfner",
         "days": "W",
         "time_of_day": "02:00 PM-05:00 PM",
         "duration": 180.0,
@@ -385,7 +385,7 @@
         "days": "TR",
         "time_of_day": "12:25 PM-01:45 PM",
         "duration": 80.0,
-        "location": "BUC 301",
+        "location": "MEB 3225",
         "type": "Elective",
         "anticipated_enrollment": "30"
     },
@@ -531,7 +531,7 @@
     },
     {
         "course_number": "CH EN 7857-1",
-        "instructors": "Hoepfner",
+        "instructors": "Whitty",
         "days": "F",
         "time_of_day": "10:45 AM-12:05 PM",
         "duration": 80.0,
